@@ -22,6 +22,7 @@ public class HoldState : IProjectileState
     public IProjectileState ChangeState()
     {
         UpdateCurrentSpeed();
+        FullManaBar();
         return controller.releaseState;
     }
 
@@ -46,10 +47,22 @@ public class HoldState : IProjectileState
         {
             controller.ChangeState();
         }
+
+        UpdateManaBar();
     }
 
     public void UpdateCurrentSpeed()
     {
         controller.currentSpeed = newSpeed;
+    }
+
+    public void UpdateManaBar()
+    {
+        UIAssets.instance.manaBar.fillAmount = timer / controller.holdProjectileTime;
+    }
+
+    public void FullManaBar()
+    {
+        UIAssets.instance.manaBar.fillAmount = 1; //full
     }
 }

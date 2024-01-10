@@ -14,6 +14,7 @@ public class ProjectileController : MonoBehaviour
 
     [Header("Speed values")]
     public float baseSpeed = 3f;
+    [HideInInspector]
     public float currentSpeed;
     public float upSpeedPerSecond = 1f;
 
@@ -33,10 +34,7 @@ public class ProjectileController : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            ChangeState();
-        }
+        
 
         if (currentState != null)
             currentState.OnUpdate();
@@ -45,7 +43,17 @@ public class ProjectileController : MonoBehaviour
     public void ChangeState()
     {
         if (currentState != null)
+        {
             currentState = currentState.ChangeState();
+            if(currentState == releaseState)
+            {
+                transform.parent.gameObject.GetComponent<ControlAroundBorder>().isFather = false;
+                transform.parent.gameObject.GetComponent<ControlAroundBorder>().CleanInsideObjectData();
+            }
+        }
+           
+
+            
         currentState.OnBeginState();
     }
 }

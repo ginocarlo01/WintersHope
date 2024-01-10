@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class ControlAroundBorder : MonoBehaviour
 {
-    
-    [SerializeField]
     GameObject insideObject;
+    ProjectileController insideProjectile;
+    public bool isFather;
 
-    [SerializeField]
     bool pressedState;
 
     [SerializeField]
-    bool isFather;
-   
+    string playerTag;
+
+    private void Start()
+    {
+        ChangeToReleased();
+    }
+
     void Update()
     {
         if(Input.GetMouseButtonDown(0))
@@ -29,7 +33,8 @@ public class ControlAroundBorder : MonoBehaviour
         {
             if (insideObject != null)
             {
-                insideObject.GetComponent<ProjectileController>().ChangeState(); //trocar isso
+                insideProjectile.ChangeState();
+                ChangeToHold();
                 insideObject.transform.parent = transform;
                 isFather = true;
             }
@@ -39,9 +44,14 @@ public class ControlAroundBorder : MonoBehaviour
         {
             if (insideObject != null)
             {
-                insideObject.GetComponent<ProjectileController>().ChangeState();
-                insideObject.transform.parent = null;
+                insideProjectile.ChangeState();
+                ChangeToReleased();
+                if (insideObject != null)
+                {
+                    insideObject.transform.parent = null;
+                }
                 isFather = false;
+                CleanInsideObjectData();
             }
         }
         
@@ -49,11 +59,44 @@ public class ControlAroundBorder : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        insideObject = collision.gameObject;
+        if(this.gameObject.tag != playerTag)
+        {
+            insideObject = collision.gameObject;
+            insideProjectile = collision.GetComponent<ProjectileController>();
+        }
+        else
+        {
+            if (collision.CompareTag(LifeBorder.instance.enemyTag))
+            {
+                LifeBorder.instance.TakeDamage(1);
+                Destroy(collision.gameObject);
+            }
+        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        CleanInsideObjectData();
+    }
+
+    public void ChangeToHold()
+    {
+        this.gameObject.tag = playerTag;
+    }
+
+    public void ChangeToReleased()
+    {
+        this.gameObject.tag = "Untagged";
+    }
+
+    public void CleanInsideObjectData()
+    {
+        if(insideObject != null)
+        {
+            insideObject.transform.parent = null;
+        }
         insideObject = null;
+        insideProjectile = null;
     }
 }
