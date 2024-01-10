@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ControlAroundBorder : MonoBehaviour
 {
+    
     [SerializeField]
     GameObject insideObject;
 
@@ -28,8 +29,7 @@ public class ControlAroundBorder : MonoBehaviour
         {
             if (insideObject != null)
             {
-                insideObject.GetComponent<ProjectileLookAt>().StopMovement();
-                insideObject.GetComponent<ProjectileLookAt>().StartTimer();
+                insideObject.GetComponent<ProjectileController>().ChangeState(); //trocar isso
                 insideObject.transform.parent = transform;
                 isFather = true;
             }
@@ -39,8 +39,7 @@ public class ControlAroundBorder : MonoBehaviour
         {
             if (insideObject != null)
             {
-                insideObject.GetComponent<ProjectileLookAt>().ReverseDirection();
-                insideObject.GetComponent<ProjectileLookAt>().StopTimer();
+                insideObject.GetComponent<ProjectileController>().ChangeState();
                 insideObject.transform.parent = null;
                 isFather = false;
             }

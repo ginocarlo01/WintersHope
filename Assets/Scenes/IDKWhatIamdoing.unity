@@ -581,11 +581,11 @@ GameObject:
   - component: {fileID: 880344653}
   m_Layer: 0
   m_Name: Projectile (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &880344649
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -617,7 +617,6 @@ MonoBehaviour:
   speed: 0.3
   damage: 2
   destroyTime: 20
-  playerTag: Player
   lookAtPos: {x: 0, y: 0, z: 0}
   upSpeedValue: 0.5
   maxTimer: 7
@@ -720,6 +719,7 @@ GameObject:
   - component: {fileID: 881692858}
   - component: {fileID: 881692857}
   - component: {fileID: 881692859}
+  - component: {fileID: 881692860}
   m_Layer: 0
   m_Name: LifeBorder
   m_TagString: Player
@@ -804,12 +804,26 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3.5
+--- !u!114 &881692860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881692856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a455c01857b830341a0f553da24a7334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTag: Enemy
+  life: 0
 --- !u!1 &1147548443
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,12 +950,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1289125030}
   - component: {fileID: 1289125032}
-  - component: {fileID: 1289125031}
   - component: {fileID: 1289125033}
   - component: {fileID: 1289125034}
+  - component: {fileID: 1289125035}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -961,25 +975,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1289125031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289125029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e6533efe724ad49a4336cebc08f573, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1.2
-  damage: 2
-  destroyTime: 20
-  playerTag: Player
-  lookAtPos: {x: 0, y: 0, z: 0}
-  upSpeedValue: 0.5
-  maxTimer: 7
 --- !u!212 &1289125032
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1069,6 +1064,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1289125035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289125029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32673c0af35c61b40ab464cb9ca8f2e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSpeed: 1
+  currentSpeed: 0
+  upSpeedPerSecond: 1
+  holdProjectileTime: 5
 --- !u!1 &1302502273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,11 +1802,11 @@ GameObject:
   - component: {fileID: 2014390484}
   m_Layer: 0
   m_Name: Projectile (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &2014390480
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1827,7 +1838,6 @@ MonoBehaviour:
   speed: 0.5
   damage: 2
   destroyTime: 20
-  playerTag: Player
   lookAtPos: {x: 0, y: 0, z: 0}
   upSpeedValue: 0.5
   maxTimer: 7
