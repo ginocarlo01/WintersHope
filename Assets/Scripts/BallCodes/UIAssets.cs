@@ -15,6 +15,8 @@ public class UIAssets : MonoBehaviour
 
     public static UIAssets instance;
 
+    private Material healthMat;
+
     private void Awake()
     {
         instance = this;
@@ -25,7 +27,13 @@ public class UIAssets : MonoBehaviour
         //the only way to change is by doing this:
 
         healthObj.GetComponent<SpriteRenderer>().material = Instantiate<Material>(healthObj.GetComponent<SpriteRenderer>().material);
+        healthMat = healthObj.GetComponent<SpriteRenderer>().material;
+        //healthObj.GetComponent<SpriteRenderer>().material.SetFloat("_Arc1", 90f);
+        //ChangeHealthArc(180);
+    }
 
-        healthObj.GetComponent<SpriteRenderer>().material.SetFloat("_Arc1", 90f);
+    public void ChangeHealthArc(float angle)
+    {
+        healthMat.SetFloat("_Arc1", angle);
     }
 }

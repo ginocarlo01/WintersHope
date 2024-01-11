@@ -29,7 +29,7 @@ public class LifeBorder : MonoBehaviour
     {
         currentLife -= damage;
         //UIAssets.instance.ChangeHealthArc(currentLife / baseLife * 360);
-        //UpdateHealthBar();
+        UpdateHealthBar();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,8 +45,8 @@ public class LifeBorder : MonoBehaviour
     {
         if(currentLife > 0)
         {
-            UIAssets.instance.healthBar.fillAmount = currentLife / baseLife;
-
+            //UIAssets.instance.healthBar.fillAmount = currentLife / baseLife;
+            UIAssets.instance.ChangeHealthArc((1 - currentLife / baseLife) * 360);
         }
     }
 }
