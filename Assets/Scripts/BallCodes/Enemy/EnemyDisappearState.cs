@@ -6,7 +6,7 @@ public class EnemyDisappearState : IEnemyState
 {
     EnemyController controller;
 
-    float disappearTimer = 0;
+    float disappearTimer;
 
     public EnemyDisappearState(EnemyController controller)
     {
@@ -15,21 +15,25 @@ public class EnemyDisappearState : IEnemyState
 
     public IEnemyState ChangeState()
     {
-        throw new System.NotImplementedException();
+        ChangeDisappearArc(0);
+        controller.ChangePosition();
+        return controller.loadState;
     }
 
     public void OnBeginState()
     {
-        throw new System.NotImplementedException();
+        ChangeDisappearArc(0);
     }
 
     public void OnUpdate()
     {
         disappearTimer += Time.deltaTime;
+        ChangeDisappearArc(disappearTimer / controller.disappearTime * 360);
 
-        if(disappearTimer > controller.disappearTime)
+        if (disappearTimer > controller.disappearTime)
         {
             disappearTimer = 0;
+            controller.ChangeState();
         }
     }
 
@@ -37,11 +41,5 @@ public class EnemyDisappearState : IEnemyState
     {
         controller.materialDisappearArc.SetFloat("_Arc1", angle);
     }
-
-    public void FindNewPosition()
-    {
-
-    }
-
 
 }

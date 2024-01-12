@@ -35,14 +35,17 @@ public class EnemyController : MonoBehaviour
     [Header("Visual Elements")]
     [SerializeField]
     private SpriteRenderer spriteRendererLoadArc;
+    [HideInInspector]
     public Material materialLoadArc;
     [SerializeField]
     private SpriteRenderer spriteRendererDisappearArc;
+    [HideInInspector]
     public Material materialDisappearArc;
 
     private void Awake()
     {
         loadState = new EnemyLoadState(this);
+        disappearState = new EnemyDisappearState(this);
     }
 
     void Start()
@@ -63,11 +66,8 @@ public class EnemyController : MonoBehaviour
     {
         if (currentState != null)
             currentState.OnUpdate();
+
     }
-
-    
-
-    
 
     public void ChangeState()
     {
@@ -82,5 +82,10 @@ public class EnemyController : MonoBehaviour
     {
         GameObject newProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
         newProjectile.GetComponent<ProjectileController>().baseSpeed = attackSpeed;
+    }
+
+    public void ChangePosition()
+    {
+        this.gameObject.transform.position = SpawnEnemies.instance.ChangeObjectPosition(this.gameObject.transform).position;
     }
 }
