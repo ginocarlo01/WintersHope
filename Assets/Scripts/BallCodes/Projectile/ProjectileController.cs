@@ -60,8 +60,27 @@ public class ProjectileController : MonoBehaviour
             }
         }
            
-
-            
         currentState.OnBeginState();
+    }
+    void OnDestroy()
+    {
+        // Your custom logic when the object is destroyed
+        Debug.Log("Object is being destroyed!");
+
+        // Call a function when the object is destroyed
+        YourFunction();
+    }
+
+    void YourFunction()
+    {
+        // Your custom function logic
+        Debug.Log("YourFunction called when the object is destroyed!");
+       
+
+        if(transform.parent != null)
+        {
+            transform.parent.gameObject.GetComponent<ControlAroundBorder>().CleanInsideObjectData();
+        }
+        
     }
 }

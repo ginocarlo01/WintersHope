@@ -20,11 +20,25 @@ public class ReleaseState : IProjectileState
 
     public void OnBeginState()
     {
-        movementDirection = new Vector3(-1, 0, 0);
+        movementDirection = new Vector3(1, 0, 0);
+        LookToCursor();
     }
 
     public void OnUpdate()
     {
         controller.transform.Translate(controller.currentSpeed * movementDirection * Time.deltaTime);
     }
+
+    private void LookToCursor()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;
+
+        Vector3 lookDir =  mousePos - controller.transform.position;
+
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+
+        controller.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
+
 }

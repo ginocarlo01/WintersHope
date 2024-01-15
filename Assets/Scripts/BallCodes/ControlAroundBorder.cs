@@ -79,10 +79,7 @@ public class ControlAroundBorder : MonoBehaviour
         */
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        CleanInsideObjectData();
-    }
+    
 
     public void ChangeToHold()
     {
@@ -103,5 +100,6 @@ public class ControlAroundBorder : MonoBehaviour
         }
         insideObject = null;
         insideProjectile = null;
+        isFather = false;
     }
 }

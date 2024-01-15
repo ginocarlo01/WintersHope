@@ -9,6 +9,10 @@ public class EnemyController : MonoBehaviour
     public EnemyDisappearState disappearState;
     IEnemyState currentState;
 
+    [Header("Enemy Type")]
+    [SerializeField]
+    public bool alwaysAttack = true;
+
     [Header("Load state attributes")]
     [SerializeField]
     public float loadTime = 0.5f;

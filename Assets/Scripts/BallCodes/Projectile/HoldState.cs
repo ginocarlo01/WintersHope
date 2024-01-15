@@ -30,7 +30,6 @@ public class HoldState : IProjectileState
     {
         timer = controller.holdProjectileTime;
         newSpeed = controller.baseSpeed;
-        Debug.Log("NewSpeed:" + newSpeed.ToString());
     }
 
     public void OnUpdate()
@@ -55,7 +54,6 @@ public class HoldState : IProjectileState
     public void UpdateCurrentSpeed()
     {
         controller.currentSpeed = newSpeed;
-        Debug.Log("NewNewSpeed:" + newSpeed.ToString());
     }
 
     public void UpdateManaBar(float angle)

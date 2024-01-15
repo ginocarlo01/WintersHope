@@ -11,6 +11,7 @@ public class ProjectileCollider : MonoBehaviour
     {
         if (collision.CompareTag(enemyTag))
         {
+
             Destroy(collision.gameObject);
         }
     }
