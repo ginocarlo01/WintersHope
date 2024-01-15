@@ -25,6 +25,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     public GameObject projectile;
 
+    [SerializeField]
+    public Transform spawnPositionProjectile;
+
     [Header("Disappear state attributes")]
     [SerializeField]
     public float disappearTime = 0f;
@@ -80,7 +83,7 @@ public class EnemyController : MonoBehaviour
 
     public void SpawnProjectile()
     {
-        GameObject newProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+        GameObject newProjectile = Instantiate(projectile, spawnPositionProjectile.position, Quaternion.identity);
         newProjectile.GetComponent<ProjectileController>().baseSpeed = attackSpeed;
     }
 
@@ -88,4 +91,6 @@ public class EnemyController : MonoBehaviour
     {
         this.gameObject.transform.position = SpawnEnemies.instance.ChangeObjectPosition(this.gameObject.transform).position;
     }
+
+    
 }

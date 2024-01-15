@@ -70,7 +70,6 @@ public class SpawnEnemies : MonoBehaviour
         Transform newPosition = ChooseNewPosition();
         FreePoint(oldPosition);
         OccupyPoint(newPosition);
-        Debug.Log(newPosition);
         return newPosition;
     }
 }

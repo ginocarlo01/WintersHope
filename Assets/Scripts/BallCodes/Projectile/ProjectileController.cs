@@ -9,17 +9,23 @@ public class ProjectileController : MonoBehaviour
     public AttackState attackState;
     public HoldState holdState;
     public ReleaseState releaseState;
-
+    
     IProjectileState currentState;
 
     [Header("Speed values")]
-    public float baseSpeed = 3f;
+    [HideInInspector]
+    public float baseSpeed;
     [HideInInspector]
     public float currentSpeed;
     public float upSpeedPerSecond = 1f;
 
     [Header("Hold values")]
     public float holdProjectileTime = 5f;
+
+    [SerializeField]
+    public GameObject holdObj;
+    [HideInInspector]
+    public Material holdMat;
 
     private void Awake()
     {
@@ -29,12 +35,14 @@ public class ProjectileController : MonoBehaviour
     }
     void Start()
     {
+        holdObj.GetComponent<SpriteRenderer>().material = Instantiate<Material>(holdObj.GetComponent<SpriteRenderer>().material);
+        holdMat = holdObj.GetComponent<SpriteRenderer>().material;
+
         currentState = attackState;
         currentState.OnBeginState();
     }
     void Update()
     {
-        
 
         if (currentState != null)
             currentState.OnUpdate();

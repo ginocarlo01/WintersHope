@@ -30,6 +30,7 @@ public class HoldState : IProjectileState
     {
         timer = controller.holdProjectileTime;
         newSpeed = controller.baseSpeed;
+        Debug.Log("NewSpeed:" + newSpeed.ToString());
     }
 
     public void OnUpdate()
@@ -48,21 +49,24 @@ public class HoldState : IProjectileState
             controller.ChangeState();
         }
 
-        UpdateManaBar();
+        UpdateManaBar(timer / controller.holdProjectileTime * 360);
     }
 
     public void UpdateCurrentSpeed()
     {
         controller.currentSpeed = newSpeed;
+        Debug.Log("NewNewSpeed:" + newSpeed.ToString());
     }
 
-    public void UpdateManaBar()
+    public void UpdateManaBar(float angle)
     {
-        UIAssets.instance.manaBar.fillAmount = timer / controller.holdProjectileTime;
+        //UIAssets.instance.manaBar.fillAmount = timer / controller.holdProjectileTime;
+        controller.holdMat.SetFloat("_Arc1", angle);
     }
 
     public void FullManaBar()
     {
-        UIAssets.instance.manaBar.fillAmount = 1; //full
+        //UIAssets.instance.manaBar.fillAmount = 1; //full
+        controller.holdMat.SetFloat("_Arc1", 360);
     }
 }

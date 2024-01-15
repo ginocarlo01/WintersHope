@@ -10,7 +10,6 @@ public class LifeBorder : MonoBehaviour
     [SerializeField]
     private float baseLife = 10;
 
-    [SerializeField]
     private float currentLife;
 
     public static LifeBorder instance;

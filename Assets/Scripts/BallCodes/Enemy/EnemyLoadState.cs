@@ -9,6 +9,8 @@ public class EnemyLoadState : IEnemyState
 
     float loadTimer = 0;
 
+    Vector3 lookAtPos = Vector3.zero;
+
     public EnemyLoadState(EnemyController controller)
     {
         this.controller = controller;
@@ -22,6 +24,7 @@ public class EnemyLoadState : IEnemyState
 
     public void OnBeginState()
     {
+        UpdateRotation();
         ChangeLoadArc(0);
     }
 
@@ -42,6 +45,15 @@ public class EnemyLoadState : IEnemyState
     public void ChangeLoadArc(float angle)
     {
         controller.materialLoadArc.SetFloat("_Arc1", angle);
+    }
+
+    public void UpdateRotation()
+    {
+        Vector3 lookDir = lookAtPos - controller.transform.position;
+
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+
+        controller.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
 

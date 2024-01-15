@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class ControlAroundBorder : MonoBehaviour
 {
+    [SerializeField]
     GameObject insideObject;
     ProjectileController insideProjectile;
-    public bool isFather;
 
+    [SerializeField]
+    public bool isFather;
+    [SerializeField]
     bool pressedState;
 
     [SerializeField]
@@ -34,7 +37,7 @@ public class ControlAroundBorder : MonoBehaviour
             if (insideObject != null)
             {
                 insideProjectile.ChangeState();
-                ChangeToHold();
+                //ChangeToHold();
                 insideObject.transform.parent = transform;
                 isFather = true;
             }
@@ -45,7 +48,7 @@ public class ControlAroundBorder : MonoBehaviour
             if (insideObject != null)
             {
                 insideProjectile.ChangeState();
-                ChangeToReleased();
+                //ChangeToReleased();
                 if (insideObject != null)
                 {
                     insideObject.transform.parent = null;
@@ -59,12 +62,13 @@ public class ControlAroundBorder : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(this.gameObject.tag != playerTag)
+        if(this.gameObject.tag != playerTag && !isFather)
         {
             insideObject = collision.gameObject;
             insideProjectile = collision.GetComponent<ProjectileController>();
         }
-        else
+       /* 
+        * else
         {
             if (collision.CompareTag(LifeBorder.instance.enemyTag))
             {
@@ -72,7 +76,7 @@ public class ControlAroundBorder : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
-        
+        */
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -92,6 +96,7 @@ public class ControlAroundBorder : MonoBehaviour
 
     public void CleanInsideObjectData()
     {
+        Debug.Log("Clean object data");
         if(insideObject != null)
         {
             insideObject.transform.parent = null;
