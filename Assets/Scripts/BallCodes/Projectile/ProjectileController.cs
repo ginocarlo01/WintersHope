@@ -9,8 +9,9 @@ public class ProjectileController : MonoBehaviour
     public AttackState attackState;
     public HoldState holdState;
     public ReleaseState releaseState;
-    
-    IProjectileState currentState;
+    public FollowAttackState followAttackState;
+
+    public IProjectileState currentState;
 
     [Header("Speed values")]
     [HideInInspector]
@@ -32,11 +33,12 @@ public class ProjectileController : MonoBehaviour
         attackState = new AttackState(this);
         holdState = new HoldState(this);
         releaseState = new ReleaseState(this);
+        followAttackState = new FollowAttackState(this);
     }
     void Start()
     {
-        holdObj.GetComponent<SpriteRenderer>().material = Instantiate<Material>(holdObj.GetComponent<SpriteRenderer>().material);
-        holdMat = holdObj.GetComponent<SpriteRenderer>().material;
+
+        InitiMaterial();
 
         currentState = attackState;
         currentState.OnBeginState();
@@ -64,23 +66,21 @@ public class ProjectileController : MonoBehaviour
     }
     void OnDestroy()
     {
-        // Your custom logic when the object is destroyed
-        Debug.Log("Object is being destroyed!");
-
-        // Call a function when the object is destroyed
-        YourFunction();
+        CleanParentData();
     }
 
-    void YourFunction()
+    void CleanParentData()
     {
-        // Your custom function logic
-        Debug.Log("YourFunction called when the object is destroyed!");
-       
-
         if(transform.parent != null)
         {
             transform.parent.gameObject.GetComponent<ControlAroundBorder>().CleanInsideObjectData();
         }
         
+    }
+
+    public void InitiMaterial()
+    {
+        holdObj.GetComponent<SpriteRenderer>().material = Instantiate<Material>(holdObj.GetComponent<SpriteRenderer>().material);
+        holdMat = holdObj.GetComponent<SpriteRenderer>().material;
     }
 }

@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a7d1b5408dd834bbc257bd64b09194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alwaysAttack: 1
   loadTime: 2
   loadTimeRandomness: 0.1
   attackSpeed: 2
@@ -158,7 +159,7 @@ GameObject:
   - component: {fileID: 3030093187679584331}
   - component: {fileID: 9034117433588993341}
   m_Layer: 0
-  m_Name: TakeDamageBox
+  m_Name: TakeDamageCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,7 +195,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.085
+  m_Radius: 0.2
 --- !u!114 &9034117433588993341
 MonoBehaviour:
   m_ObjectHideFlags: 0
