@@ -93,7 +93,6 @@ public class ControlAroundBorder : MonoBehaviour
 
     public void CleanInsideObjectData()
     {
-        Debug.Log("Clean object data");
         if(insideObject != null)
         {
             insideObject.transform.parent = null;

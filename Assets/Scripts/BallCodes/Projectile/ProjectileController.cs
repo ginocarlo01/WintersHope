@@ -28,6 +28,15 @@ public class ProjectileController : MonoBehaviour
     [HideInInspector]
     public Material holdMat;
 
+    [Header("Attack values")]
+    [SerializeField]
+    private float baseAttack = 1;
+
+    [Header("Projectile Type")]
+    [SerializeField]
+    private TypeUtility.Type currentProjectileType;
+
+
     private void Awake()
     {
         attackState = new AttackState(this);
@@ -38,7 +47,7 @@ public class ProjectileController : MonoBehaviour
     void Start()
     {
 
-        InitiMaterial();
+        InitMaterial();
 
         currentState = attackState;
         currentState.OnBeginState();
@@ -78,9 +87,19 @@ public class ProjectileController : MonoBehaviour
         
     }
 
-    public void InitiMaterial()
+    public void InitMaterial()
     {
         holdObj.GetComponent<SpriteRenderer>().material = Instantiate<Material>(holdObj.GetComponent<SpriteRenderer>().material);
         holdMat = holdObj.GetComponent<SpriteRenderer>().material;
+    }
+
+    public TypeUtility.Type GetProjectileType()
+    {
+        return this.currentProjectileType;
+    }
+
+    public float GetBaseAttack()
+    {
+        return baseAttack;
     }
 }

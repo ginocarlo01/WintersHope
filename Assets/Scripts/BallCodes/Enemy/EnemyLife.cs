@@ -8,24 +8,15 @@ public class EnemyLife : MonoBehaviour
     public string enemyTag = "Enemy";
 
     [SerializeField]
-    public string projectileName = "NewProjectile";
-
-    [SerializeField]
     private float baseLife = 10;
-
     private float currentLife;
-
-    public static EnemyLife instance;
 
     [SerializeField]
     public GameObject healthObj;
-
     private Material healthMat;
 
-    private void Awake()
-    {
-        instance = this;
-    }
+    [SerializeField]
+    private TypeUtility.Type type;
 
     private void Start()
     {
@@ -33,7 +24,7 @@ public class EnemyLife : MonoBehaviour
         healthMat = healthObj.GetComponent<SpriteRenderer>().material;
         currentLife = baseLife;
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentLife -= damage;
         ChangeHealthArc((1 - currentLife / baseLife) * 360);
@@ -43,8 +34,33 @@ public class EnemyLife : MonoBehaviour
     {
         if (collision.CompareTag(enemyTag))
         {
+            ProjectileController projectile = collision.GetComponent<ProjectileController>();
+
+            if (projectile != null)
+            {
+                TypeUtility.Type attackerType = projectile.GetProjectileType();
+                float attackValue = projectile.GetBaseAttack();
+
+                Debug.Log("Attacker: " + attackerType.ToString());
+                Debug.Log("Defender: " + type.ToString());
+                if (TypeUtility.IsInvincible(attackerType, type))
+                {
+                    Debug.Log("It is invincible");
+                    attackValue = 0;
+                }
+                else if(TypeUtility.HasAdvantage(attackerType, type))
+                {
+                    Debug.Log("It has advantage");
+                    attackValue *= 2; //double attack
+                }
+                else
+                {
+                    Debug.Log("It is not invincible and does not have advantage");
+                }
+                
+                TakeDamage(attackValue);
+            }
             
-            TakeDamage(1);
             Destroy(collision.gameObject);
         }
     }

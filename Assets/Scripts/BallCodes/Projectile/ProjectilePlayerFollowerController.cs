@@ -6,7 +6,7 @@ public class ProjectilePlayerFollowerController : ProjectileController
 {
     void Start()
     {
-        InitiMaterial();
+        InitMaterial();
 
         currentState = followAttackState;
         currentState.OnBeginState();

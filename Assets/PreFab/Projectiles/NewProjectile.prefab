@@ -245,6 +245,8 @@ MonoBehaviour:
   holdProjectileTime: 7
   holdObj: {fileID: 2009547251}
   holdMat: {fileID: 0}
+  baseAttack: 1
+  currentProjectileType: 1
 --- !u!114 &2380209651230733252
 MonoBehaviour:
   m_ObjectHideFlags: 0
