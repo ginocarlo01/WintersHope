@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ReleaseState : IProjectileState
 {
-    Vector3 movementDirection;
 
     ProjectileController controller;
 
@@ -15,18 +14,18 @@ public class ReleaseState : IProjectileState
 
     public IProjectileState ChangeState()
     {
-        throw new System.NotImplementedException();
+        return controller.holdState;
     }
 
     public void OnBeginState()
     {
-        movementDirection = new Vector3(1, 0, 0);
+        controller.currentDirection = new Vector3(1, 0, 0);
         LookToCursor();
     }
 
     public void OnUpdate()
     {
-        controller.transform.Translate(controller.currentSpeed * movementDirection * Time.deltaTime);
+        controller.transform.Translate(controller.currentSpeed * controller.currentDirection * Time.deltaTime);
     }
 
     private void LookToCursor()

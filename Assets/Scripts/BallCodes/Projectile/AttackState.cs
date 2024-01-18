@@ -6,7 +6,6 @@ public class AttackState : IProjectileState
 {
     ProjectileController controller;
 
-    Vector3 movementDirection;
 
     Vector3 lookAtPos = Vector3.zero;
 
@@ -22,7 +21,7 @@ public class AttackState : IProjectileState
 
     public void OnBeginState()
     {
-        movementDirection = new Vector3(1, 0, 0);
+        controller.currentDirection = new Vector3(1, 0, 0);
 
         Vector3 lookDir = lookAtPos - controller.transform.position;
 
@@ -33,6 +32,6 @@ public class AttackState : IProjectileState
 
     public void OnUpdate()
     {
-        controller.transform.Translate(controller.baseSpeed  * movementDirection * Time.deltaTime);
+        controller.transform.Translate(controller.baseSpeed  * controller.currentDirection * Time.deltaTime);
     }
 }

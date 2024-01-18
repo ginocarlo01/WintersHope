@@ -6,8 +6,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class FollowAttackState : IProjectileState
 {
     ProjectileController controller;
-
-    Vector3 movementDirection;
+    
 
     Vector3 lookAtPos = Vector3.zero;
 
@@ -23,14 +22,13 @@ public class FollowAttackState : IProjectileState
 
     public void OnBeginState()
     {
-        movementDirection = new Vector3(1, 0, 0);
-
+        controller.currentDirection = new Vector3(1, 0, 0);
         LookToPlayer();
     }
 
     public void OnUpdate()
     {
-        controller.transform.Translate(controller.baseSpeed  * movementDirection * Time.deltaTime);
+        controller.transform.Translate(controller.baseSpeed  * controller.currentDirection * Time.deltaTime);
     }
 
     public void LookToPlayer()

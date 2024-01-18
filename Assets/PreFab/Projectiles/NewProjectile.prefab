@@ -242,6 +242,7 @@ MonoBehaviour:
   baseSpeed: 12
   currentSpeed: 0
   upSpeedPerSecond: 0.5
+  currentDirection: {x: 0, y: 0, z: 0}
   holdProjectileTime: 7
   holdObj: {fileID: 2009547251}
   holdMat: {fileID: 0}
