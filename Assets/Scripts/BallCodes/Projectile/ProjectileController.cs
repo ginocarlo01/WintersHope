@@ -60,16 +60,6 @@ public class ProjectileController : MonoBehaviour
         if (currentState != null)
             currentState.OnUpdate();
 
-        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
-
-        if (scrollInput > 0f)
-        {
-            ChangeProjectileType(true);
-        }
-        else if (scrollInput < 0f)
-        {
-            ChangeProjectileType(false);
-        }
     }
 
     public void ChangeState()
@@ -116,33 +106,6 @@ public class ProjectileController : MonoBehaviour
         return baseAttack;
     }
 
-    void ChangeProjectileType(bool scrollUp)
-    {
-        // Get the array of all types
-        TypeUtility.Type[] allTypes = (TypeUtility.Type[])System.Enum.GetValues(typeof(TypeUtility.Type));
-
-        // Find the index of the current type
-        int currentIndex = System.Array.IndexOf(allTypes, currentProjectileType);
-
-        // Calculate the new index based on scroll direction
-        int newIndex;
-
-        if (scrollUp)
-        {
-            // Scroll up, change to the next type
-            newIndex = (currentIndex + 1) % allTypes.Length;
-        }
-        else
-        {
-            // Scroll down, change to the previous type
-            newIndex = (currentIndex - 1 + allTypes.Length) % allTypes.Length;
-        }
-
-        // Set the new projectile type
-        currentProjectileType = allTypes[newIndex];
-
-        // Print for testing purposes
-        Debug.Log("Current Projectile Type: " + currentProjectileType);
-    }
+    
 
 }
