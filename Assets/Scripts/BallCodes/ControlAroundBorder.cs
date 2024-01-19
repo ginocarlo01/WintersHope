@@ -8,9 +8,7 @@ public class ControlAroundBorder : MonoBehaviour
     GameObject insideObject;
     ProjectileController insideProjectile;
 
-    [SerializeField]
     public bool isFather;
-    [SerializeField]
     bool pressedState;
 
     [SerializeField]
@@ -30,6 +28,15 @@ public class ControlAroundBorder : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             pressedState = false;
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            //check if there is a object inside
+
+            //check if this object can be kept
+
+            //keep the object or not (wont do nothing in this case)
         }
 
         if (!isFather && pressedState)

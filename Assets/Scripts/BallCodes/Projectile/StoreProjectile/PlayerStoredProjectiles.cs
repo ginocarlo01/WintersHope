@@ -12,16 +12,35 @@ public class PlayerStoredProjectiles : MonoBehaviour
     }
 
     public List<StoredProjectile> maxQty;
-
     public List<StoredProjectile> currentQty;
+
+    public Dictionary<TypeUtility.Type, int> currentQtyDict;
+    public Dictionary<TypeUtility.Type, int> maxQtyDict;
 
     [SerializeField]
     private int indexSelectedType;
 
+    private void Start()
+    {
+        maxQtyDict = new Dictionary<TypeUtility.Type, int>();
+        currentQtyDict = new Dictionary<TypeUtility.Type, int>();
+
+        foreach (StoredProjectile storedProjectile in maxQty)
+        {
+            maxQtyDict.Add(storedProjectile.type, storedProjectile.qty);
+        }
+
+        foreach (StoredProjectile storedProjectile in currentQty)
+        {
+            currentQtyDict.Add(storedProjectile.type, storedProjectile.qty);
+        }
+
+    }
+
     private void Update()
     {
 
-        if(currentQty.Count > 1)
+        if(currentQtyDict.Count > 1)
         {
             float scrollInput = Input.GetAxis("Mouse ScrollWheel");
 
@@ -39,20 +58,18 @@ public class PlayerStoredProjectiles : MonoBehaviour
 
     void ChangeProjectileType(bool scrollUp)
     {
-        
-
         // Calculate the new index based on scroll direction
         int newIndex;
 
         if (scrollUp)
         {
             // Scroll up, change to the next type
-            newIndex = (indexSelectedType + 1) % currentQty.Count;
+            newIndex = (indexSelectedType + 1) % currentQtyDict.Count;
         }
         else
         {
             // Scroll down, change to the previous type
-            newIndex = (indexSelectedType - 1 + currentQty.Count) % currentQty.Count;
+            newIndex = (indexSelectedType - 1 + currentQtyDict.Count) % currentQtyDict.Count;
         }
 
         // Set the new projectile type
@@ -60,5 +77,62 @@ public class PlayerStoredProjectiles : MonoBehaviour
 
         // Print for testing purposes
         Debug.Log("Current Projectile Type: " + newIndex);
+    }
+
+    public void SaveProjectile(TypeUtility.Type type)
+    {
+        currentQtyDict[type]++;
+    }
+
+    public bool CanProjectileBeKept(TypeUtility.Type type)
+    {
+        if (!maxQtyDict.ContainsKey(type))
+        {
+            Debug.LogWarning("This type is not registered");
+            return false;
+        }
+
+        if (!currentQtyDict.ContainsKey(type))
+        {
+            currentQtyDict.Add(type, 0);
+        }
+
+        if (currentQtyDict[type] < maxQtyDict[type])
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool CanProjectileBeUsed(TypeUtility.Type type)
+    {
+        if (!maxQtyDict.ContainsKey(type))
+        {
+            Debug.LogWarning("This type is not registered");
+            return false;
+        }
+
+        if (!currentQtyDict.ContainsKey(type))
+        {
+            Debug.LogWarning("This type was not kept");
+            return false;
+        }
+
+        if (currentQtyDict[type] > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void UseProjectile(TypeUtility.Type type)
+    {
+        currentQtyDict[type]--;
     }
 }
