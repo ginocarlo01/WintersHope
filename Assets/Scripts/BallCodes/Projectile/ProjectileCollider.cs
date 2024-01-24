@@ -12,7 +12,14 @@ public class ProjectileCollider : MonoBehaviour
         if (collision.CompareTag(enemyTag))
         {
 
-            Destroy(collision.gameObject);
+            #region DisableProjectile
+            IPooledObject objectFromPool = collision.GetComponent<IPooledObject>();
+
+            if (objectFromPool != null)
+            {
+                objectFromPool.OnObjectDisabled();
+            }
+            #endregion
         }
     }
 }

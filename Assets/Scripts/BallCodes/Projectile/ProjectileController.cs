@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class ProjectileController : MonoBehaviour
+public class ProjectileController : MonoBehaviour, IPooledObject
+
 {
 
     public AttackState attackState;
@@ -46,14 +47,7 @@ public class ProjectileController : MonoBehaviour
         releaseState = new ReleaseState(this);
         followAttackState = new FollowAttackState(this);
     }
-    void Start()
-    {
-
-        InitMaterial();
-
-        currentState = attackState;
-        currentState.OnBeginState();
-    }
+    
     void Update()
     {
 
@@ -76,10 +70,7 @@ public class ProjectileController : MonoBehaviour
            
         currentState.OnBeginState();
     }
-    void OnDestroy()
-    {
-        CleanParentData();
-    }
+    
 
     void CleanParentData()
     {
@@ -106,6 +97,24 @@ public class ProjectileController : MonoBehaviour
         return baseAttack;
     }
 
-    
+    public void OnObjectSpawn()
+    {
+        InitMaterial();
+        Invoke("TurnOff", 30f);
+        Debug.Log("Spawned, starting timer!");
+        currentState = attackState;
+        currentState.OnBeginState();
+    }
 
+    public void OnObjectDisabled()
+    {
+        CleanParentData();
+        TurnOff();
+    }
+
+    protected void TurnOff()
+    {
+        Debug.Log("Turned off...");
+        this.gameObject.SetActive(false);
+    }
 }

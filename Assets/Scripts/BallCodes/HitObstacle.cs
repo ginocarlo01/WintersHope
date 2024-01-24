@@ -17,7 +17,14 @@ public class HitObstacle : MonoBehaviour
         if (collision.CompareTag(projectileTag))
         {
             hitsTaken++;
-            Destroy(collision.gameObject);
+            #region DisableProjectile
+            IPooledObject objectFromPool = collision.GetComponent<IPooledObject>();
+
+            if (objectFromPool != null)
+            {
+                objectFromPool.OnObjectDisabled();
+            }
+            #endregion
             CheckNumberOfHits();
         }
     }

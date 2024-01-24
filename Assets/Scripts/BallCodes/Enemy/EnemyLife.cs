@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class EnemyLife : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class EnemyLife : MonoBehaviour
     {
         if (collision.CompareTag(enemyTag))
         {
+            #region DealDamage
             ProjectileController projectile = collision.GetComponent<ProjectileController>();
 
             if (projectile != null)
@@ -59,9 +61,18 @@ public class EnemyLife : MonoBehaviour
                 }
                 
                 TakeDamage(attackValue);
+
             }
-            
-            Destroy(collision.gameObject);
+            #endregion
+
+            #region DisableProjectile
+            IPooledObject objectFromPool = collision.GetComponent<IPooledObject>();
+
+            if(objectFromPool != null)
+            {
+                objectFromPool.OnObjectDisabled();
+            }
+            #endregion
         }
     }
 

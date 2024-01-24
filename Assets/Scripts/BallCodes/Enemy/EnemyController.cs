@@ -27,9 +27,6 @@ public class EnemyController : MonoBehaviour
     public float attackSpeedRandomness = .3f;
 
     [SerializeField]
-    public GameObject projectile;
-
-    [SerializeField]
     public Transform spawnPositionProjectile;
 
     [Header("Disappear state attributes")]
@@ -49,6 +46,12 @@ public class EnemyController : MonoBehaviour
     [HideInInspector]
     public Material materialDisappearArc;
 
+    //object pool
+    ObjectPooler objectPooler;
+
+    [SerializeField]
+    public string objectPoolTag = "NewProjectile";
+
     private void Awake()
     {
         loadState = new EnemyLoadState(this);
@@ -67,13 +70,15 @@ public class EnemyController : MonoBehaviour
         //init state
         currentState = loadState;
         currentState.OnBeginState();
+
+        //find object pool
+        objectPooler = ObjectPooler.instance;
     }
 
     void Update()
     {
         if (currentState != null)
             currentState.OnUpdate();
-
     }
 
     public void ChangeState()
@@ -87,7 +92,9 @@ public class EnemyController : MonoBehaviour
 
     public void SpawnProjectile()
     {
-        GameObject newProjectile = Instantiate(projectile, spawnPositionProjectile.position, Quaternion.identity);
+        //GameObject newProjectile = Instantiate(projectile, spawnPositionProjectile.position, Quaternion.identity);
+        
+        GameObject newProjectile = objectPooler.SpawnFromPool(objectPoolTag, spawnPositionProjectile.position, Quaternion.identity);
         newProjectile.GetComponent<ProjectileController>().baseSpeed = attackSpeed;
     }
 

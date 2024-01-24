@@ -36,7 +36,16 @@ public class LifeBorder : MonoBehaviour
         if (collision.CompareTag(enemyTag))
         {
             TakeDamage(1);
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+
+            #region DisableProjectile
+            IPooledObject objectFromPool = collision.GetComponent<IPooledObject>();
+
+            if (objectFromPool != null)
+            {
+                objectFromPool.OnObjectDisabled();
+            }
+            #endregion
         }
     }
 
