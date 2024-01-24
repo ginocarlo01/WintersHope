@@ -47,12 +47,12 @@ public class EnemyLife : MonoBehaviour
                 Debug.Log("Defender: " + type.ToString());
                 if (TypeUtility.IsInvincible(attackerType, type))
                 {
-                    Debug.Log("It is invincible");
+                    Debug.Log("It is invincible (it wont take damage from the projectile) ");
                     attackValue = 0;
                 }
                 else if(TypeUtility.HasAdvantage(attackerType, type))
                 {
-                    Debug.Log("It has advantage");
+                    Debug.Log("It has advantage (it will take double damage from the projectile");
                     attackValue *= 2; //double attack
                 }
                 else

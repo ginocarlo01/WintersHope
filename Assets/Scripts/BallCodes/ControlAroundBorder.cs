@@ -14,6 +14,9 @@ public class ControlAroundBorder : MonoBehaviour
     [SerializeField]
     string playerTag;
 
+    [SerializeField]
+    PlayerStoredProjectiles pstored;
+
     private void Start()
     {
         ChangeToReleased();
@@ -33,10 +36,33 @@ public class ControlAroundBorder : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             //check if there is a object inside
+            if(insideObject != null)
+            {
+                Debug.Log("There is a object!");
+                ProjectileController projectileController = insideObject.GetComponent<ProjectileController>();
 
-            //check if this object can be kept
+                if(projectileController != null)
+                {
+                    TypeUtility.Type projectileType = projectileController.GetProjectileType();
+                    //check if this object can be kept
+                    if (pstored.CanProjectileBeSaved(projectileType))
+                    {
+                        Debug.Log("Projectile can be saved");
+                        //keep the object or not (wont do nothing in this case)
+                        pstored.SaveProjectile(projectileType);
+                        projectileController.OnObjectDisabled();
+                    }
+                    else
+                    {
+                        Debug.Log("Projectile can't be saved");
+                    }
+                }
+            }
+            else
+            {
+                Debug.Log("There isn't a object!");
+            }
 
-            //keep the object or not (wont do nothing in this case)
         }
 
         if (!isFather && pressedState)

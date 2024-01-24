@@ -5,35 +5,38 @@ using UnityEngine;
 public class HitObstacle : MonoBehaviour
 {
     [SerializeField]
-    private int hitsToDestroy = 2;
+    protected int hitsToDestroy = 2;
     [SerializeField]
-    private int hitsTaken;
+    protected int hitsTaken;
 
     [SerializeField]
-    private string projectileTag = "Enemy";
+    protected string projectileTag = "Enemy";
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(projectileTag))
         {
-            hitsTaken++;
-            #region DisableProjectile
-            IPooledObject objectFromPool = collision.GetComponent<IPooledObject>();
-
-            if (objectFromPool != null)
-            {
-                objectFromPool.OnObjectDisabled();
-            }
-            #endregion
+            hitsTaken++; 
+            DisableProjectile(collision);
             CheckNumberOfHits();
         }
     }
 
-    private void CheckNumberOfHits()
+    protected void CheckNumberOfHits()
     {
         if(hitsTaken >= hitsToDestroy)
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);   
+        }
+    }
+
+    protected void DisableProjectile(Collider2D collision)
+    {
+        IPooledObject objectFromPool = collision.GetComponent<IPooledObject>();
+
+        if (objectFromPool != null)
+        {
+            objectFromPool.OnObjectDisabled();
         }
     }
 }

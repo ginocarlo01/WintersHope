@@ -114,7 +114,6 @@ public class ProjectileController : MonoBehaviour, IPooledObject
 
     protected void TurnOff()
     {
-        Debug.Log("Turned off...");
         this.gameObject.SetActive(false);
     }
 }

@@ -82,9 +82,10 @@ public class PlayerStoredProjectiles : MonoBehaviour
     public void SaveProjectile(TypeUtility.Type type)
     {
         currentQtyDict[type]++;
+        Debug.Log(type.ToString() + " " + currentQtyDict[type].ToString());
     }
 
-    public bool CanProjectileBeKept(TypeUtility.Type type)
+    public bool CanProjectileBeSaved(TypeUtility.Type type)
     {
         if (!maxQtyDict.ContainsKey(type))
         {
