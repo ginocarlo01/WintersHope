@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 5740597907615467065}
   - component: {fileID: 1501043876}
   - component: {fileID: 1501043877}
+  - component: {fileID: 1501043878}
   m_Layer: 0
   m_Name: PlayerWithAim
   m_TagString: Player
@@ -303,6 +304,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1501043876}
   moveSpeed: 5
+--- !u!114 &1501043878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5740597907615467064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cebcf5077ed80fb459c543e0ff845327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxQty:
+  - type: 0
+    qty: 3
+  - type: 1
+    qty: 3
+  currentQty:
+  - type: 0
+    qty: 0
+  - type: 1
+    qty: 0
+  indexSelectedType: 0
 --- !u!1 &5740597907956477916
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,8 +526,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   insideObject: {fileID: 0}
   isFather: 0
-  pressedState: 0
   playerTag: Player
+  pstored: {fileID: 1501043878}
 --- !u!68 &5740597908032280330
 EdgeCollider2D:
   m_ObjectHideFlags: 0

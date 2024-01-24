@@ -92,6 +92,12 @@ public class ProjectileController : MonoBehaviour, IPooledObject
         return this.currentProjectileType;
     }
 
+    public void SetProjectileType(TypeUtility.Type newType)
+    {
+        
+        this.currentProjectileType = newType;
+    }
+
     public float GetBaseAttack()
     {
         return baseAttack;

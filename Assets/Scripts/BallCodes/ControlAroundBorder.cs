@@ -17,9 +17,18 @@ public class ControlAroundBorder : MonoBehaviour
     [SerializeField]
     PlayerStoredProjectiles pstored;
 
+    [SerializeField]
+    Transform spawnPoint;
+
+    [SerializeField]
+    string spawnProjectileTag = "FollowPlayerProjectile";
+
+    ObjectPooler objectPooler;
+
     private void Start()
     {
         ChangeToReleased();
+        objectPooler = ObjectPooler.instance;
     }
 
     void Update()
@@ -51,18 +60,43 @@ public class ControlAroundBorder : MonoBehaviour
                         //keep the object or not (wont do nothing in this case)
                         pstored.SaveProjectile(projectileType);
                         projectileController.OnObjectDisabled();
+                        insideObject = null;
                     }
                     else
                     {
                         Debug.Log("Projectile can't be saved");
                     }
                 }
+                //isFather = false;
             }
             else
             {
+                /*
                 Debug.Log("There isn't a object!");
+                
+                */
             }
 
+        }
+
+        if (Input.GetMouseButtonDown(2))
+        {
+            if (insideObject == null)
+            {
+                //check if the selected index can spawn
+                TypeUtility.Type selectedType = pstored.GetSelectedType();
+                if (pstored.CanProjectileBeUsed(selectedType))
+                {
+                    //use the projectle
+                    pstored.UseProjectile(selectedType);
+
+                    //spawn the projectle
+                    GameObject newProjectile = objectPooler.SpawnFromPool(spawnProjectileTag, spawnPoint.position, Quaternion.identity);
+
+                    //change the type of the object spawned
+                    newProjectile.GetComponent<ProjectileController>().SetProjectileType(selectedType);
+                }
+            }
         }
 
         if (!isFather && pressedState)
@@ -112,7 +146,15 @@ public class ControlAroundBorder : MonoBehaviour
         */
     }
 
-    
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!isFather)
+        {
+            CleanInsideObjectData();
+        }
+        
+    }
+
 
     public void ChangeToHold()
     {

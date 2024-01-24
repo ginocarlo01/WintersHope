@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerStoredProjectiles : MonoBehaviour
@@ -136,4 +137,20 @@ public class PlayerStoredProjectiles : MonoBehaviour
     {
         currentQtyDict[type]--;
     }
+
+    public TypeUtility.Type GetSelectedType()
+    {
+        TypeUtility.Type[] tipos = currentQtyDict.Keys.ToArray();
+
+        if (indexSelectedType >= 0 && indexSelectedType < tipos.Length)
+        {
+            return tipos[indexSelectedType];
+        }
+        else
+        {
+            Debug.LogError("Índice de tipo selecionado fora dos limites.");
+            return TypeUtility.Type.Neutral; 
+        }
+    }
+
 }
