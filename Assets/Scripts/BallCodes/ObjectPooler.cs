@@ -18,6 +18,8 @@ public class ObjectPooler : MonoBehaviour
 
     public static ObjectPooler instance;
 
+    
+
     private void Awake()
     {
         instance = this;

@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectilePlayerFollowerController : ProjectileController, IPooledObject
-
+public class ProjectileCursorFollowerController : ProjectileController, IPooledObject
 {
     public new void OnObjectSpawn()
     {
         InitMaterial();
-        
-        Invoke("TurnOff", 30f);
-        currentState = followAttackState;
+
+        Invoke("TurnOff", timeToDestroy);
+        currentState = followCursorState;
         currentState.OnBeginState();
     }
 
@@ -19,7 +18,4 @@ public class ProjectilePlayerFollowerController : ProjectileController, IPooledO
         if (currentState != null)
             currentState.OnUpdate();
     }
-
-
-
 }

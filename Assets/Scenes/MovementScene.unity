@@ -307,10 +307,13 @@ MonoBehaviour:
   pools:
   - tag: NewProjectile
     preFab: {fileID: 3834227921182978686, guid: 67b80e4cff98bb64abf7eda4382e6954, type: 3}
-    size: 10
+    size: 30
   - tag: FollowPlayerProjectile
     preFab: {fileID: 2720217287527765667, guid: ed68a2e290a946d4b92fbd3be367133e, type: 3}
-    size: 10
+    size: 30
+  - tag: FollowCursorProjectile
+    preFab: {fileID: 2720217287527765667, guid: fb137d8a5f4670a4d8b48f58424835bc, type: 3}
+    size: 30
 --- !u!4 &1015004433
 Transform:
   m_ObjectHideFlags: 0
@@ -339,7 +342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1501043878, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
       propertyPath: currentQty.Array.data[0].qty
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1501043878, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
       propertyPath: currentQty.Array.data[1].qty
@@ -398,8 +401,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1552695536}
     - target: {fileID: 5740597908032280373, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
+      propertyPath: attackSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5740597908032280373, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
+      propertyPath: playerStored
+      value: 
+      objectReference: {fileID: 1501043876}
+    - target: {fileID: 5740597908032280373, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
       propertyPath: spawnProjectileTag
-      value: FollowPlayerProjectile
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
@@ -481,6 +492,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5740597907615467065, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
   m_PrefabInstance: {fileID: 1152926039}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1501043876 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1501043878, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
+  m_PrefabInstance: {fileID: 1152926039}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cebcf5077ed80fb459c543e0ff845327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1552695535
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175217367898330493, guid: 28e73b8e2a9aa8440ba8a1e0bce12b8c, type: 3}
       propertyPath: objectPoolTag
-      value: FollowPlayerProjectile
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28e73b8e2a9aa8440ba8a1e0bce12b8c, type: 3}

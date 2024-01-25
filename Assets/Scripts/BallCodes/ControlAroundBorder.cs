@@ -15,15 +15,18 @@ public class ControlAroundBorder : MonoBehaviour
     string playerTag;
 
     [SerializeField]
-    PlayerStoredProjectiles pstored;
+    PlayerStoredProjectiles playerStored;
 
     [SerializeField]
     Transform spawnPoint;
 
     [SerializeField]
-    string spawnProjectileTag = "FollowPlayerProjectile";
+    TypeUtility.ProjectileTag spawnProjectileTag;
 
     ObjectPooler objectPooler;
+
+    [SerializeField]
+    public float attackSpeed = 1f;
 
     private void Start()
     {
@@ -54,11 +57,11 @@ public class ControlAroundBorder : MonoBehaviour
                 {
                     TypeUtility.Type projectileType = projectileController.GetProjectileType();
                     //check if this object can be kept
-                    if (pstored.CanProjectileBeSaved(projectileType))
+                    if (playerStored.CanProjectileBeSaved(projectileType))
                     {
                         Debug.Log("Projectile can be saved");
                         //keep the object or not (wont do nothing in this case)
-                        pstored.SaveProjectile(projectileType);
+                        playerStored.SaveProjectile(projectileType);
                         projectileController.OnObjectDisabled();
                         insideObject = null;
                     }
@@ -84,17 +87,20 @@ public class ControlAroundBorder : MonoBehaviour
             if (insideObject == null)
             {
                 //check if the selected index can spawn
-                TypeUtility.Type selectedType = pstored.GetSelectedType();
-                if (pstored.CanProjectileBeUsed(selectedType))
+                TypeUtility.Type selectedType = playerStored.GetSelectedType();
+                if (playerStored.CanProjectileBeUsed(selectedType))
                 {
                     //use the projectle
-                    pstored.UseProjectile(selectedType);
+                    playerStored.UseProjectile(selectedType);
 
                     //spawn the projectle
-                    GameObject newProjectile = objectPooler.SpawnFromPool(spawnProjectileTag, spawnPoint.position, Quaternion.identity);
+                    GameObject newProjectile = objectPooler.SpawnFromPool(spawnProjectileTag.ToString(), spawnPoint.position, Quaternion.identity);
 
                     //change the type of the object spawned
                     newProjectile.GetComponent<ProjectileController>().SetProjectileType(selectedType);
+
+                    //set the speed of the object
+                    newProjectile.GetComponent<ProjectileController>().baseSpeed = attackSpeed;
                 }
             }
         }

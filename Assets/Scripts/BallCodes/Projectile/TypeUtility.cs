@@ -11,6 +11,13 @@ public static class TypeUtility
         Water
     }
 
+    public enum ProjectileTag
+    {
+        NewProjectile,
+        FollowPlayerProjectile,
+        FollowCursorProjectile
+    }
+
     // Dictionary to define advantages and disadvantages
     public static Dictionary<Type, List<Type>> TypeAdvantages = new Dictionary<Type, List<Type>>()
     {

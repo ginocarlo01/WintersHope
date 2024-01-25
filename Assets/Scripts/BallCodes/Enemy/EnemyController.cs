@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static TypeUtility;
 
 public class EnemyController : MonoBehaviour
 {
@@ -50,7 +51,7 @@ public class EnemyController : MonoBehaviour
     ObjectPooler objectPooler;
 
     [SerializeField]
-    public string objectPoolTag = "NewProjectile";
+    public ProjectileTag objectPoolTag;
 
     private void Awake()
     {
@@ -94,7 +95,7 @@ public class EnemyController : MonoBehaviour
     {
         //GameObject newProjectile = Instantiate(projectile, spawnPositionProjectile.position, Quaternion.identity);
         
-        GameObject newProjectile = objectPooler.SpawnFromPool(objectPoolTag, spawnPositionProjectile.position, Quaternion.identity);
+        GameObject newProjectile = objectPooler.SpawnFromPool(objectPoolTag.ToString(), spawnPositionProjectile.position, Quaternion.identity);
         newProjectile.GetComponent<ProjectileController>().baseSpeed = attackSpeed;
     }
 

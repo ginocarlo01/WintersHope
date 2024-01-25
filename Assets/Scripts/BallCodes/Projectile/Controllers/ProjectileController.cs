@@ -11,6 +11,7 @@ public class ProjectileController : MonoBehaviour, IPooledObject
     public HoldState holdState;
     public ReleaseState releaseState;
     public FollowAttackState followAttackState;
+    public FollowCursorAttackState followCursorState;
 
     public IProjectileState currentState;
 
@@ -39,6 +40,10 @@ public class ProjectileController : MonoBehaviour, IPooledObject
     [SerializeField]
     private TypeUtility.Type currentProjectileType;
 
+    [Header("General Values")]
+    [SerializeField]
+    protected float timeToDestroy = 25f;
+
 
     private void Awake()
     {
@@ -46,11 +51,12 @@ public class ProjectileController : MonoBehaviour, IPooledObject
         holdState = new HoldState(this);
         releaseState = new ReleaseState(this);
         followAttackState = new FollowAttackState(this);
+        followCursorState = new FollowCursorAttackState(this);
     }
     
     void Update()
     {
-
+        
         if (currentState != null)
             currentState.OnUpdate();
 
@@ -106,8 +112,7 @@ public class ProjectileController : MonoBehaviour, IPooledObject
     public void OnObjectSpawn()
     {
         InitMaterial();
-        Invoke("TurnOff", 30f);
-        Debug.Log("Spawned, starting timer!");
+        Invoke("TurnOff", timeToDestroy);
         currentState = attackState;
         currentState.OnBeginState();
     }
