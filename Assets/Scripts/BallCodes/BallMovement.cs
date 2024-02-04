@@ -12,15 +12,11 @@ public class BallMovement : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 1f;
 
-    void Start()
-    {
-        
-    }
+    private Animator anim;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -28,6 +24,8 @@ public class BallMovement : MonoBehaviour
         GetInput();
 
         MoveCharacter();
+
+        AnimateCharacter();
     }
 
     void MoveCharacter()
@@ -40,5 +38,19 @@ public class BallMovement : MonoBehaviour
         changeMovementInput = Vector3.zero;
         changeMovementInput.x = Input.GetAxisRaw("Horizontal");
         changeMovementInput.y = Input.GetAxisRaw("Vertical");
+    }
+
+    void AnimateCharacter()
+    {
+        if(changeMovementInput != Vector3.zero)
+        {
+            anim.SetFloat("moveX", changeMovementInput.x);
+            anim.SetFloat("moveY", changeMovementInput.y);
+            anim.SetBool("moving", true);
+        }
+        else
+        {
+            anim.SetBool("moving", false);
+        }
     }
 }
