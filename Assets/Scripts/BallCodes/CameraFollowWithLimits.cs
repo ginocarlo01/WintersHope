@@ -55,4 +55,17 @@ public class CameraFollowWithLimits : MonoBehaviour
     {
         animator.SetBool("kick_active", false);
     }
+
+    #region SubjectSubscription
+    private void OnEnable()
+    {
+        RoomTransition.PlayerEnteredTransition += AddMaxPosition;
+        RoomTransition.PlayerEnteredTransition += AddMinPosition;
+    }
+    private void OnDisable()
+    {
+        RoomTransition.PlayerEnteredTransition -= AddMaxPosition;
+        RoomTransition.PlayerEnteredTransition -= AddMinPosition;
+    }
+    #endregion
 }
