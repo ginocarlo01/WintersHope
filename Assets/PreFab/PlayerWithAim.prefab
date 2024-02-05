@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1552695536}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 5740597906383645715}
   - component: {fileID: 5740597906383645713}
   - component: {fileID: 5740597906383645718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LifeBorder
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1072301905
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 07a718a61ee838249b13bcc7684543a4, type: 3}
   m_Color: {r: 0.38207456, g: 0.754717, b: 0.17443931, a: 0.4392157}
@@ -132,7 +132,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.73
 --- !u!114 &5740597906383645718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740597906396538351}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Life
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,13 +190,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5740597907327255284}
   - component: {fileID: 5740597907327255285}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LifeBg
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5740597907327255284
 Transform:
   m_ObjectHideFlags: 0
@@ -206,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 5740597907327255287}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.21, y: 1.21, z: 1.21}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5740597906396538351}
@@ -262,7 +262,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!1 &5740597907615467064
 GameObject:
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 289222944}
   - component: {fileID: 289222949}
   - component: {fileID: 289222950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerWithAim
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1072301905
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 851998262, guid: d5518f70bfbe3ee488d3c024c56919fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -446,8 +446,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.023128193, y: 0.096468404}
-  m_Size: {x: 0.7132054, y: 1.2228796}
+  m_Offset: {x: 0.023128193, y: -0.10589812}
+  m_Size: {x: 0.7132055, y: 0.81814665}
   m_Direction: 0
 --- !u!1 &5740597907956477916
 GameObject:
@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 5740597907956477907}
   - component: {fileID: 5740597907956477906}
   - component: {fileID: 5740597907956477905}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RotateBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +523,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1072301905
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: d2ec9a38aaea31d4fae9225ff430f9f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -560,8 +560,8 @@ GameObject:
   - component: {fileID: 5740597908032280375}
   - component: {fileID: 5740597908032280372}
   - component: {fileID: 5740597908032280373}
-  - component: {fileID: 5740597908032280330}
-  m_Layer: 0
+  - component: {fileID: 2009829894}
+  m_Layer: 8
   m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,9 +622,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1072301905
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 5487c19fce2e95b47b8d629ed44edde9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07a718a61ee838249b13bcc7684543a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -654,8 +654,8 @@ MonoBehaviour:
   spawnPoint: {fileID: 1552695536}
   spawnProjectileTag: 2
   attackSpeed: 3
---- !u!68 &5740597908032280330
-EdgeCollider2D:
+--- !u!58 &2009829894
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -664,20 +664,9 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 1.3584294, y: 1.9218794}
-  - {x: 0.037606716, y: 0.050104924}
-  - {x: 1.4950511, y: -1.8773012}
-  - {x: 2.1821356, y: -0.89159626}
-  - {x: 2.3737998, y: 0.027967006}
-  - {x: 2.1803312, y: 1.0492754}
-  - {x: 1.3850162, y: 1.9218795}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_Offset: {x: 0.000015258789, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.7

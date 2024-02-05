@@ -1,0 +1,110 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using static TypeUtility;
+
+public class EnemyController : MonoBehaviour
+{
+    //state values
+    public EnemyLoadState loadState;
+    public EnemyDisappearState disappearState;
+    IEnemyState currentState;
+
+    [Header("Enemy Type")]
+    [SerializeField]
+    public bool alwaysAttack = true;
+
+    [Header("Load state attributes")]
+    [SerializeField]
+    public float loadTime = 0.5f;
+
+    [SerializeField]
+    public float loadTimeRandomness = .1f;
+
+    [SerializeField]
+    public float attackSpeed = 1f;
+
+    [SerializeField]
+    public float attackSpeedRandomness = .3f;
+
+    [SerializeField]
+    public Transform spawnPositionProjectile;
+
+    [Header("Disappear state attributes")]
+    [SerializeField]
+    public float disappearTime = 0f;
+
+    [SerializeField]
+    public float disappearTimeRandomness = .3f; 
+
+    [Header("Visual Elements")]
+    [SerializeField]
+    private SpriteRenderer spriteRendererLoadArc;
+    [HideInInspector]
+    public Material materialLoadArc;
+    [SerializeField]
+    private SpriteRenderer spriteRendererDisappearArc;
+    [HideInInspector]
+    public Material materialDisappearArc;
+
+    //object pool
+    ObjectPooler objectPooler;
+
+    [SerializeField]
+    public ProjectileTag objectPoolTag;
+
+    private void Awake()
+    {
+        loadState = new EnemyLoadState(this);
+        disappearState = new EnemyDisappearState(this);
+    }
+
+    void Start()
+    {
+        //load arc
+        spriteRendererLoadArc.material = Instantiate<Material>(spriteRendererLoadArc.material);
+        materialLoadArc = spriteRendererLoadArc.material;
+        //disappear arc
+        spriteRendererDisappearArc.material = Instantiate<Material>(spriteRendererDisappearArc.material);
+        materialDisappearArc = spriteRendererDisappearArc.material;
+
+        //init state
+        currentState = loadState;
+        currentState.OnBeginState();
+
+        //find object pool
+        objectPooler = ObjectPooler.instance;
+
+        loadTime += Random.Range(-loadTimeRandomness, loadTimeRandomness);
+        attackSpeed += Random.Range(-attackSpeedRandomness, attackSpeedRandomness);
+
+    }
+
+    void Update()
+    {
+        if (currentState != null)
+            currentState.OnUpdate();
+    }
+
+    public void ChangeState()
+    {
+        if (currentState != null)
+        {
+            currentState = currentState.ChangeState();   
+        }
+        currentState.OnBeginState();
+    }
+
+    public void SpawnProjectile()
+    {
+        GameObject newProjectile = objectPooler.SpawnFromPool(objectPoolTag.ToString(), spawnPositionProjectile.position, Quaternion.identity);
+        newProjectile.GetComponent<ProjectileController>().baseSpeed = attackSpeed;
+    }
+
+    public void ChangePosition()
+    {
+        this.gameObject.transform.position = SpawnEnemies.instance.ChangeObjectPosition(this.gameObject.transform).position;
+    }
+
+    
+}

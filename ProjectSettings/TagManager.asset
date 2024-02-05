@@ -13,10 +13,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - PlayerProjectile
+  - Player
+  - EnemyProjectile
   - 
   - 
   - 
@@ -43,6 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Enemy
+    uniqueID: 1657278161
+    locked: 0
   - name: Player
     uniqueID: 1072301905
+    locked: 0
+  - name: ObjectInGame
+    uniqueID: 3452888315
     locked: 0

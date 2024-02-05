@@ -114,7 +114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3834227921182978686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.95, y: -0, z: -0.021575192}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1.96, y: 1.96, z: 1.96}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -248,6 +248,7 @@ MonoBehaviour:
   holdMat: {fileID: 0}
   baseAttack: 1
   currentProjectileType: 1
+  timeToDestroy: 25
 --- !u!114 &2380209651230733252
 MonoBehaviour:
   m_ObjectHideFlags: 0
