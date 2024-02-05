@@ -24,6 +24,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     public float attackSpeedRandomness = .3f;
     [SerializeField]
+    public Transform centerPositionProjectile;
+    [SerializeField]
     public Transform spawnPositionProjectile;
 
     [Header("Disappear state attributes")]
@@ -107,7 +109,7 @@ public class EnemyController : MonoBehaviour
 
     public void SpawnProjectile()
     {
-        GameObject newProjectile = objectPooler.SpawnFromPool(objectPoolTag.ToString(), spawnPositionProjectile.position, Quaternion.identity);
+        GameObject newProjectile = objectPooler.SpawnFromPool(objectPoolTag.ToString(), spawnPositionProjectile.position, centerPositionProjectile.rotation);
         newProjectile.GetComponent<ProjectileController>().baseSpeed = attackSpeed;
     }
 

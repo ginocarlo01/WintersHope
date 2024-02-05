@@ -43,6 +43,9 @@ public class ProjectileController : MonoBehaviour, IPooledObject
     [Header("General Values")]
     [SerializeField]
     protected float timeToDestroy = 25f;
+    [SerializeField]
+    string enemyTag;
+    private Animator anim;
 
     public void OnObjectSpawn()
     {
@@ -59,6 +62,7 @@ public class ProjectileController : MonoBehaviour, IPooledObject
         releaseState = new ReleaseState(this);
         followAttackState = new FollowAttackState(this);
         followCursorState = new FollowCursorAttackState(this);
+        anim = GetComponent<Animator>();    
     }
     
     void Update()
@@ -127,5 +131,28 @@ public class ProjectileController : MonoBehaviour, IPooledObject
     protected void TurnOff()
     {
         this.gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 10)
+        {
+            anim.SetTrigger("fade");
+        }
+        else if (collision.CompareTag(enemyTag))
+        {
+
+            #region DisableProjectile
+            IPooledObject objectFromPool = collision.GetComponent<IPooledObject>();
+
+            if (objectFromPool != null)
+            {
+                objectFromPool.OnObjectDisabled();
+            }
+            #endregion
+        }
+
+        
+
     }
 }
