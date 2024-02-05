@@ -30,13 +30,23 @@ public class LifeBorder : MonoBehaviour
     }
     public void AlterLife(int damage)
     {
+        Debug.Log(damage);
         currentLife -= damage;
         if(currentLife > baseLife)
         {
             currentLife = baseLife;
         }
-
-        UpdateHealthBar();
+        
+        if(damage> 0)
+        {
+            UpdateHealthBar(true);
+        }
+        else
+        {
+            UpdateHealthBar(false);
+        }
+        
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,12 +66,13 @@ public class LifeBorder : MonoBehaviour
         }
     }
 
-    public void UpdateHealthBar()
+    public void UpdateHealthBar(bool damaged)
     {
-        if(currentLife > 0 && currentLife < baseLife)
+        if(currentLife > 0)
         {
             ChangeHealthArc((1 - currentLife / baseLife) * 360);
-            animator.SetTrigger("damaged");
+            if(damaged) animator.SetTrigger("damaged");
+            else animator.SetTrigger("gain");
         }
     }
 

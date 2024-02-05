@@ -11,6 +11,8 @@ public class Room : MonoBehaviour
     [SerializeField]
     bool startInactive = false;
 
+    public GameObject virtualCamera;
+
     private void Start()
     {
         enemies = GetComponentsInChildren<EnemyController>().Cast<EnemyController>().ToList();
@@ -27,6 +29,8 @@ public class Room : MonoBehaviour
         {
             foreach (EnemyController enemy in enemies)
                 ChangeActivation(enemy, true);
+
+            virtualCamera.SetActive(true);
         }
     }
 
@@ -36,6 +40,8 @@ public class Room : MonoBehaviour
         {
             foreach (EnemyController enemy in enemies)
                 ChangeActivation(enemy, false);
+
+            virtualCamera.SetActive(false);
         }
     }
 
