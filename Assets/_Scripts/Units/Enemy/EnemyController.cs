@@ -17,16 +17,12 @@ public class EnemyController : MonoBehaviour
     [Header("Load state attributes")]
     [SerializeField]
     public float loadTime = 0.5f;
-
     [SerializeField]
     public float loadTimeRandomness = .1f;
-
     [SerializeField]
     public float attackSpeed = 1f;
-
     [SerializeField]
     public float attackSpeedRandomness = .3f;
-
     [SerializeField]
     public Transform spawnPositionProjectile;
 
@@ -46,17 +42,21 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer spriteRendererDisappearArc;
     [HideInInspector]
     public Material materialDisappearArc;
+    private Vector2 homePosition;
 
     //object pool
     ObjectPooler objectPooler;
-
     [SerializeField]
-    public ProjectileTag objectPoolTag;
+    public ObjectFromPoolTag objectPoolTag;
+
+    //enemy life
+    EnemyLife enemyLife;
 
     private void Awake()
     {
         loadState = new EnemyLoadState(this);
         disappearState = new EnemyDisappearState(this);
+        homePosition = transform.position;
     }
 
     void Start()
@@ -74,10 +74,20 @@ public class EnemyController : MonoBehaviour
 
         //find object pool
         objectPooler = ObjectPooler.instance;
+        enemyLife = GetComponent<EnemyLife>();  
 
         loadTime += Random.Range(-loadTimeRandomness, loadTimeRandomness);
         attackSpeed += Random.Range(-attackSpeedRandomness, attackSpeedRandomness);
 
+    }
+
+    private void OnEnable()
+    {
+        transform.position = homePosition;
+        if(enemyLife != null)
+        {
+            enemyLife.RestartLife();
+        }
     }
 
     void Update()

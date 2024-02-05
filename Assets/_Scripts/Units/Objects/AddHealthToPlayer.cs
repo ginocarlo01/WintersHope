@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AddHealthToPlayer : MonoBehaviour
+public class AddHealthToPlayer : MonoBehaviour, IPooledObject
 {
     [SerializeField]
     private string playerTag = "Player";
@@ -10,12 +10,22 @@ public class AddHealthToPlayer : MonoBehaviour
     [SerializeField]
     private int upHealth = 1;
 
+    public void OnObjectDisabled()
+    {
+        this.gameObject.SetActive(false);
+    }
+
+    public void OnObjectSpawn()
+    {
+        return;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == playerTag)
         {
-            collision.GetComponent<LifeBorder>().TakeDamage(-upHealth);
-            gameObject.SetActive(false);
+            collision.GetComponent<LifeBorder>().AlterLife(-upHealth);
+            OnObjectDisabled();
         }
     }
 }

@@ -76,4 +76,21 @@ public class ObjectPooler : MonoBehaviour
 
         return objectToSpawn;
     }
+
+    public void SpawnFromPoolExternal(string tag, Vector3 position, Quaternion rotation)
+    {
+        SpawnFromPool(tag, position, rotation);
+    }
+
+    #region SubjectSubscription
+    private void OnEnable()
+    {
+        EnemyLife.SpawnLootAction += SpawnFromPoolExternal;
+    }
+    private void OnDisable()
+    {
+        EnemyLife.SpawnLootAction -= SpawnFromPoolExternal;
+    }
+
+    #endregion
 }

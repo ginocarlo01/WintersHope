@@ -21,7 +21,7 @@ public class ControlAroundBorder : MonoBehaviour
     Transform spawnPoint;
 
     [SerializeField]
-    TypeUtility.ProjectileTag spawnProjectileTag;
+    TypeUtility.ObjectFromPoolTag spawnProjectileTag;
 
     ObjectPooler objectPooler;
 
@@ -139,16 +139,6 @@ public class ControlAroundBorder : MonoBehaviour
             insideObject = collision.gameObject;
             insideProjectile = collision.GetComponent<ProjectileController>();
         }
-       /* 
-        * else
-        {
-            if (collision.CompareTag(LifeBorder.instance.enemyTag))
-            {
-                LifeBorder.instance.TakeDamage(1);
-                Destroy(collision.gameObject);
-            }
-        }
-        */
     }
 
     private void OnTriggerExit2D(Collider2D collision)

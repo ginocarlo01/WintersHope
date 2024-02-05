@@ -12,22 +12,30 @@ public class LifeBorder : MonoBehaviour
     [SerializeField]
     private float currentLife;
 
-    public static LifeBorder instance;
+    [SerializeField]
+    public GameObject healthObj;
 
-    private void Awake()
-    {
-        instance = this;
-    }
+    private Material healthMat;
+
+    Animator animator;
 
     private void Start()
     {
+        healthObj.GetComponent<SpriteRenderer>().material = Instantiate<Material>(healthObj.GetComponent<SpriteRenderer>().material);
+        healthMat = healthObj.GetComponent<SpriteRenderer>().material;
+
         currentLife = baseLife;
-        //UIAssets.instance.ChangeHealthArc(currentLife / baseLife * 360);
+
+        animator = GetComponent<Animator>();    
     }
-    public void TakeDamage(int damage)
+    public void AlterLife(int damage)
     {
         currentLife -= damage;
-        //UIAssets.instance.ChangeHealthArc(currentLife / baseLife * 360);
+        if(currentLife > baseLife)
+        {
+            currentLife = baseLife;
+        }
+
         UpdateHealthBar();
     }
 
@@ -35,8 +43,7 @@ public class LifeBorder : MonoBehaviour
     {
         if (collision.CompareTag(enemyTag))
         {
-            TakeDamage(1);
-            //Destroy(collision.gameObject);
+            AlterLife(1);
 
             #region DisableProjectile
             IPooledObject objectFromPool = collision.GetComponent<IPooledObject>();
@@ -51,10 +58,15 @@ public class LifeBorder : MonoBehaviour
 
     public void UpdateHealthBar()
     {
-        if(currentLife > 0)
+        if(currentLife > 0 && currentLife < baseLife)
         {
-            //UIAssets.instance.healthBar.fillAmount = currentLife / baseLife;
-            UIAssets.instance.ChangeHealthArc((1 - currentLife / baseLife) * 360);
+            ChangeHealthArc((1 - currentLife / baseLife) * 360);
+            animator.SetTrigger("damaged");
         }
+    }
+
+    public void ChangeHealthArc(float angle)
+    {
+        healthMat.SetFloat("_Arc1", angle);
     }
 }

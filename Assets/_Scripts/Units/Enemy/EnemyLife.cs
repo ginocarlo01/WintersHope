@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
+using UnityEngine.UIElements;
 
 public class EnemyLife : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class EnemyLife : MonoBehaviour
 
     [SerializeField]
     private float baseLife = 10;
-    private float currentLife;
+    public float currentLife;
 
     [SerializeField]
     public GameObject healthObj;
@@ -19,8 +21,19 @@ public class EnemyLife : MonoBehaviour
     [SerializeField]
     private TypeUtility.Type type;
 
+    [SerializeField]
+    private List<TypeUtility.ObjectFromPoolTag> loot;
+
+    [SerializeField]
+    private float maxRandomLootQty;
+
+    public static Action<string, Vector3, Quaternion> SpawnLootAction;
+
+    Animator animator;
+
     private void Start()
     {
+        animator = GetComponent<Animator>();
         healthObj.GetComponent<SpriteRenderer>().material = Instantiate<Material>(healthObj.GetComponent<SpriteRenderer>().material);
         healthMat = healthObj.GetComponent<SpriteRenderer>().material;
         currentLife = baseLife;
@@ -28,6 +41,7 @@ public class EnemyLife : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentLife -= damage;
+        animator.SetTrigger("damaged");
         ChangeHealthArc((1 - currentLife / baseLife) * 360);
     }
 
@@ -61,7 +75,7 @@ public class EnemyLife : MonoBehaviour
                 }
                 
                 TakeDamage(attackValue);
-
+                CheckDeath();
             }
             #endregion
 
@@ -79,5 +93,31 @@ public class EnemyLife : MonoBehaviour
     public void ChangeHealthArc(float angle)
     {
         healthMat.SetFloat("_Arc1", angle);
+    }
+
+    public void CheckDeath()
+    {
+        if(currentLife <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        for(int i = 0; i < maxRandomLootQty; i++)
+        {
+            int indexR = UnityEngine.Random.Range(0, loot.Count);
+            //TODO: NOT INSTANTIATE, BUT OBJECT POOLING
+            SpawnLootAction?.Invoke(loot[indexR].ToString(), this.transform.position, Quaternion.identity);
+
+        }
+        this.gameObject.SetActive(false);
+    }
+
+    public void RestartLife()
+    {
+        currentLife = baseLife;
+        ChangeHealthArc((1 - currentLife / baseLife) * 360);
     }
 }

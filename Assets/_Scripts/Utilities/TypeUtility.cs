@@ -11,11 +11,12 @@ public static class TypeUtility
         Water
     }
 
-    public enum ProjectileTag
+    public enum ObjectFromPoolTag
     {
         NewProjectile,
         FollowPlayerProjectile,
-        FollowCursorProjectile
+        FollowCursorProjectile,
+        AddHealth
     }
 
     // Dictionary to define advantages and disadvantages
