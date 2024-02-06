@@ -19,14 +19,10 @@ public class EnemyLoadState : IEnemyState
     public IEnemyState ChangeState()
     {
         ChangeLoadArc(0);
-        if(controller.alwaysAttack)
-        {
-            return controller.loadState;
-        }
-        else
-        {
-            return controller.disappearState;
-        }
+        
+        return controller.loadState;
+        
+        
         
     }
 

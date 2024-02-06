@@ -12,7 +12,8 @@ public class EnemyController : MonoBehaviour
 
     [Header("Enemy Type")]
     [SerializeField]
-    public bool alwaysAttack = true;
+    //is an indepdent value from enemylife
+    private TypeUtility.Type type;
 
     [Header("Load state attributes")]
     [SerializeField]
@@ -53,6 +54,8 @@ public class EnemyController : MonoBehaviour
 
     //enemy life
     EnemyLife enemyLife;
+
+    
 
     private void Awake()
     {
@@ -110,7 +113,10 @@ public class EnemyController : MonoBehaviour
     public void SpawnProjectile()
     {
         GameObject newProjectile = objectPooler.SpawnFromPool(objectPoolTag.ToString(), spawnPositionProjectile.position, centerPositionProjectile.rotation);
-        newProjectile.GetComponent<ProjectileController>().baseSpeed = attackSpeed;
+        ProjectileController pc_ = newProjectile.GetComponent<ProjectileController>();
+        pc_.baseSpeed = attackSpeed;
+        pc_.SetProjectileType(this.type);
+
     }
 
     public void ChangePosition()

@@ -148,7 +148,7 @@ MonoBehaviour:
   baseAttack: 1
   currentProjectileType: 1
   timeToDestroy: 25
-  enemyTag: 
+  enemyTag: Enemy
 --- !u!95 &8948523091587959822
 Animator:
   serializedVersion: 4

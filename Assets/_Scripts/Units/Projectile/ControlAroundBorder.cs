@@ -15,6 +15,9 @@ public class ControlAroundBorder : MonoBehaviour
     string playerTag;
 
     [SerializeField]
+    string enemyTag = "Enemy";
+
+    [SerializeField]
     PlayerStoredProjectiles playerStored;
 
     [SerializeField]
@@ -134,7 +137,7 @@ public class ControlAroundBorder : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(this.gameObject.tag != playerTag && !isFather)
+        if(this.gameObject.tag != playerTag && !isFather && collision.tag == enemyTag)
         {
             insideObject = collision.gameObject;
             insideProjectile = collision.GetComponent<ProjectileController>();
@@ -158,7 +161,7 @@ public class ControlAroundBorder : MonoBehaviour
 
     public void ChangeToReleased()
     {
-        this.gameObject.tag = "Untagged";
+        this.gameObject.tag = "PlayerReleased";
     }
 
     public void CleanInsideObjectData()

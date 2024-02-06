@@ -57,8 +57,8 @@ public class EnemyLife : MonoBehaviour
                 TypeUtility.Type attackerType = projectile.GetProjectileType();
                 float attackValue = projectile.GetBaseAttack();
 
-                Debug.Log("Attacker: " + attackerType.ToString());
-                Debug.Log("Defender: " + type.ToString());
+                //Debug.Log("Attacker: " + attackerType.ToString());
+                //Debug.Log("Defender: " + type.ToString());
                 if (TypeUtility.IsInvincible(attackerType, type))
                 {
                     Debug.Log("It is invincible (it wont take damage from the projectile) ");

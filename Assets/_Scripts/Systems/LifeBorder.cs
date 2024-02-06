@@ -30,7 +30,7 @@ public class LifeBorder : MonoBehaviour
     }
     public void AlterLife(int damage)
     {
-        Debug.Log(damage);
+        //Debug.Log(damage);
         currentLife -= damage;
         if(currentLife > baseLife)
         {

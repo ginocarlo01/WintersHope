@@ -111,8 +111,8 @@ public class ProjectileController : MonoBehaviour, IPooledObject
 
     public void SetProjectileType(TypeUtility.Type newType)
     {
-        
         this.currentProjectileType = newType;
+        anim.SetTrigger(currentProjectileType.ToString());
     }
 
     public float GetBaseAttack()
@@ -137,9 +137,11 @@ public class ProjectileController : MonoBehaviour, IPooledObject
     {
         if (collision.gameObject.layer == 10)
         {
-            anim.SetTrigger("fade");
+            //anim.SetTrigger("fade");
+            this.OnObjectDisabled();
         }
-        else if (collision.CompareTag(enemyTag))
+        
+        else if (collision.tag == enemyTag)
         {
 
             #region DisableProjectile
@@ -151,8 +153,8 @@ public class ProjectileController : MonoBehaviour, IPooledObject
             }
             #endregion
         }
-
         
+
 
     }
 }
