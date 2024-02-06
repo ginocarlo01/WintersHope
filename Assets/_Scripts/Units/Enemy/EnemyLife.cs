@@ -15,8 +15,9 @@ public class EnemyLife : MonoBehaviour
     public float currentLife;
 
     [SerializeField]
-    public GameObject healthObj;
-    private Material healthMat;
+    private SpriteRenderer spriteRendererLifeArc;
+    [SerializeField]
+    public Material materialLifeArc;
 
     [SerializeField]
     private TypeUtility.Type type;
@@ -29,13 +30,17 @@ public class EnemyLife : MonoBehaviour
 
     public static Action<string, Vector3, Quaternion> SpawnLootAction;
 
-    Animator animator;
+    [SerializeField]
+    GameObject parent;
 
+    Animator animator;
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        healthObj.GetComponent<SpriteRenderer>().material = Instantiate<Material>(healthObj.GetComponent<SpriteRenderer>().material);
-        healthMat = healthObj.GetComponent<SpriteRenderer>().material;
+        animator = parent.GetComponent<Animator>();
+        
+        //load arc
+        spriteRendererLifeArc.material = Instantiate<Material>(spriteRendererLifeArc.material);
+        materialLifeArc = spriteRendererLifeArc.material;
         currentLife = baseLife;
     }
     public void TakeDamage(float damage)
@@ -47,6 +52,7 @@ public class EnemyLife : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.CompareTag(enemyTag))
         {
             #region DealDamage
@@ -92,7 +98,7 @@ public class EnemyLife : MonoBehaviour
 
     public void ChangeHealthArc(float angle)
     {
-        healthMat.SetFloat("_Arc1", angle);
+        materialLifeArc.SetFloat("_Arc1", angle);
     }
 
     public void CheckDeath()
@@ -112,7 +118,8 @@ public class EnemyLife : MonoBehaviour
             SpawnLootAction?.Invoke(loot[indexR].ToString(), this.transform.position, Quaternion.identity);
 
         }
-        this.gameObject.SetActive(false);
+        parent.SetActive(false);
+        
     }
 
     public void RestartLife()

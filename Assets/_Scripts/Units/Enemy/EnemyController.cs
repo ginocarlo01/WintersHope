@@ -53,6 +53,7 @@ public class EnemyController : MonoBehaviour
     public ObjectFromPoolTag objectPoolTag;
 
     //enemy life
+    [SerializeField]
     EnemyLife enemyLife;
 
     
@@ -79,7 +80,6 @@ public class EnemyController : MonoBehaviour
 
         //find object pool
         objectPooler = ObjectPooler.instance;
-        enemyLife = GetComponent<EnemyLife>();  
 
         loadTime += Random.Range(-loadTimeRandomness, loadTimeRandomness);
         attackSpeed += Random.Range(-attackSpeedRandomness, attackSpeedRandomness);

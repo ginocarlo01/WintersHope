@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 7866975501728422707}
   - component: {fileID: 7866975501728422670}
   - component: {fileID: 7866975501728422671}
-  - component: {fileID: 7866975501728422664}
+  - component: {fileID: 233337464}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -74,7 +74,7 @@ Transform:
   m_GameObject: {fileID: 7866975501728422706}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.4, y: 3.4, z: 3.4}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7866975501711654771}
@@ -131,11 +131,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingLayerID: 1657278161
+  m_SortingLayer: 1
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 07a718a61ee838249b13bcc7684543a4, type: 3}
+  m_Color: {r: 1, g: 0.91467893, b: 0.0047169924, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -145,7 +145,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &7866975501728422664
+--- !u!68 &233337464
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,22 +161,18 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.086957924, y: 0.0012568608}
-  - {x: 0.0829238, y: 0.030340392}
-  - {x: 0.066821046, y: 0.056337472}
-  - {x: 0.03866812, y: 0.080160245}
-  - {x: -0.004701599, y: 0.08726686}
-  - {x: -0.049524464, y: 0.07318719}
-  - {x: -0.07933659, y: 0.037288595}
-  - {x: -0.087864414, y: 0.000026507303}
-  - {x: -0.06846829, y: 0.0003956668}
-  - {x: -0.056052964, y: 0.037472732}
-  - {x: -0.01919196, y: 0.065470375}
-  - {x: 0.011777072, y: 0.0665476}
-  - {x: 0.04837712, y: 0.04623365}
-  - {x: 0.06600426, y: 0.021260802}
-  - {x: 0.06724858, y: 0.00072628446}
-  - {x: 0.088688225, y: 0.0015710751}
+  - {x: 0.9855131, y: -0.0040277243}
+  - {x: 0.76404655, y: 0.007203251}
+  - {x: 0.74305695, y: 0.37558377}
+  - {x: 0.55143005, y: 0.6136519}
+  - {x: 0.33566767, y: 0.7509213}
+  - {x: -0.002746813, y: 0.82997847}
+  - {x: 0.0011306405, y: 0.9995521}
+  - {x: 0.49035397, y: 0.93403226}
+  - {x: 0.73238933, y: 0.7437059}
+  - {x: 0.92217726, y: 0.4821751}
+  - {x: 0.98837215, y: 0.30309576}
+  - {x: 0.99999994, y: 0}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
