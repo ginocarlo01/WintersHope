@@ -45,10 +45,12 @@ public class UIAssets : MonoBehaviour
     private void OnEnable()
     {
         ControlAroundBorder.SelectedTypeAction += ChangeTarget;
+        ControlAroundBorder.EnableOrbAction += EnableOrb;
     }
     private void OnDisable()
     {
         ControlAroundBorder.SelectedTypeAction -= ChangeTarget;
+        ControlAroundBorder.EnableOrbAction -= EnableOrb;
     }
 
     #endregion
@@ -65,5 +67,10 @@ public class UIAssets : MonoBehaviour
         {
             elements[i].SetActive(false);
         }
+    }
+
+    private void EnableOrb(int index)
+    {
+        elements[index].SetActive(true);
     }
 }

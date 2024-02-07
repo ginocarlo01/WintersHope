@@ -6,9 +6,9 @@ public static class TypeUtility
     public enum Type
     {
         Neutral,
+        Water,
         Fire,
-        Plant,
-        Water
+        Plant
     }
 
     public enum ObjectFromPoolTag

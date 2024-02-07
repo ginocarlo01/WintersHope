@@ -41,7 +41,8 @@ public class ControlAroundBorder : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        #region InputControls
+        if (Input.GetMouseButtonDown(0))
         {
             pressedState = true;
         }
@@ -54,70 +55,71 @@ public class ControlAroundBorder : MonoBehaviour
         {
             ChangeProjectileType(true);
         }
+        #endregion
 
-            #region PastCode
-            /*
-            if (Input.GetMouseButtonDown(1))
+        #region PastCode
+        /*
+        if (Input.GetMouseButtonDown(1))
+        {
+            //check if there is a object inside
+            if(insideObject != null)
             {
-                //check if there is a object inside
-                if(insideObject != null)
-                {
-                    Debug.Log("There is a object!");
-                    ProjectileController projectileController = insideObject.GetComponent<ProjectileController>();
+                Debug.Log("There is a object!");
+                ProjectileController projectileController = insideObject.GetComponent<ProjectileController>();
 
-                    if(projectileController != null)
+                if(projectileController != null)
+                {
+                    TypeUtility.Type projectileType = projectileController.GetProjectileType();
+                    //check if this object can be kept
+                    if (playerStored.CanProjectileBeSaved(projectileType))
                     {
-                        TypeUtility.Type projectileType = projectileController.GetProjectileType();
-                        //check if this object can be kept
-                        if (playerStored.CanProjectileBeSaved(projectileType))
-                        {
-                            Debug.Log("Projectile can be saved");
-                            //keep the object or not (wont do nothing in this case)
-                            playerStored.SaveProjectile(projectileType);
-                            projectileController.OnObjectDisabled();
-                            insideObject = null;
-                        }
-                        else
-                        {
-                            Debug.Log("Projectile can't be saved");
-                        }
+                        Debug.Log("Projectile can be saved");
+                        //keep the object or not (wont do nothing in this case)
+                        playerStored.SaveProjectile(projectileType);
+                        projectileController.OnObjectDisabled();
+                        insideObject = null;
                     }
-                    //isFather = false;
+                    else
+                    {
+                        Debug.Log("Projectile can't be saved");
+                    }
                 }
-                else
-                {
+                //isFather = false;
+            }
+            else
+            {
 
-                    Debug.Log("There isn't a object!");
+                Debug.Log("There isn't a object!");
 
-
-                }
 
             }
 
-            if (Input.GetMouseButtonDown(2))
+        }
+
+        if (Input.GetMouseButtonDown(2))
+        {
+            if (insideObject == null)
             {
-                if (insideObject == null)
+                //check if the selected index can spawn
+                TypeUtility.Type selectedType = playerStored.GetSelectedType();
+                if (playerStored.CanProjectileBeUsed(selectedType))
                 {
-                    //check if the selected index can spawn
-                    TypeUtility.Type selectedType = playerStored.GetSelectedType();
-                    if (playerStored.CanProjectileBeUsed(selectedType))
-                    {
-                        //use the projectle
-                        playerStored.UseProjectile(selectedType);
+                    //use the projectle
+                    playerStored.UseProjectile(selectedType);
 
-                        //spawn the projectle
-                        GameObject newProjectile = objectPooler.SpawnFromPool(spawnProjectileTag.ToString(), spawnPoint.position, Quaternion.identity);
+                    //spawn the projectle
+                    GameObject newProjectile = objectPooler.SpawnFromPool(spawnProjectileTag.ToString(), spawnPoint.position, Quaternion.identity);
 
-                        //change the type of the object spawned
-                        newProjectile.GetComponent<ProjectileController>().SetProjectileType(selectedType);
+                    //change the type of the object spawned
+                    newProjectile.GetComponent<ProjectileController>().SetProjectileType(selectedType);
 
-                        //set the speed of the object
-                        newProjectile.GetComponent<ProjectileController>().baseSpeed = attackSpeed;
-                    }
+                    //set the speed of the object
+                    newProjectile.GetComponent<ProjectileController>().baseSpeed = attackSpeed;
                 }
             }
-            */
-            #endregion
+        }
+        */
+        #endregion
 
         if (!isFather && pressedState)
         {
@@ -221,5 +223,15 @@ public class ControlAroundBorder : MonoBehaviour
         insideObject = null;
         insideProjectile = null;
         isFather = false;
+    }
+
+    public void AddProjectileTypeToArsenal(TypeUtility.Type type)
+    {
+        if(!availableProjectiles.Contains(type))
+        {
+            availableProjectiles.Add(type);
+            EnableOrbAction?.Invoke(((int)type));
+        }
+        
     }
 }
