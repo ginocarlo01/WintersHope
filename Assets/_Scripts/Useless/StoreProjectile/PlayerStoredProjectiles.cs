@@ -77,7 +77,7 @@ public class PlayerStoredProjectiles : MonoBehaviour
         indexSelectedType = newIndex;
 
         // Print for testing purposes
-        Debug.Log("Current Projectile Type: " + newIndex);
+        //Debug.Log("Current Projectile Type: " + newIndex);
     }
 
     public void SaveProjectile(TypeUtility.Type type)

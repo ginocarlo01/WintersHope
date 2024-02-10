@@ -1,45 +1,48 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ControlAroundBorder : MonoBehaviour
 {
+    [Header("Control Projectile")]
     [SerializeField]
     GameObject insideObject;
     ProjectileController insideProjectile;
-
+    [SerializeField]
+    Transform spawnPoint;
+    [HideInInspector]
     public bool isFather;
     bool pressedState;
 
+    [Header("Tags")]
     [SerializeField]
     string playerTag;
-
     [SerializeField]
     string enemyTag = "Enemy";
 
+    [Header("Change Projectile")]
     [SerializeField]
-    PlayerStoredProjectiles playerStored;
-
+    List<TypeUtility.Type> availableProjectiles = new List<TypeUtility.Type>();
     [SerializeField]
-    Transform spawnPoint;
-
-    [SerializeField]
-    TypeUtility.ObjectFromPoolTag spawnProjectileTag;
-
-    ObjectPooler objectPooler;
-
-    [SerializeField]
-    public float attackSpeed = 1f;
+    private int indexSelectedType;
+    public static Action<int> SelectedTypeAction;
+    public static Action<int> EnableOrbAction;
 
     private void Start()
     {
-        ChangeToReleased();
-        objectPooler = ObjectPooler.instance;
+        ChangeToReleased(); //idk why this is here but keep it!
+
+        for(int i = 0; i < availableProjectiles.Count; i++)
+        {
+            EnableOrbAction?.Invoke(i);
+        }
     }
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        #region InputControls
+        if (Input.GetMouseButtonDown(0))
         {
             pressedState = true;
         }
@@ -48,6 +51,14 @@ public class ControlAroundBorder : MonoBehaviour
             pressedState = false;
         }
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            ChangeProjectileType(true);
+        }
+        #endregion
+
+        #region PastCode
+        /*
         if (Input.GetMouseButtonDown(1))
         {
             //check if there is a object inside
@@ -77,10 +88,10 @@ public class ControlAroundBorder : MonoBehaviour
             }
             else
             {
-                /*
+
                 Debug.Log("There isn't a object!");
-                
-                */
+
+
             }
 
         }
@@ -107,6 +118,8 @@ public class ControlAroundBorder : MonoBehaviour
                 }
             }
         }
+        */
+        #endregion
 
         if (!isFather && pressedState)
         {
@@ -116,6 +129,7 @@ public class ControlAroundBorder : MonoBehaviour
                 insideObject.transform.position = spawnPoint.position;
                 insideObject.transform.parent = transform;
                 isFather = true;
+                ChangeIndexProjectile(((int)insideProjectile.GetProjectileType()));
             }
         }
 
@@ -133,6 +147,42 @@ public class ControlAroundBorder : MonoBehaviour
             }
         }
         
+    }
+
+    void ChangeProjectileType(bool scrollUp)
+    {
+        // Calculate the new index based on scroll direction
+        int newIndex;
+
+        if (scrollUp)
+        {
+            // Scroll up, change to the next type
+            newIndex = (indexSelectedType + 1) % availableProjectiles.Count;
+            
+        }
+        else
+        {
+            // Scroll down, change to the previous type
+            newIndex = (indexSelectedType - 1 + availableProjectiles.Count) % availableProjectiles.Count;
+            
+        }
+
+        // Set the new projectile type
+        if(indexSelectedType != newIndex)
+        {
+            ChangeIndexProjectile(newIndex);
+            if (insideProjectile != null)
+            {
+                insideProjectile.SetProjectileType(availableProjectiles[indexSelectedType]);
+            }
+        }
+        
+    }
+
+    private void ChangeIndexProjectile(int newIndex_)
+    {
+        indexSelectedType = newIndex_;
+        SelectedTypeAction?.Invoke(newIndex_);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -173,5 +223,15 @@ public class ControlAroundBorder : MonoBehaviour
         insideObject = null;
         insideProjectile = null;
         isFather = false;
+    }
+
+    public void AddProjectileTypeToArsenal(TypeUtility.Type type)
+    {
+        if(!availableProjectiles.Contains(type))
+        {
+            availableProjectiles.Add(type);
+            EnableOrbAction?.Invoke(((int)type));
+        }
+        
     }
 }

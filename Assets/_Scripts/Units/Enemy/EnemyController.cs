@@ -93,6 +93,7 @@ public class EnemyController : MonoBehaviour
         {
             enemyLife.RestartLife();
         }
+        SpawnProjectile();
     }
 
     void Update()

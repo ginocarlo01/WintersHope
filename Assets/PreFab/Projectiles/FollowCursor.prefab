@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 143345428156714590, guid: 9e9c888eba65b2d48a87ad14641ee3e4, type: 3}
       propertyPath: m_Name
-      value: BaseProjectile
+      value: FollowCursor
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 143345428156714576, guid: 9e9c888eba65b2d48a87ad14641ee3e4, type: 3}
@@ -85,3 +85,4 @@ MonoBehaviour:
   baseAttack: 1
   currentProjectileType: 0
   timeToDestroy: 60
+  enemyTag: Enemy

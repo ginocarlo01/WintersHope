@@ -10,7 +10,6 @@ public class ShieldReflect : MonoBehaviour
     {
         if (collision.CompareTag(projectileTag))
         {
-            Debug.Log("reflected");
             Transform enemyTransform = collision.gameObject.transform;
 
             Vector3 currentRotation = enemyTransform.eulerAngles;

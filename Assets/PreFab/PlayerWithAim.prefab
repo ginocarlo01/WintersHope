@@ -330,7 +330,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5740597907615467064}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cebcf5077ed80fb459c543e0ff845327, type: 3}
   m_Name: 
@@ -633,12 +633,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insideObject: {fileID: 0}
+  spawnPoint: {fileID: 1552695536}
   isFather: 0
   playerTag: Player
-  playerStored: {fileID: 1501043878}
-  spawnPoint: {fileID: 1552695536}
-  spawnProjectileTag: 2
-  attackSpeed: 3
+  enemyTag: Enemy
+  availableProjectiles: 00000000
+  indexSelectedType: 0
 --- !u!58 &2009829894
 CircleCollider2D:
   m_ObjectHideFlags: 0

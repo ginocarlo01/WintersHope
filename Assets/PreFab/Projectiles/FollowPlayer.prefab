@@ -85,6 +85,7 @@ MonoBehaviour:
   baseAttack: 1
   currentProjectileType: 0
   timeToDestroy: 25
+  enemyTag: Enemy
 --- !u!1 &3771902544306673327 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3803476883749518803, guid: 9e9c888eba65b2d48a87ad14641ee3e4, type: 3}
