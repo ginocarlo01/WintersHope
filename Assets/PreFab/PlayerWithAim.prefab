@@ -386,8 +386,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1072301905
   m_SortingLayer: 2
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 1232402529, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 851998262, guid: d5518f70bfbe3ee488d3c024c56919fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -635,7 +635,6 @@ MonoBehaviour:
   insideObject: {fileID: 0}
   isFather: 0
   playerTag: Player
-  enemyTag: Enemy
   playerStored: {fileID: 1501043878}
   spawnPoint: {fileID: 1552695536}
   spawnProjectileTag: 2

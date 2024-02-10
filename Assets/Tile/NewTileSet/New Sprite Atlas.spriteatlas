@@ -46,47 +46,14 @@ SpriteAtlas:
     packables:
     - {fileID: 2800000, guid: 3dfcf66e4a47bab4f86cefeb12a4d27e, type: 3}
     - {fileID: 2800000, guid: 4f50fd538737da345ab03b09d00d1a63, type: 3}
-    - {fileID: 2800000, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 1825763768, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
-  - {fileID: 2009632424, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
-  - {fileID: 1304672046, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
-  - {fileID: -1806157241, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
-  - {fileID: 241997475, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
-  - {fileID: 533022888, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
-  - {fileID: 1232402529, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
-  - {fileID: 1704280760, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
-  - {fileID: 1703197038, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
-  - {fileID: 443673249, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
-  - {fileID: 435836186, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
-  - {fileID: 1067065440, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
-  - {fileID: 924446584, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
-  - {fileID: -2142745367, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
-  - {fileID: -1241224962, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
-  - {fileID: 1745317320, guid: 2d4bd0a11ac4abe4abd8bc5b04402a9c, type: 3}
   - {fileID: 21300000, guid: 4f50fd538737da345ab03b09d00d1a63, type: 3}
   - {fileID: 21300000, guid: 3dfcf66e4a47bab4f86cefeb12a4d27e, type: 3}
   m_PackedSpriteNamesToIndex:
-  - walk_right_0
-  - walk_right_1
-  - walk_up_1
-  - walk_up_0
-  - walk_up_2
-  - idle_up
-  - idle_down
-  - walk_left_1
-  - walk_left_0
-  - walk_left_2
-  - walk_down_2
-  - walk_down_3
-  - walk_down_1
-  - idle_right
-  - idle_left
-  - walk_right_2
   - topDown_baseTiles
   - spr_alex
   m_RenderDataMap: {}
