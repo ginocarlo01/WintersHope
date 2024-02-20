@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7531312865991464059}
   - component: {fileID: 7531312865991464058}
   - component: {fileID: 7531312865991464060}
+  - component: {fileID: 485085812}
   m_Layer: 0
   m_Name: AddToArsenalProjectile
   m_TagString: Untagged
@@ -125,4 +126,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  type: 3
+  type: 2
+--- !u!95 &485085812
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7531312865991464056}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77303482138fd9844bb2a8cc24bc6fcf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

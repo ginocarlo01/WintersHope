@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3438384456971780940}
   - component: {fileID: 8045706956601242265}
   m_Layer: 0
-  m_Name: Life (1)
+  m_Name: LifeBg
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -192,7 +192,7 @@ SpriteRenderer:
   m_SortingLayerID: 1072301905
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1061427716, guid: dda1b22f6aaec55428b7b992feabc2ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5886700d769ae044a83f7da9409557db, type: 3}
   m_Color: {r: 0.38207456, g: 0.754717, b: 0.17443931, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -757,7 +757,7 @@ GameObject:
   - component: {fileID: 4257174303390960201}
   - component: {fileID: 136971878844938838}
   m_Layer: 0
-  m_Name: Life (2)
+  m_Name: LifeDivision
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
