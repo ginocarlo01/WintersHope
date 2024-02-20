@@ -10,6 +10,14 @@ public class AddToProjectileArsenal : MonoBehaviour
     [SerializeField]
     private TypeUtility.Type type;
 
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        animator.SetTrigger(type.ToString());
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == playerTag)

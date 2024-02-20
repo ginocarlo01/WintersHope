@@ -14,6 +14,8 @@ public class BallMovement : MonoBehaviour
 
     private Animator anim;
 
+    private bool pause;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -51,6 +53,25 @@ public class BallMovement : MonoBehaviour
         else
         {
             anim.SetBool("moving", false);
+        }
+    }
+
+    public void HandlePauseInput()
+    {
+        pause = !pause;
+        TogglePause(pause);
+
+    }
+
+    private void TogglePause(bool pause)
+    {
+        if (pause)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
         }
     }
 }

@@ -180,14 +180,14 @@ public class ControlAroundBorder : MonoBehaviour
     }
 
     private void ChangeIndexProjectile(int newIndex_)
-    {
+    { 
         indexSelectedType = newIndex_;
         SelectedTypeAction?.Invoke(newIndex_);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(this.gameObject.tag != playerTag && !isFather && collision.tag == enemyTag)
+        if(this.gameObject.tag != playerTag && !isFather && collision.gameObject.layer != 6)
         {
             insideObject = collision.gameObject;
             insideProjectile = collision.GetComponent<ProjectileController>();
