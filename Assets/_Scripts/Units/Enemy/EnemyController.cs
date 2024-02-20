@@ -46,6 +46,8 @@ public class EnemyController : MonoBehaviour
     [HideInInspector]
     public Material materialDisappearArc;
     private Vector2 homePosition;
+    [SerializeField]
+    Animator anim;
 
     //object pool
     ObjectPooler objectPooler;
@@ -83,7 +85,6 @@ public class EnemyController : MonoBehaviour
 
         loadTime += Random.Range(-loadTimeRandomness, loadTimeRandomness);
         attackSpeed += Random.Range(-attackSpeedRandomness, attackSpeedRandomness);
-
     }
 
     private void OnEnable()
@@ -93,6 +94,7 @@ public class EnemyController : MonoBehaviour
         {
             enemyLife.RestartLife();
         }
+        anim.SetTrigger(type.ToString());
         SpawnProjectile();
     }
 
@@ -100,6 +102,8 @@ public class EnemyController : MonoBehaviour
     {
         if (currentState != null)
             currentState.OnUpdate();
+
+
     }
 
     public void ChangeState()
@@ -118,6 +122,11 @@ public class EnemyController : MonoBehaviour
         pc_.baseSpeed = attackSpeed;
         pc_.SetProjectileType(this.type);
 
+        Vector2 direction = (spawnPositionProjectile.position - centerPositionProjectile.position).normalized;
+
+        anim.SetFloat("moveX", direction.x);
+        anim.SetFloat("moveY", direction.y);
+
     }
 
     public void ChangePosition()
@@ -126,4 +135,6 @@ public class EnemyController : MonoBehaviour
     }
 
     
+
+
 }

@@ -36,7 +36,6 @@ public class EnemyLife : MonoBehaviour
     Animator animator;
     private void Start()
     {
-        animator = parent.GetComponent<Animator>();
         
         //load arc
         spriteRendererLifeArc.material = Instantiate<Material>(spriteRendererLifeArc.material);
@@ -46,8 +45,9 @@ public class EnemyLife : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentLife -= damage;
-        animator.SetTrigger("damaged");
+        //animator.SetTrigger("damaged");
         ChangeHealthArc((1 - currentLife / baseLife) * 360);
+        CheckDeath();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -81,7 +81,7 @@ public class EnemyLife : MonoBehaviour
                 }
                 
                 TakeDamage(attackValue);
-                CheckDeath();
+                
             }
             #endregion
 
