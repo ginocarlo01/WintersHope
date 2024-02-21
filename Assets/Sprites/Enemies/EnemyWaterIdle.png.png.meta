@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7322ba1d38dd6b9468d7105cc931f618
+guid: 5e8891b487d37724682dc0dd035787c1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: down_0
+      name: EnemyWaterIdle.png_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,20 +124,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d80cdb2ae9f1f6b42bbe5af3361408ec
-      internalID: 296098374
+      spriteID: ef7f45c2e6e09554fb0f4dfc3751d58a
+      internalID: 1364451224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: down_1
+      name: EnemyWaterIdle.png_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,20 +145,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35fc6782308852c48984d77937e0403d
-      internalID: -1921730561
+      spriteID: 73920ff1c334fb440a531cfabc548e9a
+      internalID: -528244892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: down_2
+      name: EnemyWaterIdle.png_2
       rect:
         serializedVersion: 2
         x: 128
@@ -166,20 +166,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0452d3cfd04269c4e9d17fbd83311c52
-      internalID: 450089523
+      spriteID: cc4afd1d4f989bb438e9c33e7016144d
+      internalID: 183082248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: down_3
+      name: EnemyWaterIdle.png_3
       rect:
         serializedVersion: 2
         x: 192
@@ -187,20 +187,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fd9665e380314b4da268355fd981d08
-      internalID: -1584545817
+      spriteID: e1bd49424de513f47ab6780c6725c91e
+      internalID: 1596096991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: left_0
+      name: EnemyWaterIdle.png_4
       rect:
         serializedVersion: 2
         x: 0
@@ -208,20 +208,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b8e222bd64520e428666c92d033b3e7
-      internalID: 327922727
+      spriteID: e767241a31f0f7049a06468f0a6c82f3
+      internalID: -2141758632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: left_1
+      name: EnemyWaterIdle.png_5
       rect:
         serializedVersion: 2
         x: 64
@@ -229,20 +229,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5afd5a8686123f4193974b7cfd9e84c
-      internalID: 1734721005
+      spriteID: 07f395cd4ce25c94c91729fef7ede5d1
+      internalID: 1545759847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: left_2
+      name: EnemyWaterIdle.png_6
       rect:
         serializedVersion: 2
         x: 128
@@ -250,20 +250,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea2e6491bbff12047ab5861bc8ee1e74
-      internalID: 1169437018
+      spriteID: 2208d238c7f6768479cb77e86705ff0c
+      internalID: -630861005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: left_3
+      name: EnemyWaterIdle.png_7
       rect:
         serializedVersion: 2
         x: 192
@@ -271,20 +271,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f28c1434503872747800abbb80a736ca
-      internalID: -690174819
+      spriteID: b1fc616b17ebe5c43b5875ea39f23074
+      internalID: -1712207566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: right_0
+      name: EnemyWaterIdle.png_8
       rect:
         serializedVersion: 2
         x: 0
@@ -292,20 +292,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f96c6bfb39e980340a8c305a29348b6b
-      internalID: 650643890
+      spriteID: 514a27f1b85d51345879c52abcc41cba
+      internalID: -356717664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: right_1
+      name: EnemyWaterIdle.png_9
       rect:
         serializedVersion: 2
         x: 64
@@ -313,20 +313,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5ece3a917625ae408e83fc91dbd43bf
-      internalID: 492534154
+      spriteID: 3640bb3770fb955458d2b7ca5751d1d2
+      internalID: -1441909324
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: right_2
+      name: EnemyWaterIdle.png_10
       rect:
         serializedVersion: 2
         x: 128
@@ -334,20 +334,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b4117bb686996c4697882a047f2c2e1
-      internalID: -1458401439
+      spriteID: d84a5468ab530b845a2aece0468257de
+      internalID: 1938498510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: right_3
+      name: EnemyWaterIdle.png_11
       rect:
         serializedVersion: 2
         x: 192
@@ -355,20 +355,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c357530ea180ab84fa4a1db7bae4a268
-      internalID: -1900619562
+      spriteID: 33c8ebcee92e84f48bdded08b0cd58cf
+      internalID: 1212751330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: up_0
+      name: EnemyWaterIdle.png_12
       rect:
         serializedVersion: 2
         x: 0
@@ -376,20 +376,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d28ba0a09bfd7a44d9adfd07b77f7432
-      internalID: 2129725874
+      spriteID: 38eeb34535eaa2d4fbff08d306ee5541
+      internalID: -684413825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: up_1
+      name: EnemyWaterIdle.png_13
       rect:
         serializedVersion: 2
         x: 64
@@ -397,20 +397,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61db7e799bfb76a48935913a78045b3f
-      internalID: -1068107264
+      spriteID: 6a1036580b4772b4d8f3827223793057
+      internalID: -190186243
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: up_2
+      name: EnemyWaterIdle.png_14
       rect:
         serializedVersion: 2
         x: 128
@@ -418,20 +418,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14beaccbe1a58324d9ed139e35534be8
-      internalID: -1001966351
+      spriteID: a9186bd525cf09847b285b6843c7dc16
+      internalID: -1267736449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: up_3
+      name: EnemyWaterIdle.png_15
       rect:
         serializedVersion: 2
         x: 192
@@ -439,14 +439,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e851e72c7e6fd8c4dbf8ee2b4b8f6864
-      internalID: -1070019436
+      spriteID: 17ab21916eeae404596eec5595eba2ad
+      internalID: -1562344997
       vertices: []
       indices: 
       edges: []
@@ -462,22 +462,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      right_1: 492534154
-      up_0: 2129725874
-      left_1: 1734721005
-      up_3: -1070019436
-      left_0: 327922727
-      down_1: -1921730561
-      left_2: 1169437018
-      up_1: -1068107264
-      down_2: 450089523
-      right_2: -1458401439
-      up_2: -1001966351
-      down_0: 296098374
-      down_3: -1584545817
-      right_3: -1900619562
-      right_0: 650643890
-      left_3: -690174819
+      EnemyWaterIdle.png_5: 1545759847
+      EnemyWaterIdle.png_10: 1938498510
+      EnemyWaterIdle.png_15: -1562344997
+      EnemyWaterIdle.png_6: -630861005
+      EnemyWaterIdle.png_3: 1596096991
+      EnemyWaterIdle.png_14: -1267736449
+      EnemyWaterIdle.png_13: -190186243
+      EnemyWaterIdle.png_8: -356717664
+      EnemyWaterIdle.png_12: -684413825
+      EnemyWaterIdle.png_11: 1212751330
+      EnemyWaterIdle.png_2: 183082248
+      EnemyWaterIdle.png_4: -2141758632
+      EnemyWaterIdle.png_7: -1712207566
+      EnemyWaterIdle.png_1: -528244892
+      EnemyWaterIdle.png_0: 1364451224
+      EnemyWaterIdle.png_9: -1441909324
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

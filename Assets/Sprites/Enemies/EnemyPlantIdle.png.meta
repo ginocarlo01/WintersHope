@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7322ba1d38dd6b9468d7105cc931f618
+guid: fa4c0a3a669ddc548a8c5667fee0127b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: down_0
+      name: EnemyPlantIdle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,20 +124,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d80cdb2ae9f1f6b42bbe5af3361408ec
-      internalID: 296098374
+      spriteID: 8cc2e24501a5e764dbe81a9aac4bcd2d
+      internalID: 2130024555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: down_1
+      name: EnemyPlantIdle_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,20 +145,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35fc6782308852c48984d77937e0403d
-      internalID: -1921730561
+      spriteID: eb3e492a37b8cea429dfe4ff40f54b4a
+      internalID: 1189441635
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: down_2
+      name: EnemyPlantIdle_2
       rect:
         serializedVersion: 2
         x: 128
@@ -166,20 +166,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0452d3cfd04269c4e9d17fbd83311c52
-      internalID: 450089523
+      spriteID: 1c809f6221b77a8469ba12e399faa879
+      internalID: -127414760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: down_3
+      name: EnemyPlantIdle_3
       rect:
         serializedVersion: 2
         x: 192
@@ -187,20 +187,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fd9665e380314b4da268355fd981d08
-      internalID: -1584545817
+      spriteID: 4d1082b81101cc842b50e0cfc545a219
+      internalID: 2115797595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: left_0
+      name: EnemyPlantIdle_4
       rect:
         serializedVersion: 2
         x: 0
@@ -208,20 +208,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b8e222bd64520e428666c92d033b3e7
-      internalID: 327922727
+      spriteID: 12c3b0f110fc3f64892be1a3ef529c34
+      internalID: 204482986
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: left_1
+      name: EnemyPlantIdle_5
       rect:
         serializedVersion: 2
         x: 64
@@ -229,20 +229,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5afd5a8686123f4193974b7cfd9e84c
-      internalID: 1734721005
+      spriteID: 93170b7e13849eb4b82524f803167a8b
+      internalID: 686323507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: left_2
+      name: EnemyPlantIdle_6
       rect:
         serializedVersion: 2
         x: 128
@@ -250,20 +250,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea2e6491bbff12047ab5861bc8ee1e74
-      internalID: 1169437018
+      spriteID: d762e96fb191dc548aa60364dcd9a552
+      internalID: 1971399943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: left_3
+      name: EnemyPlantIdle_7
       rect:
         serializedVersion: 2
         x: 192
@@ -271,20 +271,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f28c1434503872747800abbb80a736ca
-      internalID: -690174819
+      spriteID: 93923a4edef81a943a78f67ac3df0a4f
+      internalID: -941605261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: right_0
+      name: EnemyPlantIdle_8
       rect:
         serializedVersion: 2
         x: 0
@@ -292,20 +292,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f96c6bfb39e980340a8c305a29348b6b
-      internalID: 650643890
+      spriteID: 9e32871e6a23b4b4f88ea593f934aaa3
+      internalID: -1160807961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: right_1
+      name: EnemyPlantIdle_9
       rect:
         serializedVersion: 2
         x: 64
@@ -313,20 +313,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5ece3a917625ae408e83fc91dbd43bf
-      internalID: 492534154
+      spriteID: da09d15196103bf4cb4627ffc3f2601a
+      internalID: 1838403152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: right_2
+      name: EnemyPlantIdle_10
       rect:
         serializedVersion: 2
         x: 128
@@ -334,20 +334,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b4117bb686996c4697882a047f2c2e1
-      internalID: -1458401439
+      spriteID: 7ec0e3ab4b65e2a4ab0b49bb9f11fbd6
+      internalID: -135820964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: right_3
+      name: EnemyPlantIdle_11
       rect:
         serializedVersion: 2
         x: 192
@@ -355,20 +355,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c357530ea180ab84fa4a1db7bae4a268
-      internalID: -1900619562
+      spriteID: dbf1fc0f6c1fd1b419e81711d8413062
+      internalID: 1241182935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: up_0
+      name: EnemyPlantIdle_12
       rect:
         serializedVersion: 2
         x: 0
@@ -376,20 +376,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d28ba0a09bfd7a44d9adfd07b77f7432
-      internalID: 2129725874
+      spriteID: c5a72bf17711d854e85b5abf327ae969
+      internalID: -1678427010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: up_1
+      name: EnemyPlantIdle_13
       rect:
         serializedVersion: 2
         x: 64
@@ -397,20 +397,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61db7e799bfb76a48935913a78045b3f
-      internalID: -1068107264
+      spriteID: 8273a3c6415c5484c94c269ccd8ca9b7
+      internalID: 1138955244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: up_2
+      name: EnemyPlantIdle_14
       rect:
         serializedVersion: 2
         x: 128
@@ -418,20 +418,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14beaccbe1a58324d9ed139e35534be8
-      internalID: -1001966351
+      spriteID: aee146207d33f954f8d83c1d61ac8161
+      internalID: -829554512
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: up_3
+      name: EnemyPlantIdle_15
       rect:
         serializedVersion: 2
         x: 192
@@ -439,14 +439,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e851e72c7e6fd8c4dbf8ee2b4b8f6864
-      internalID: -1070019436
+      spriteID: 72b9aa13e4dfc094e8efd5b8976a34c5
+      internalID: 1219110986
       vertices: []
       indices: 
       edges: []
@@ -462,22 +462,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      right_1: 492534154
-      up_0: 2129725874
-      left_1: 1734721005
-      up_3: -1070019436
-      left_0: 327922727
-      down_1: -1921730561
-      left_2: 1169437018
-      up_1: -1068107264
-      down_2: 450089523
-      right_2: -1458401439
-      up_2: -1001966351
-      down_0: 296098374
-      down_3: -1584545817
-      right_3: -1900619562
-      right_0: 650643890
-      left_3: -690174819
+      EnemyPlantIdle_10: -135820964
+      EnemyPlantIdle_0: 2130024555
+      EnemyPlantIdle_15: 1219110986
+      EnemyPlantIdle_2: -127414760
+      EnemyPlantIdle_14: -829554512
+      EnemyPlantIdle_1: 1189441635
+      EnemyPlantIdle_6: 1971399943
+      EnemyPlantIdle_12: -1678427010
+      EnemyPlantIdle_3: 2115797595
+      EnemyPlantIdle_13: 1138955244
+      EnemyPlantIdle_4: 204482986
+      EnemyPlantIdle_7: -941605261
+      EnemyPlantIdle_9: 1838403152
+      EnemyPlantIdle_8: -1160807961
+      EnemyPlantIdle_11: 1241182935
+      EnemyPlantIdle_5: 686323507
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

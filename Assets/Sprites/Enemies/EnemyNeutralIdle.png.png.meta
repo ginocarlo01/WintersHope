@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7322ba1d38dd6b9468d7105cc931f618
+guid: 430bab7895e472e41896c5bd9a59f76b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: down_0
+      name: EnemyNeutralIdle.png_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,20 +124,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d80cdb2ae9f1f6b42bbe5af3361408ec
-      internalID: 296098374
+      spriteID: e2d30931c3427da4aae63b00e6cf39fc
+      internalID: 1748977734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: down_1
+      name: EnemyNeutralIdle.png_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,20 +145,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35fc6782308852c48984d77937e0403d
-      internalID: -1921730561
+      spriteID: a98a4f229426d6b46b88b04210cfe4da
+      internalID: -1669904044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: down_2
+      name: EnemyNeutralIdle.png_2
       rect:
         serializedVersion: 2
         x: 128
@@ -166,20 +166,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0452d3cfd04269c4e9d17fbd83311c52
-      internalID: 450089523
+      spriteID: 64a03cffc28f65c43914eba19d771bfd
+      internalID: 1037240780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: down_3
+      name: EnemyNeutralIdle.png_3
       rect:
         serializedVersion: 2
         x: 192
@@ -187,20 +187,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fd9665e380314b4da268355fd981d08
-      internalID: -1584545817
+      spriteID: 32202fde924387a4baa1ebe149753ae4
+      internalID: 2104222989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: left_0
+      name: EnemyNeutralIdle.png_4
       rect:
         serializedVersion: 2
         x: 0
@@ -208,20 +208,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b8e222bd64520e428666c92d033b3e7
-      internalID: 327922727
+      spriteID: dfac785f9dd425f45ac457607892cec6
+      internalID: 2081254374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: left_1
+      name: EnemyNeutralIdle.png_5
       rect:
         serializedVersion: 2
         x: 64
@@ -229,20 +229,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5afd5a8686123f4193974b7cfd9e84c
-      internalID: 1734721005
+      spriteID: 4d224206d3f955a41a9db29a0c1dd8c7
+      internalID: 775706484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: left_2
+      name: EnemyNeutralIdle.png_6
       rect:
         serializedVersion: 2
         x: 128
@@ -250,20 +250,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea2e6491bbff12047ab5861bc8ee1e74
-      internalID: 1169437018
+      spriteID: b8f4d0933653459429903aa4ce5cbc4a
+      internalID: 1050159738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: left_3
+      name: EnemyNeutralIdle.png_7
       rect:
         serializedVersion: 2
         x: 192
@@ -271,20 +271,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f28c1434503872747800abbb80a736ca
-      internalID: -690174819
+      spriteID: dd8c3a06385b8974ba40cb176b51e467
+      internalID: 1021039539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: right_0
+      name: EnemyNeutralIdle.png_8
       rect:
         serializedVersion: 2
         x: 0
@@ -292,20 +292,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f96c6bfb39e980340a8c305a29348b6b
-      internalID: 650643890
+      spriteID: f1dd0d521dbc5c14eb8bf242ca301ca5
+      internalID: -2104991048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: right_1
+      name: EnemyNeutralIdle.png_9
       rect:
         serializedVersion: 2
         x: 64
@@ -313,20 +313,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5ece3a917625ae408e83fc91dbd43bf
-      internalID: 492534154
+      spriteID: f50c227b6f3594044887bc4dfb886526
+      internalID: -532840674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: right_2
+      name: EnemyNeutralIdle.png_10
       rect:
         serializedVersion: 2
         x: 128
@@ -334,20 +334,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b4117bb686996c4697882a047f2c2e1
-      internalID: -1458401439
+      spriteID: b38598a19004e6c458eeb53bf094f70e
+      internalID: 1469574320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: right_3
+      name: EnemyNeutralIdle.png_11
       rect:
         serializedVersion: 2
         x: 192
@@ -355,20 +355,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c357530ea180ab84fa4a1db7bae4a268
-      internalID: -1900619562
+      spriteID: 366f2ec32a9c85e4eb232afd54fc828f
+      internalID: 1805782422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: up_0
+      name: EnemyNeutralIdle.png_12
       rect:
         serializedVersion: 2
         x: 0
@@ -376,20 +376,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d28ba0a09bfd7a44d9adfd07b77f7432
-      internalID: 2129725874
+      spriteID: 71e312e9aedea7c46adf060b09d69023
+      internalID: 1112132479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: up_1
+      name: EnemyNeutralIdle.png_13
       rect:
         serializedVersion: 2
         x: 64
@@ -397,20 +397,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61db7e799bfb76a48935913a78045b3f
-      internalID: -1068107264
+      spriteID: 3f7a50615aa9def428d324bcc43f4de7
+      internalID: 1662235876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: up_2
+      name: EnemyNeutralIdle.png_14
       rect:
         serializedVersion: 2
         x: 128
@@ -418,20 +418,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14beaccbe1a58324d9ed139e35534be8
-      internalID: -1001966351
+      spriteID: cd02012ad6e054c43a1c903e05987884
+      internalID: 992619974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: up_3
+      name: EnemyNeutralIdle.png_15
       rect:
         serializedVersion: 2
         x: 192
@@ -439,14 +439,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e851e72c7e6fd8c4dbf8ee2b4b8f6864
-      internalID: -1070019436
+      spriteID: 3538cce1804734d4894f1bf67b799f83
+      internalID: -1318408296
       vertices: []
       indices: 
       edges: []
@@ -462,22 +462,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      right_1: 492534154
-      up_0: 2129725874
-      left_1: 1734721005
-      up_3: -1070019436
-      left_0: 327922727
-      down_1: -1921730561
-      left_2: 1169437018
-      up_1: -1068107264
-      down_2: 450089523
-      right_2: -1458401439
-      up_2: -1001966351
-      down_0: 296098374
-      down_3: -1584545817
-      right_3: -1900619562
-      right_0: 650643890
-      left_3: -690174819
+      EnemyNeutralIdle.png_6: 1050159738
+      EnemyNeutralIdle.png_7: 1021039539
+      EnemyNeutralIdle.png_13: 1662235876
+      EnemyNeutralIdle.png_1: -1669904044
+      EnemyNeutralIdle.png_15: -1318408296
+      EnemyNeutralIdle.png_8: -2104991048
+      EnemyNeutralIdle.png_14: 992619974
+      EnemyNeutralIdle.png_11: 1805782422
+      EnemyNeutralIdle.png_0: 1748977734
+      EnemyNeutralIdle.png_3: 2104222989
+      EnemyNeutralIdle.png_4: 2081254374
+      EnemyNeutralIdle.png_5: 775706484
+      EnemyNeutralIdle.png_12: 1112132479
+      EnemyNeutralIdle.png_2: 1037240780
+      EnemyNeutralIdle.png_9: -532840674
+      EnemyNeutralIdle.png_10: 1469574320
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
