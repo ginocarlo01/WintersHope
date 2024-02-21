@@ -14,6 +14,7 @@ public class ControlAroundBorder : MonoBehaviour
         public bool available;
         public bool limited;
         public int qty;
+        public Sprite sprite;
     }
 
     [Header("Control Projectile")]
@@ -39,6 +40,14 @@ public class ControlAroundBorder : MonoBehaviour
     private int indexSelectedType;
     public static Action<int> SelectedTypeAction;
     public static Action<int> EnableOrbAction;
+
+    [Header("Hand")]
+    [SerializeField]
+    SpriteRenderer handSprite;
+
+    [SerializeField]
+    Sprite emptyHandSprite;
+
 
     private void Start()
     {
@@ -153,12 +162,16 @@ public class ControlAroundBorder : MonoBehaviour
                     availableProjectiles[indexSelectedType].qty--;
                 }
 
+                handSprite.sprite = emptyHandSprite;
+
                 insideProjectile.ChangeState();
+
                 if (insideObject != null)
                 {
                     insideObject.transform.parent = null;
                 }
                 isFather = false;
+
                 CleanInsideObjectData();
             }
         }
@@ -184,8 +197,8 @@ public class ControlAroundBorder : MonoBehaviour
         if(indexSelectedType != newIndex)
         {
             TypeUtility.Type newType = (TypeUtility.Type)Enum.ToObject(typeof(TypeUtility.Type), newIndex);
-            bool changedSuccessfully = ChangeIndexProjectile(newType);
-            if (insideProjectile != null && changedSuccessfully)
+            ChangeIndexProjectile(newType);
+            if (insideProjectile != null)
             {
                 insideProjectile.SetProjectileType(availableProjectiles[indexSelectedType].type);
             }
@@ -201,11 +214,13 @@ public class ControlAroundBorder : MonoBehaviour
             {
                 indexSelectedType = ((int)newType);
                 SelectedTypeAction?.Invoke(indexSelectedType);
+                handSprite.sprite = proj.sprite;
                 return true;
             }
         }
 
         indexSelectedType = (0);
+        handSprite.sprite = availableProjectiles[0].sprite;
         SelectedTypeAction?.Invoke(indexSelectedType);
         return false;
 
@@ -213,7 +228,7 @@ public class ControlAroundBorder : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(this.gameObject.tag != playerTag && !isFather && collision.gameObject.layer != 6)
+        if(this.gameObject.tag != playerTag && !isFather && collision.gameObject.layer != 6 && collision.tag == "Enemy")
         {
             insideObject = collision.gameObject;
             insideProjectile = collision.GetComponent<ProjectileController>();

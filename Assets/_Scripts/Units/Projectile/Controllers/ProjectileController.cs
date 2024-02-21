@@ -46,6 +46,7 @@ public class ProjectileController : MonoBehaviour, IPooledObject
     [SerializeField]
     string enemyTag;
     private Animator anim;
+    public SpriteRenderer spriteRenderer;
 
     public void OnObjectSpawn()
     {

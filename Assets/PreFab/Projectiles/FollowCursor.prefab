@@ -58,6 +58,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 143345428156714576, guid: 9e9c888eba65b2d48a87ad14641ee3e4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9e9c888eba65b2d48a87ad14641ee3e4, type: 3}
+--- !u!212 &8648531841603611589 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 143345428156714579, guid: 9e9c888eba65b2d48a87ad14641ee3e4, type: 3}
+  m_PrefabInstance: {fileID: 8788917657006318998}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8648531841603611592 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 143345428156714590, guid: 9e9c888eba65b2d48a87ad14641ee3e4, type: 3}
@@ -86,3 +91,4 @@ MonoBehaviour:
   currentProjectileType: 0
   timeToDestroy: 60
   enemyTag: Enemy
+  spriteRenderer: {fileID: 8648531841603611589}

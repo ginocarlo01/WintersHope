@@ -149,6 +149,8 @@ MonoBehaviour:
   currentProjectileType: 1
   timeToDestroy: 25
   enemyTag: Enemy
+  spriteRenderer: {fileID: 143345428156714579}
+  collider2D: {fileID: 8948523091587959857}
 --- !u!95 &8948523091587959822
 Animator:
   serializedVersion: 4

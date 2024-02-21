@@ -86,6 +86,12 @@ MonoBehaviour:
   currentProjectileType: 0
   timeToDestroy: 25
   enemyTag: Enemy
+  spriteRenderer: {fileID: 102901762271421743}
+--- !u!212 &102901762271421743 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 143345428156714579, guid: 9e9c888eba65b2d48a87ad14641ee3e4, type: 3}
+  m_PrefabInstance: {fileID: 40769288915004284}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3771902544306673327 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3803476883749518803, guid: 9e9c888eba65b2d48a87ad14641ee3e4, type: 3}

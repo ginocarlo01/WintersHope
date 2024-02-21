@@ -1199,10 +1199,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 159530400}
     m_Modifications:
-    - target: {fileID: 5740597906383645718, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
-      propertyPath: damageSFX
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5740597907615467064, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
       propertyPath: m_Name
       value: PlayerWithAim
@@ -1250,38 +1246,6 @@ PrefabInstance:
     - target: {fileID: 5740597907615467065, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740597908032280373, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
-      propertyPath: availableProjectiles.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740597908032280373, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
-      propertyPath: availableProjectiles.Array.data[1].type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740597908032280373, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
-      propertyPath: availableProjectiles.Array.data[2].type
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740597908032280373, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
-      propertyPath: availableProjectiles.Array.data[3].type
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740597908032280373, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
-      propertyPath: availableProjectiles.Array.data[1].limited
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740597908032280373, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
-      propertyPath: availableProjectiles.Array.data[2].limited
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740597908032280373, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
-      propertyPath: availableProjectiles.Array.data[3].limited
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740597908032280373, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
-      propertyPath: availableProjectiles.Array.data[0].available
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
@@ -4964,6 +4928,9 @@ MonoBehaviour:
     size: 30
   - tag: PlantObj
     preFab: {fileID: 7405747843095112628, guid: 04db33c78d1c5a24d9d34d56eac19f67, type: 3}
+    size: 30
+  - tag: AddHealth
+    preFab: {fileID: 8763342048346953723, guid: b312f3dccf079ee43b1f6a7ec1c6b8aa, type: 3}
     size: 30
 --- !u!4 &1088287702
 Transform:

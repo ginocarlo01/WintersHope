@@ -23,6 +23,8 @@ public class HoldState : IProjectileState
     {
         UpdateCurrentSpeed();
         FullManaBar();
+        controller.spriteRenderer.enabled = true;
+        
         return controller.releaseState;
     }
 
@@ -30,6 +32,8 @@ public class HoldState : IProjectileState
     {
         timer = controller.holdProjectileTime;
         newSpeed = controller.baseSpeed;
+        controller.spriteRenderer.enabled = false;
+        controller.gameObject.layer = ((int)MyLayers.HoldProjectile);
     }
 
     public void OnUpdate()
