@@ -1,3 +1,4 @@
+using SuperTiled2Unity.Editor.ClipperLib;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,15 @@ using UnityEngine;
 
 public class ControlAroundBorder : MonoBehaviour
 {
+    [System.Serializable]
+    public class Projectile
+    {
+        public TypeUtility.Type type;
+        public bool available;
+        public bool limited;
+        public int qty;
+    }
+
     [Header("Control Projectile")]
     [SerializeField]
     GameObject insideObject;
@@ -24,7 +34,7 @@ public class ControlAroundBorder : MonoBehaviour
 
     [Header("Change Projectile")]
     [SerializeField]
-    List<TypeUtility.Type> availableProjectiles = new List<TypeUtility.Type>();
+    List<Projectile> availableProjectiles = new List<Projectile>();
     [SerializeField]
     private int indexSelectedType;
     public static Action<int> SelectedTypeAction;
@@ -130,7 +140,7 @@ public class ControlAroundBorder : MonoBehaviour
                 insideObject.transform.position = spawnPoint.position;
                 insideObject.transform.parent = transform;
                 isFather = true;
-                ChangeIndexProjectile(((int)insideProjectile.GetProjectileType()));
+                ChangeIndexProjectile((insideProjectile.GetProjectileType()));
             }
         }
 
@@ -138,6 +148,11 @@ public class ControlAroundBorder : MonoBehaviour
         {
             if (insideObject != null)
             {
+                if (availableProjectiles[indexSelectedType].limited)
+                {
+                    availableProjectiles[indexSelectedType].qty--;
+                }
+
                 insideProjectile.ChangeState();
                 if (insideObject != null)
                 {
@@ -147,7 +162,6 @@ public class ControlAroundBorder : MonoBehaviour
                 CleanInsideObjectData();
             }
         }
-        
     }
 
     void ChangeProjectileType(bool scrollUp)
@@ -159,40 +173,41 @@ public class ControlAroundBorder : MonoBehaviour
         {
             // Scroll up, change to the next type
             newIndex = (indexSelectedType + 1) % availableProjectiles.Count;
-            
         }
         else
         {
             // Scroll down, change to the previous type
             newIndex = (indexSelectedType - 1 + availableProjectiles.Count) % availableProjectiles.Count;
-            
         }
 
         // Set the new projectile type
         if(indexSelectedType != newIndex)
         {
-            ChangeIndexProjectile(newIndex);
-            if (insideProjectile != null)
+            TypeUtility.Type newType = (TypeUtility.Type)Enum.ToObject(typeof(TypeUtility.Type), newIndex);
+            bool changedSuccessfully = ChangeIndexProjectile(newType);
+            if (insideProjectile != null && changedSuccessfully)
             {
-                insideProjectile.SetProjectileType(availableProjectiles[indexSelectedType]);
+                insideProjectile.SetProjectileType(availableProjectiles[indexSelectedType].type);
             }
         }
         
     }
 
-    private void ChangeIndexProjectile(int newIndex_)
+    private bool ChangeIndexProjectile(TypeUtility.Type newType)
     {
-        if (availableProjectiles.Contains((TypeUtility.Type)Enum.ToObject(typeof(TypeUtility.Type), newIndex_)))
+        foreach(Projectile proj in availableProjectiles)
         {
-            indexSelectedType = newIndex_;
-            
-        }
-        else
-        {
-            indexSelectedType = 0;
+            if (proj.type == newType && proj.qty > 0 && proj.available)
+            {
+                indexSelectedType = ((int)newType);
+                SelectedTypeAction?.Invoke(indexSelectedType);
+                return true;
+            }
         }
 
+        indexSelectedType = (0);
         SelectedTypeAction?.Invoke(indexSelectedType);
+        return false;
 
     }
 
@@ -211,9 +226,7 @@ public class ControlAroundBorder : MonoBehaviour
         {
             CleanInsideObjectData();
         }
-        
     }
-
 
     public void ChangeToHold()
     {
@@ -238,11 +251,18 @@ public class ControlAroundBorder : MonoBehaviour
 
     public void AddProjectileTypeToArsenal(TypeUtility.Type type)
     {
-        if(!availableProjectiles.Contains(type))
+        foreach (Projectile proj in availableProjectiles)
         {
-            availableProjectiles.Add(type);
-            EnableOrbAction?.Invoke(((int)type));
+            if (proj.type == type)
+            {
+                if (!proj.available)
+                {
+                    proj.available = true;
+                    EnableOrbAction?.Invoke(((int)type));
+                }
+            }
         }
-        
+
+
     }
 }
