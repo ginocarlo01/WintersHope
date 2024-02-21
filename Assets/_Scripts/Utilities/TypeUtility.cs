@@ -16,7 +16,10 @@ public static class TypeUtility
         NewProjectile,
         FollowPlayerProjectile,
         FollowCursorProjectile,
-        AddHealth
+        AddHealth,
+        WaterObj,
+        FireObj,
+        PlantObj
     }
 
     // Dictionary to define advantages and disadvantages

@@ -262,7 +262,31 @@ public class ControlAroundBorder : MonoBehaviour
                 }
             }
         }
-
-
     }
+
+    public void AddToProjectileleQty(TypeUtility.Type type, int qty)
+    {
+        foreach (Projectile proj in availableProjectiles)
+        {
+            if (proj.type == type)
+            {
+                if (proj.available)
+                {
+                    proj.qty += qty;
+                }
+            }
+        }
+    }
+
+    #region ObserverSubscription
+    private void OnEnable()
+    {
+        AddToProjectileQty.collectedAction += AddToProjectileleQty;
+    }
+
+    private void OnDisable()
+    {
+        AddToProjectileQty.collectedAction -= AddToProjectileleQty;
+    }
+    #endregion
 }
