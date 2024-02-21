@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7651633062001635752, guid: 7e66d827fa80c79438dab34638e88d2c, type: 3}
       propertyPath: m_Name
-      value: PlantBattery
+      value: PlantBattery Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7651633062001635925, guid: 7e66d827fa80c79438dab34638e88d2c, type: 3}
       propertyPath: m_RootOrder

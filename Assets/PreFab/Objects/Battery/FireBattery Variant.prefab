@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3407464750792267984, guid: 11a5384b69238f74cbfdcc14f5f1cfa9, type: 3}
       propertyPath: m_Name
-      value: FireBattery
+      value: FireBattery Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3407464750792268589, guid: 11a5384b69238f74cbfdcc14f5f1cfa9, type: 3}
       propertyPath: m_RootOrder

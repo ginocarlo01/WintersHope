@@ -150,7 +150,6 @@ MonoBehaviour:
   timeToDestroy: 25
   enemyTag: Enemy
   spriteRenderer: {fileID: 143345428156714579}
-  collider2D: {fileID: 8948523091587959857}
 --- !u!95 &8948523091587959822
 Animator:
   serializedVersion: 4
@@ -183,7 +182,7 @@ GameObject:
   - component: {fileID: 3803476883749518805}
   m_Layer: 9
   m_Name: HoldBorder
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

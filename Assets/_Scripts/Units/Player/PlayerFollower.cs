@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerFollower : MonoBehaviour
 {
+    [SerializeField]
     GameObject player;
 
     [SerializeField]

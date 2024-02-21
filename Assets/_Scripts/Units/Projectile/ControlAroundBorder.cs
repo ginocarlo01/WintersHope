@@ -164,6 +164,7 @@ public class ControlAroundBorder : MonoBehaviour
 
                 handSprite.sprite = emptyHandSprite;
 
+                insideProjectile.SetProjectileType(availableProjectiles[indexSelectedType].type);
                 insideProjectile.ChangeState();
 
                 if (insideObject != null)
@@ -198,10 +199,7 @@ public class ControlAroundBorder : MonoBehaviour
         {
             TypeUtility.Type newType = (TypeUtility.Type)Enum.ToObject(typeof(TypeUtility.Type), newIndex);
             ChangeIndexProjectile(newType);
-            if (insideProjectile != null)
-            {
-                insideProjectile.SetProjectileType(availableProjectiles[indexSelectedType].type);
-            }
+            
         }
         
     }
