@@ -33,7 +33,13 @@ public class EnemyLife : MonoBehaviour
     [SerializeField]
     GameObject parent;
 
-    Animator animator;
+    public static Action<SFX> damageActionSFX;
+    [SerializeField] protected SFX damageSFX;
+
+    public static Action<SFX> deathActionSFX;
+    [SerializeField] protected SFX deathSFX;
+
+
     private void Start()
     {
         
@@ -46,6 +52,7 @@ public class EnemyLife : MonoBehaviour
     {
         currentLife -= damage;
         //animator.SetTrigger("damaged");
+        if(currentLife > 0) { damageActionSFX?.Invoke(damageSFX); }
         ChangeHealthArc((1 - currentLife / baseLife) * 360);
         CheckDeath();
     }
@@ -114,10 +121,11 @@ public class EnemyLife : MonoBehaviour
         for(int i = 0; i < maxRandomLootQty; i++)
         {
             int indexR = UnityEngine.Random.Range(0, loot.Count);
-            //TODO: NOT INSTANTIATE, BUT OBJECT POOLING
+            
             SpawnLootAction?.Invoke(loot[indexR].ToString(), this.transform.position, Quaternion.identity);
 
         }
+        deathActionSFX?.Invoke(deathSFX);
         parent.SetActive(false);
         
     }

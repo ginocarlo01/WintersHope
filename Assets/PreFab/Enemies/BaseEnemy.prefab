@@ -754,6 +754,8 @@ MonoBehaviour:
   loot: 03000000
   maxRandomLootQty: 3
   parent: {fileID: 3203142110769990252}
+  damageSFX: 3
+  deathSFX: 2
 --- !u!1 &8362574163022465105
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,8 @@
 public enum SFX
 {
-    Example1,
-    Example2
+    Award,
+    PlayerDamage,
+    EnemyDeath,
+    EnemyHit,
+    ObstacleHit
 }

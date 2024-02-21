@@ -58,11 +58,21 @@ public class SoundPlayer : MonoBehaviour
     private void OnEnable()
     {
         SoundTrigger.exampleActionSFX += PlaySound;
+        LifeBorder.lifeActionSFX += PlaySound;
+        LifeBorder.damageActionSFX += PlaySound;
+        EnemyLife.damageActionSFX += PlaySound;
+        EnemyLife.deathActionSFX += PlaySound;
+        HitObstacle.hitActionSFX += PlaySound;
     }
 
     private void OnDisable()
     {
         SoundTrigger.exampleActionSFX -= PlaySound;
+        LifeBorder.lifeActionSFX -= PlaySound;
+        LifeBorder.damageActionSFX -= PlaySound;
+        EnemyLife.damageActionSFX -= PlaySound;
+        EnemyLife.deathActionSFX -= PlaySound;
+        HitObstacle.hitActionSFX -= PlaySound;
     }
     #endregion
 

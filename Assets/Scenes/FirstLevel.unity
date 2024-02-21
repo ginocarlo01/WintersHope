@@ -1405,6 +1405,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 159530400}
     m_Modifications:
+    - target: {fileID: 5740597906383645718, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
+      propertyPath: damageSFX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5740597907615467064, guid: d6267c39be56fd247ba077d9afc55646, type: 3}
       propertyPath: m_Name
       value: PlayerWithAim
@@ -4583,6 +4587,46 @@ PrefabInstance:
     - target: {fileID: 8117032232895695211, guid: 8f2796ab98794234394c9b4abdb34e1b, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117032232959250746, guid: 8f2796ab98794234394c9b4abdb34e1b, type: 3}
+      propertyPath: audioDataArray.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117032232959250746, guid: 8f2796ab98794234394c9b4abdb34e1b, type: 3}
+      propertyPath: audioDataArray.Array.data[0].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 56721324605f91243b9f03f273d1564c, type: 3}
+    - target: {fileID: 8117032232959250746, guid: 8f2796ab98794234394c9b4abdb34e1b, type: 3}
+      propertyPath: audioDataArray.Array.data[1].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a4f66a1f9264b1e4ea42227e8f08362a, type: 3}
+    - target: {fileID: 8117032232959250746, guid: 8f2796ab98794234394c9b4abdb34e1b, type: 3}
+      propertyPath: audioDataArray.Array.data[1].audioName
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117032232959250746, guid: 8f2796ab98794234394c9b4abdb34e1b, type: 3}
+      propertyPath: audioDataArray.Array.data[2].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 16108215d17273246b1532991d6f2642, type: 3}
+    - target: {fileID: 8117032232959250746, guid: 8f2796ab98794234394c9b4abdb34e1b, type: 3}
+      propertyPath: audioDataArray.Array.data[2].audioName
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117032232959250746, guid: 8f2796ab98794234394c9b4abdb34e1b, type: 3}
+      propertyPath: audioDataArray.Array.data[3].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 83ac7bcdfa4e42e4b8ab6fe47a06993e, type: 3}
+    - target: {fileID: 8117032232959250746, guid: 8f2796ab98794234394c9b4abdb34e1b, type: 3}
+      propertyPath: audioDataArray.Array.data[3].audioName
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117032232959250746, guid: 8f2796ab98794234394c9b4abdb34e1b, type: 3}
+      propertyPath: audioDataArray.Array.data[4].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f425732e010bb384e9005240d885386f, type: 3}
+    - target: {fileID: 8117032232959250746, guid: 8f2796ab98794234394c9b4abdb34e1b, type: 3}
+      propertyPath: audioDataArray.Array.data[4].audioName
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8117032233051074127, guid: 8f2796ab98794234394c9b4abdb34e1b, type: 3}
       propertyPath: pauseSignal

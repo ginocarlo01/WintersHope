@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,11 +13,15 @@ public class HitObstacle : MonoBehaviour
     [SerializeField]
     protected string projectileTag = "Enemy";
 
+    public static Action<SFX> hitActionSFX;
+    [SerializeField] protected SFX hitSFX;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(projectileTag))
         {
-            hitsTaken++; 
+            hitsTaken++;
+            hitActionSFX?.Invoke(hitSFX);
             DisableProjectile(collision);
             CheckNumberOfHits();
         }

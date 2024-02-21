@@ -128,6 +128,7 @@ MonoBehaviour:
   hitsToDestroy: 2
   hitsTaken: 0
   projectileTag: Enemy
+  hitSFX: 4
 --- !u!61 &4029997488027494990
 BoxCollider2D:
   m_ObjectHideFlags: 0

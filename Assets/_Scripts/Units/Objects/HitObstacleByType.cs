@@ -18,6 +18,7 @@ public class HitObstacleByType : HitObstacle
                 if (this.CanBeHit(projectile.GetProjectileType()))
                 {
                     hitsTaken++;
+                    hitActionSFX?.Invoke(hitSFX);
                     CheckNumberOfHits();
                 }
                 DisableProjectile(collision);

@@ -28,7 +28,6 @@ public class UIAssets : MonoBehaviour
     }
 
 
-
     private void Update()
     {
         if(target != null)

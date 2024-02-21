@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,12 @@ public class LifeBorder : MonoBehaviour
 
     Animator animator;
 
+    public static Action<SFX> lifeActionSFX;
+    [SerializeField] protected SFX lifeSFX;
+
+    public static Action<SFX> damageActionSFX;
+    [SerializeField] protected SFX damageSFX;
+
     private void Start()
     {
         healthObj.GetComponent<SpriteRenderer>().material = Instantiate<Material>(healthObj.GetComponent<SpriteRenderer>().material);
@@ -30,7 +37,6 @@ public class LifeBorder : MonoBehaviour
     }
     public void AlterLife(int damage)
     {
-        //Debug.Log(damage);
         currentLife -= damage;
         if(currentLife > baseLife)
         {
@@ -71,8 +77,16 @@ public class LifeBorder : MonoBehaviour
         if(currentLife > 0)
         {
             ChangeHealthArc((1 - currentLife / baseLife) * 360);
-            if(damaged) animator.SetTrigger("damaged");
-            else animator.SetTrigger("gain");
+            if (damaged)
+            {
+                animator.SetTrigger("damaged");
+                damageActionSFX?.Invoke(damageSFX);
+            }
+            else
+            {
+                animator.SetTrigger("gain");
+                lifeActionSFX?.Invoke(lifeSFX);
+            }
         }
     }
 
