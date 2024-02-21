@@ -21,16 +21,31 @@ public class WaypointFollower : MonoBehaviour
 
     Rigidbody2D rb;
 
+    [SerializeField]
+    Animator animator;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         currentGoal = path[currentPoint];
+
+        EnemyController enemyController = GetComponent<EnemyController>();
+
+        if(enemyController != null)
+        {
+            enemyController.DisableControlAnimation();
+        }
     }
 
     void FixedUpdate()
     {
         Vector3 temp = Vector3.MoveTowards(transform.position, currentGoal.position, moveSpeed * Time.deltaTime);
         rb.MovePosition(temp);
+
+        if(moveSpeed != 0)
+        {
+            animator.SetBool("moving", true);
+        }
 
         if (Vector3.Distance(transform.position, currentGoal.position) < roundingDistance)
         {
@@ -44,11 +59,22 @@ public class WaypointFollower : MonoBehaviour
         {
             currentPoint = 0;
             currentGoal = path[currentPoint];
+            UpdateAnimation();
         }
         else
         {
             currentPoint++;
             currentGoal = path[currentPoint];
+            UpdateAnimation();
         }
     }
+
+    void UpdateAnimation()
+    {
+        Vector2 direction = (currentGoal.position - transform.position).normalized;
+
+        animator.SetFloat("moveX", direction.x);
+        animator.SetFloat("moveY", direction.y);
+    }
+
 }

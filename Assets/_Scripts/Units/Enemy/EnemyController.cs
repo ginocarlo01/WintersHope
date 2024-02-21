@@ -48,6 +48,8 @@ public class EnemyController : MonoBehaviour
     private Vector2 homePosition;
     [SerializeField]
     Animator anim;
+    [SerializeField]
+    bool controlAnimation = true;
 
     //object pool
     ObjectPooler objectPooler;
@@ -122,11 +124,8 @@ public class EnemyController : MonoBehaviour
         pc_.baseSpeed = attackSpeed;
         pc_.SetProjectileType(this.type);
 
-        Vector2 direction = (spawnPositionProjectile.position - centerPositionProjectile.position).normalized;
-
-        anim.SetFloat("moveX", direction.x);
-        anim.SetFloat("moveY", direction.y);
-
+        if(controlAnimation) { UpdateAnimation(); }
+        
     }
 
     public void ChangePosition()
@@ -135,6 +134,17 @@ public class EnemyController : MonoBehaviour
     }
 
     
+    public void DisableControlAnimation()
+    {
+        controlAnimation = false;
+    }
 
 
+    void UpdateAnimation()
+    {
+        Vector2 direction = (spawnPositionProjectile.position - centerPositionProjectile.position).normalized;
+
+        anim.SetFloat("moveX", direction.x);
+        anim.SetFloat("moveY", direction.y);
+    }
 }

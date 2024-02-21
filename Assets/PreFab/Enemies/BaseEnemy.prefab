@@ -317,6 +317,7 @@ GameObject:
   - component: {fileID: 3203142110769990259}
   - component: {fileID: 5991814256784386995}
   - component: {fileID: 2043814916227534763}
+  - component: {fileID: 1327038711}
   m_Layer: 6
   m_Name: BaseEnemy
   m_TagString: Untagged
@@ -357,8 +358,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  loadTime: 2
-  loadTimeRandomness: 0.8
+  loadTime: 1
+  loadTimeRandomness: 0.5
   attackSpeed: 3
   attackSpeedRandomness: 0.8
   centerPositionProjectile: {fileID: 468046106382105378}
@@ -370,6 +371,7 @@ MonoBehaviour:
   spriteRendererDisappearArc: {fileID: 3203142110437752511}
   materialDisappearArc: {fileID: 0}
   anim: {fileID: 3742824317402278256}
+  controlAnimation: 1
   objectPoolTag: 0
   enemyLife: {fileID: 714481326}
 --- !u!50 &5991814256784386995
@@ -409,6 +411,58 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.13
+--- !u!212 &1327038711
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3203142110769990252}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 4, y: 4}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &5828792446679738688
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTag: Enemy
-  baseLife: 1
+  baseLife: 2
   currentLife: 0
   spriteRendererLifeArc: {fileID: 8108421552768556613}
   materialLifeArc: {fileID: 2100000, guid: 53d15bab64b318e429a3094ca82e7221, type: 2}

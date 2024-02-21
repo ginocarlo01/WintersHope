@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class ControlAroundBorder : MonoBehaviour
@@ -180,9 +181,19 @@ public class ControlAroundBorder : MonoBehaviour
     }
 
     private void ChangeIndexProjectile(int newIndex_)
-    { 
-        indexSelectedType = newIndex_;
-        SelectedTypeAction?.Invoke(newIndex_);
+    {
+        if (availableProjectiles.Contains((TypeUtility.Type)Enum.ToObject(typeof(TypeUtility.Type), newIndex_)))
+        {
+            indexSelectedType = newIndex_;
+            
+        }
+        else
+        {
+            indexSelectedType = 0;
+        }
+
+        SelectedTypeAction?.Invoke(indexSelectedType);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

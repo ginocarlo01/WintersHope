@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8763342048346952710}
   - component: {fileID: 8763342048346953721}
   - component: {fileID: 8763342048346953720}
-  - component: {fileID: 8763342048346952711}
   - component: {fileID: 8763342048346952708}
   m_Layer: 0
   m_Name: AddHealthObject
@@ -113,19 +112,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.47328186, y: 0.4905529}
   m_EdgeRadius: 0
---- !u!114 &8763342048346952711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8763342048346953723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb78846a0c445e44e95671a1928d72d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4.5
 --- !u!114 &8763342048346952708
 MonoBehaviour:
   m_ObjectHideFlags: 0
