@@ -7,6 +7,8 @@ public class Room : MonoBehaviour
 {
     private List<EnemyController> enemies = new List<EnemyController>();
 
+    private List<ActivateByDeath> activateByDeaths = new List<ActivateByDeath>();
+
     [SerializeField]
     bool startInactive = false;
 
@@ -15,10 +17,16 @@ public class Room : MonoBehaviour
     private void Start()
     {
         enemies = GetComponentsInChildren<EnemyController>().Cast<EnemyController>().ToList();
-        if(startInactive)
+
+        activateByDeaths = GetComponentsInChildren<ActivateByDeath>().Cast<ActivateByDeath>().ToList();
+
+        if (startInactive)
         {
             foreach (EnemyController enemy in enemies)
                 ChangeActivation(enemy, false);
+
+            foreach (ActivateByDeath activateByDeath in activateByDeaths)
+                ChangeActivation(activateByDeath, false);
         }
     }
 
@@ -28,6 +36,9 @@ public class Room : MonoBehaviour
         {
             foreach (EnemyController enemy in enemies)
                 ChangeActivation(enemy, true);
+
+            foreach (ActivateByDeath activateByDeath in activateByDeaths)
+                ChangeActivation(activateByDeath, true);
 
             virtualCamera.SetActive(true);
         }
@@ -39,6 +50,9 @@ public class Room : MonoBehaviour
         {
             foreach (EnemyController enemy in enemies)
                 ChangeActivation(enemy, false);
+
+            foreach (ActivateByDeath activateByDeath in activateByDeaths)
+                ChangeActivation(activateByDeath, false);
 
             virtualCamera.SetActive(false);
         }

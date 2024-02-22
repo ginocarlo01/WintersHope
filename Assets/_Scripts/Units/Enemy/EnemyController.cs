@@ -147,4 +147,9 @@ public class EnemyController : MonoBehaviour
         anim.SetFloat("moveX", direction.x);
         anim.SetFloat("moveY", direction.y);
     }
+
+    private void OnDisable()
+    {
+        
+    }
 }
