@@ -8,7 +8,7 @@ public class UIAssets : MonoBehaviour
     private GameObject[] handPositions;
 
     [SerializeField]
-    private GameObject[] elements;
+    private Image[] elements;
 
     [SerializeField]
     private GameObject hand;
@@ -20,13 +20,22 @@ public class UIAssets : MonoBehaviour
     float roundingDistance = .2f;
 
     [SerializeField]
+    private Sprite disabledOrb;
+
+    [SerializeField]
+    private Sprite enabledOrb;
+
+    [SerializeField]
+    private Sprite[] loadedOrbs;
+
+    [SerializeField]
     float speed = 5f;
 
-    private void Awake()
+
+    private void Start()
     {
         DisableAllOrbs();
     }
-
 
     private void Update()
     {
@@ -45,11 +54,13 @@ public class UIAssets : MonoBehaviour
     {
         ControlAroundBorder.SelectedTypeAction += ChangeTarget;
         ControlAroundBorder.EnableOrbAction += EnableOrb;
+        ControlAroundBorder.UpdateQtyOrbAction += ChangeOrbQty;
     }
     private void OnDisable()
     {
         ControlAroundBorder.SelectedTypeAction -= ChangeTarget;
         ControlAroundBorder.EnableOrbAction -= EnableOrb;
+        ControlAroundBorder.UpdateQtyOrbAction -= ChangeOrbQty;
     }
 
     #endregion
@@ -62,14 +73,19 @@ public class UIAssets : MonoBehaviour
 
     private void DisableAllOrbs()
     {
-        for(int i = 0; i < elements.Length; i++)
+        for(int i = 1; i < elements.Length; i++)
         {
-            elements[i].SetActive(false);
+            elements[i].sprite = disabledOrb;
         }
     }
 
     private void EnableOrb(int index)
     {
-        elements[index].SetActive(true);
+        elements[index].sprite = enabledOrb;
+    }
+
+    public void ChangeOrbQty(TypeUtility.Type orbType, int qty)
+    {
+        elements[((int)orbType)].sprite = loadedOrbs[qty];
     }
 }

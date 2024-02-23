@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772bece35e9a9d24bb434283e25cb1ad, type: 3}
+  m_Name: Teste
+  m_EditorClassIdentifier: 
+  ch1: {fileID: 0}
+  ch2: {fileID: 0}
+  isThisDialogueaCutScene: 0
+  dialogueEnded: 0
+  textEnded: 
+  data:
+  - id: 0
+    characterName: Shogun
+    text: "O incentivo ao avan\xE7o tecnol\xF3gico, assim como o consenso sobre a
+      necessidade de qualifica\xE7\xE3o n\xE3o pode mais se dissociar do sistema
+      de forma\xE7\xE3o de quadros que corresponde \xE0s necessidades"
+    hasChoice: 0
+    goodChoice: 
+    badChoice: 
+    goodChoiceRoot: []
+    badChoiceRoot: []
+    afinityToAdd: 0
+    afinityToRemove: 0
+    c1: {r: 1, g: 1, b: 1, a: 1}
+    c2: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+    e1: {fileID: 21300000, guid: 9d806e67068704e4b95f8642e06390d8, type: 3}
+    e2: {fileID: 21300000, guid: d77a3acd8e87bb34ab9f14159d52119d, type: 3}
+    backGroundImage: {fileID: 0}
+    choiced: 0
+    badChoiceChoosed: 0
+    goodChoiceChoosed: 0
+  - id: 1
+    characterName: Yae
+    text: "Caros amigos, o desafiador cen\xE1rio globalizado maximiza as possibilidades
+      por conta do sistema de participa\xE7\xE3o geral."
+    hasChoice: 0
+    goodChoice: Escolha boa
+    badChoice: Escolha ruim
+    goodChoiceRoot:
+    - text: escolha boa 1
+      c1: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+      c2: {r: 1, g: 1, b: 1, a: 1}
+    - text: escolha boa 2
+      c1: {r: 1, g: 1, b: 1, a: 1}
+      c2: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+    badChoiceRoot:
+    - text: escolha ruim 1
+      c1: {r: 0, g: 0, b: 0, a: 0}
+      c2: {r: 0, g: 0, b: 0, a: 0}
+    - text: escolha ruim 2
+      c1: {r: 0, g: 0, b: 0, a: 0}
+      c2: {r: 0, g: 0, b: 0, a: 0}
+    - text: escolha ruim 3
+      c1: {r: 0, g: 0, b: 0, a: 0}
+      c2: {r: 0, g: 0, b: 0, a: 0}
+    afinityToAdd: 0
+    afinityToRemove: 0
+    c1: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+    c2: {r: 1, g: 1, b: 1, a: 1}
+    e1: {fileID: 21300000, guid: 9d806e67068704e4b95f8642e06390d8, type: 3}
+    e2: {fileID: 21300000, guid: d77a3acd8e87bb34ab9f14159d52119d, type: 3}
+    backGroundImage: {fileID: 0}
+    choiced: 0
+    badChoiceChoosed: 0
+    goodChoiceChoosed: 0
+  - id: 2
+    characterName: Shogun
+    text: "Evidentemente, o surgimento do com\xE9rcio virtual aponta para a melhoria
+      das diretrizes de desenvolvimento para o futuro."
+    hasChoice: 0
+    goodChoice: Escolha boa
+    badChoice: Escolha ruim
+    goodChoiceRoot: []
+    badChoiceRoot: []
+    afinityToAdd: 0
+    afinityToRemove: 0
+    c1: {r: 1, g: 1, b: 1, a: 1}
+    c2: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+    e1: {fileID: 21300000, guid: 9d806e67068704e4b95f8642e06390d8, type: 3}
+    e2: {fileID: 21300000, guid: d77a3acd8e87bb34ab9f14159d52119d, type: 3}
+    backGroundImage: {fileID: 0}
+    choiced: 0
+    badChoiceChoosed: 0
+    goodChoiceChoosed: 0
+  removeH: 0
+  reset: 0

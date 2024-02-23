@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlayerState
+{
+    walk,
+    interact
+}
+
 public class BallMovement : MonoBehaviour
 {
     [SerializeField]
@@ -16,13 +22,22 @@ public class BallMovement : MonoBehaviour
 
     private bool pause;
 
+    PlayerState currentState;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
+
+        currentState = PlayerState.walk;
     }
 
     private void FixedUpdate()
     {
+        if (currentState == PlayerState.interact)
+        {
+            return;
+        }
+
         GetInput();
 
         MoveCharacter();
@@ -74,4 +89,32 @@ public class BallMovement : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
+
+    public void EnableInteraction()
+    {
+        currentState = PlayerState.interact;
+        anim.SetBool("moving", false);
+    }
+
+    public void DisableInteraction()
+    {
+        currentState = PlayerState.walk;
+    }
+
+    #region SubjectSubscription
+    private void OnEnable()
+    {
+        SignInteraction.playerInteractAction += EnableInteraction;
+        AddToProjectileArsenal.playerInteractAction += EnableInteraction;
+        DialogueManager.endPlayerInteractAction += DisableInteraction;
+    }
+    private void OnDisable()
+    {
+        SignInteraction.playerInteractAction -= EnableInteraction;
+        AddToProjectileArsenal.playerInteractAction -= EnableInteraction;
+        DialogueManager.endPlayerInteractAction -= DisableInteraction;
+    }
+
+    #endregion
+
 }

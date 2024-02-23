@@ -13,6 +13,7 @@ public class ControlAroundBorder : MonoBehaviour
         public bool available;
         public bool limited;
         public int qty;
+        public int maxQty;
         public Sprite sprite;
     }
 
@@ -39,6 +40,7 @@ public class ControlAroundBorder : MonoBehaviour
     private int indexSelectedType;
     public static Action<int> SelectedTypeAction;
     public static Action<int> EnableOrbAction;
+    public static Action<TypeUtility.Type, int> UpdateQtyOrbAction;
 
     [Header("Hand")]
     [SerializeField]
@@ -52,10 +54,6 @@ public class ControlAroundBorder : MonoBehaviour
     {
         ChangeToReleased(); //idk why this is here but keep it!
 
-        for(int i = 0; i < availableProjectiles.Count; i++)
-        {
-            EnableOrbAction?.Invoke(i);
-        }
     }
 
     void Update()
@@ -285,6 +283,13 @@ public class ControlAroundBorder : MonoBehaviour
                 if (proj.available)
                 {
                     proj.qty += qty;
+
+                    if(proj.qty > proj.maxQty)
+                    {
+                        proj.qty = proj.maxQty;
+                    }
+
+                    UpdateQtyOrbAction?.Invoke(type, qty);
                 }
             }
         }

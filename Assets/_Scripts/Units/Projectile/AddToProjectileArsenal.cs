@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,11 @@ public class AddToProjectileArsenal : MonoBehaviour
     private TypeUtility.Type type;
 
     private Animator animator;
+
+    [SerializeField]
+    DialogueManager orientationDialogue;
+
+    public static Action playerInteractAction;
 
     private void Start()
     {
@@ -26,6 +32,12 @@ public class AddToProjectileArsenal : MonoBehaviour
             if(controlAroundBorder != null )
             {
                 controlAroundBorder.AddProjectileTypeToArsenal(type);
+                if(orientationDialogue != null)
+                {
+                    orientationDialogue.StartDialogue();
+                    playerInteractAction?.Invoke();
+
+                }
                 this.gameObject.SetActive(false);
             }
             
