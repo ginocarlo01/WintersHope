@@ -118,11 +118,9 @@ public class EnemyLife : MonoBehaviour
 
     public void Die()
     {
-        for(int i = 0; i < maxRandomLootQty; i++)
+        for(int i = 0; i < loot.Count; i++)
         {
-            int indexR = UnityEngine.Random.Range(0, loot.Count);
-            
-            SpawnLootAction?.Invoke(loot[indexR].ToString(), this.transform.position, Quaternion.identity);
+            SpawnLootAction?.Invoke(loot[i].ToString(), this.transform.position, Quaternion.identity);
 
         }
         deathActionSFX?.Invoke(deathSFX);

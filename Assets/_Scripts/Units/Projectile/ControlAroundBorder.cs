@@ -280,17 +280,20 @@ public class ControlAroundBorder : MonoBehaviour
         {
             if (proj.type == type)
             {
-                if (proj.available)
+                if (!proj.available)
                 {
-                    proj.qty += qty;
-
-                    if(proj.qty > proj.maxQty)
-                    {
-                        proj.qty = proj.maxQty;
-                    }
-
-                    UpdateQtyOrbAction?.Invoke(type, qty);
+                    proj.available = true;
+                    EnableOrbAction?.Invoke(((int)type));
                 }
+                proj.qty += qty;
+
+                if(proj.qty > proj.maxQty)
+                {
+                    proj.qty = proj.maxQty;
+                }
+
+                UpdateQtyOrbAction?.Invoke(type, qty);
+                
             }
         }
     }

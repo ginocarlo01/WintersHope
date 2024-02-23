@@ -193,7 +193,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5886700d769ae044a83f7da9409557db, type: 3}
-  m_Color: {r: 0.36320752, g: 0.7921192, b: 1, a: 1}
+  m_Color: {r: 0.5176471, g: 0.59532696, b: 0.105882354, a: 0.8509804}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -735,21 +735,25 @@ MonoBehaviour:
     available: 1
     limited: 0
     qty: 0
+    maxQty: 0
     sprite: {fileID: -343988634, guid: 67efcf18a9c6aa84eb930372174babdc, type: 3}
   - type: 1
     available: 0
     limited: 1
     qty: 0
+    maxQty: 8
     sprite: {fileID: 1506308438, guid: 67efcf18a9c6aa84eb930372174babdc, type: 3}
   - type: 2
     available: 0
     limited: 1
     qty: 0
+    maxQty: 8
     sprite: {fileID: 1330781914, guid: 67efcf18a9c6aa84eb930372174babdc, type: 3}
   - type: 3
     available: 0
     limited: 1
     qty: 0
+    maxQty: 8
     sprite: {fileID: -329951317, guid: 67efcf18a9c6aa84eb930372174babdc, type: 3}
   indexSelectedType: 0
   handSprite: {fileID: 5740597908032280372}

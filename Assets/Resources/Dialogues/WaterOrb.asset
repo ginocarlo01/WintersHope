@@ -104,5 +104,38 @@ MonoBehaviour:
     choiced: 0
     badChoiceChoosed: 0
     goodChoiceChoosed: 0
+  - id: 3
+    characterName: Yae
+    text: "Dica: monstros de \xE1gua costumam ficar perto de lagos."
+    hasChoice: 0
+    goodChoice: Escolha boa
+    badChoice: Escolha ruim
+    goodChoiceRoot:
+    - text: escolha boa 1
+      c1: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+      c2: {r: 1, g: 1, b: 1, a: 1}
+    - text: escolha boa 2
+      c1: {r: 1, g: 1, b: 1, a: 1}
+      c2: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+    badChoiceRoot:
+    - text: escolha ruim 1
+      c1: {r: 0, g: 0, b: 0, a: 0}
+      c2: {r: 0, g: 0, b: 0, a: 0}
+    - text: escolha ruim 2
+      c1: {r: 0, g: 0, b: 0, a: 0}
+      c2: {r: 0, g: 0, b: 0, a: 0}
+    - text: escolha ruim 3
+      c1: {r: 0, g: 0, b: 0, a: 0}
+      c2: {r: 0, g: 0, b: 0, a: 0}
+    afinityToAdd: 0
+    afinityToRemove: 0
+    c1: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+    c2: {r: 1, g: 1, b: 1, a: 1}
+    e1: {fileID: 21300000, guid: 9d806e67068704e4b95f8642e06390d8, type: 3}
+    e2: {fileID: 21300000, guid: d77a3acd8e87bb34ab9f14159d52119d, type: 3}
+    backGroundImage: {fileID: 0}
+    choiced: 0
+    badChoiceChoosed: 0
+    goodChoiceChoosed: 0
   removeH: 0
   reset: 0

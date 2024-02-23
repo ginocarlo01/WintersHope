@@ -11,12 +11,21 @@ public class AddToProjectileQty : MonoBehaviour, IPooledObject
     [SerializeField]
     int qty = 1;
 
-    Animator animator;
+    [SerializeField]
+    SpriteRenderer colorSpriteRender;
+
+    [SerializeField]
+    Sprite[] colorTypes;
 
     [SerializeField]
     string playerTag = "Player";
 
     public static Action<TypeUtility.Type, int> collectedAction;
+
+    private void Start()
+    {
+        colorSpriteRender.sprite = colorTypes[((int)type)];
+    }
 
     public void OnObjectDisabled()
     {
@@ -25,7 +34,7 @@ public class AddToProjectileQty : MonoBehaviour, IPooledObject
 
     public void OnObjectSpawn()
     {
-        return;
+        colorSpriteRender.sprite = colorTypes[((int)type)];
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
