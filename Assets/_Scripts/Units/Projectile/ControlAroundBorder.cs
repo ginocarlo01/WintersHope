@@ -157,6 +157,7 @@ public class ControlAroundBorder : MonoBehaviour
                 if (availableProjectiles[indexSelectedType].limited)
                 {
                     availableProjectiles[indexSelectedType].qty--;
+                    AddToProjectileQty(availableProjectiles[indexSelectedType].type, availableProjectiles[indexSelectedType].qty);
                 }
 
                 handSprite.sprite = emptyHandSprite;
@@ -274,7 +275,7 @@ public class ControlAroundBorder : MonoBehaviour
         }
     }
 
-    public void AddToProjectileleQty(TypeUtility.Type type, int qty)
+    public void AddToProjectileQty(TypeUtility.Type type, int qty)
     {
         foreach (Projectile proj in availableProjectiles)
         {
@@ -286,27 +287,28 @@ public class ControlAroundBorder : MonoBehaviour
                     EnableOrbAction?.Invoke(((int)type));
                 }
                 proj.qty += qty;
-
-                if(proj.qty > proj.maxQty)
+                if (proj.qty > proj.maxQty)
                 {
                     proj.qty = proj.maxQty;
                 }
 
-                UpdateQtyOrbAction?.Invoke(type, qty);
+                UpdateQtyOrbAction?.Invoke(type, proj.qty);
                 
             }
         }
     }
 
+    
+
     #region ObserverSubscription
     private void OnEnable()
     {
-        AddToProjectileQty.collectedAction += AddToProjectileleQty;
+        global::AddToProjectileQty.collectedAction += AddToProjectileQty;
     }
 
     private void OnDisable()
     {
-        AddToProjectileQty.collectedAction -= AddToProjectileleQty;
+        global::AddToProjectileQty.collectedAction -= AddToProjectileQty;
     }
     #endregion
 }

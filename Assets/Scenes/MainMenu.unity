@@ -183,8 +183,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Winter's Hope
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7a511e97c49aae3408edd077c899a0c8, type: 2}
-  m_sharedMaterial: {fileID: 1729643218199878624, guid: 7a511e97c49aae3408edd077c899a0c8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2c1d031fd3838714e9d670fe1db01f36, type: 2}
+  m_sharedMaterial: {fileID: 6170112974151859378, guid: 2c1d031fd3838714e9d670fe1db01f36, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -208,12 +208,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
+  m_fontSize: 200
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 100
+  m_fontSizeMax: 200
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -520,8 +520,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -1.0633299}
+  m_SizeDelta: {x: 0, y: -2.12666}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1054569677
 MonoBehaviour:
@@ -543,14 +543,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Orientation text
+  m_text: '@ginocarlo01 - Code
 
-    here
+    @lambbreta - Art
 
-    !'
+    @vitor.hca - Music
+
+    @luminarts
+    - Art
+
+    @laura_bida - Art
+
+    @mary_ogino - Art
+
+
+'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7a511e97c49aae3408edd077c899a0c8, type: 2}
-  m_sharedMaterial: {fileID: 1729643218199878624, guid: 7a511e97c49aae3408edd077c899a0c8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2c1d031fd3838714e9d670fe1db01f36, type: 2}
+  m_sharedMaterial: {fileID: 6170112974151859378, guid: 2c1d031fd3838714e9d670fe1db01f36, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -574,10 +584,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5
+  m_fontSize: 6.05
   m_fontSizeBase: 5
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 1
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -1042,7 +1052,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3312291583510243877}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7566278747953099302}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: HandleQuitButtonOnClickEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3331858941241720840
 MonoBehaviour:
   m_ObjectHideFlags: 0
