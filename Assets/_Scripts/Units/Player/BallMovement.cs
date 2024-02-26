@@ -94,11 +94,13 @@ public class BallMovement : MonoBehaviour
     {
         currentState = PlayerState.interact;
         anim.SetBool("moving", false);
+        Time.timeScale = 0f;
     }
 
     public void DisableInteraction()
     {
         currentState = PlayerState.walk;
+        Time.timeScale = 1f;
     }
 
     #region SubjectSubscription

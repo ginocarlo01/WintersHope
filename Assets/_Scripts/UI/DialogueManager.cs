@@ -45,7 +45,6 @@ public class DialogueManager : MonoBehaviour
     {
         //index = 0;
         //NextText();
-        //if(dialogueData!=null)
         SetText(index, choiceRootDialogue, 0, false);
     }
     public int GetIndex()
@@ -93,15 +92,12 @@ public class DialogueManager : MonoBehaviour
 
             if (index == length)
             {
-#if !UNITY_EDITOR
-          //  dialogueData.SetDialogueEnd(true);
-#else
-               Debug.Log("dialogu ended");
+
+               //Debug.Log("dialogu ended");
+                index = 0;
                 display.EndDialogue();
                 endPlayerInteractAction?.Invoke();
 
-
-#endif
             }
             if (index > length)
             {

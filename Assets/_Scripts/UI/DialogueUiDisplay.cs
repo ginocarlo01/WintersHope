@@ -330,15 +330,21 @@ public class DialogueUiDisplay : MonoBehaviour
     IEnumerator DisplayText()
     {
         int index = 0;
-        yield return new WaitForSeconds(0.005f);
+        float startTime = Time.realtimeSinceStartup;
+
         while (index < splited.Length)
         {
-            displayText.text += splited[index];
-            index++;
-            yield return new WaitForSeconds(displayTextDelay);
+            if (Time.realtimeSinceStartup - startTime >= displayTextDelay)
+            {
+                displayText.text += splited[index];
+                index++;
+                startTime = Time.realtimeSinceStartup;
+            }
+
+            yield return null;
         }
-        yield return null;
     }
+
 
     void BadChoice()
     {
