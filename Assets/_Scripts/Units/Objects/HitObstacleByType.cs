@@ -8,8 +8,7 @@ public class HitObstacleByType : HitObstacle, IHit
     [SerializeField]
     private TypeUtility.Type type;
 
-    [SerializeField]
-    private Animator animator;
+    
 
     public event Action OnHit;
 

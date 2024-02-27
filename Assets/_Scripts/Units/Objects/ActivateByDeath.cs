@@ -42,7 +42,7 @@ public class ActivateByDeath : MonoBehaviour
 
     private void OnEnable()
     {
-        //targetObject.SetActive(false);
+        targetObject.SetActive(true);
         disabledObjectsCount = 0;
     }
 }

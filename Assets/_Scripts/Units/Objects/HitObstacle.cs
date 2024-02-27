@@ -16,6 +16,16 @@ public class HitObstacle : MonoBehaviour
     public static Action<SFX> hitActionSFX;
     [SerializeField] protected SFX hitSFX;
 
+    [SerializeField]
+    protected Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        animator.SetTrigger("Basic");
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(projectileTag))
@@ -23,7 +33,8 @@ public class HitObstacle : MonoBehaviour
             hitsTaken++;
             hitActionSFX?.Invoke(hitSFX);
             DisableProjectile(collision);
-            CheckNumberOfHits();
+            animator.SetTrigger("Hit");
+            //CheckNumberOfHits();
         }
     }
 
@@ -33,6 +44,11 @@ public class HitObstacle : MonoBehaviour
         {
             this.gameObject.SetActive(false);   
         }
+    }
+
+    public void DisableObstacle()
+    {
+        this.gameObject.SetActive(false);
     }
 
     protected void DisableProjectile(Collider2D collision)

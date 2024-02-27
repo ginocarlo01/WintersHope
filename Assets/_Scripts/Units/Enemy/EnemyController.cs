@@ -122,7 +122,7 @@ public class EnemyController : MonoBehaviour
         GameObject newProjectile = objectPooler.SpawnFromPool(objectPoolTag.ToString(), spawnPositionProjectile.position, centerPositionProjectile.rotation);
         ProjectileController pc_ = newProjectile.GetComponent<ProjectileController>();
         pc_.baseSpeed = attackSpeed;
-        pc_.SetProjectileType(this.type);
+        pc_.SetProjectileType(TypeUtility.Type.Neutral);
 
         if(controlAnimation) { UpdateAnimation(); }
         
