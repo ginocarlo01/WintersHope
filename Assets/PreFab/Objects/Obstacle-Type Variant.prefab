@@ -13,11 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 173471291260695396, guid: 404bb3b1bff02a642b2b8b66ff807057, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.847206
+      value: 4.38
       objectReference: {fileID: 0}
     - target: {fileID: 173471291260695396, guid: 404bb3b1bff02a642b2b8b66ff807057, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -20.844456
+      value: 9.79
       objectReference: {fileID: 0}
     - target: {fileID: 173471291260695396, guid: 404bb3b1bff02a642b2b8b66ff807057, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52,6 +52,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 173471291260695397, guid: 404bb3b1bff02a642b2b8b66ff807057, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -962900419, guid: 220567608894cf84aa1365ae88683464, type: 3}
+    - target: {fileID: 173471291260695397, guid: 404bb3b1bff02a642b2b8b66ff807057, type: 3}
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
@@ -63,6 +67,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle-Type Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 173471291260695403, guid: 404bb3b1bff02a642b2b8b66ff807057, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3424559
+      objectReference: {fileID: 0}
+    - target: {fileID: 173471291260695403, guid: 404bb3b1bff02a642b2b8b66ff807057, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.17122793
+      objectReference: {fileID: 0}
+    - target: {fileID: 173471291260695403, guid: 404bb3b1bff02a642b2b8b66ff807057, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029997488027494990, guid: 404bb3b1bff02a642b2b8b66ff807057, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5839659
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029997488027494990, guid: 404bb3b1bff02a642b2b8b66ff807057, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.19198292
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029997488027494990, guid: 404bb3b1bff02a642b2b8b66ff807057, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 173471291260695402, guid: 404bb3b1bff02a642b2b8b66ff807057, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 404bb3b1bff02a642b2b8b66ff807057, type: 3}
@@ -71,6 +99,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 173471291260695398, guid: 404bb3b1bff02a642b2b8b66ff807057, type: 3}
   m_PrefabInstance: {fileID: 5590314589253887163}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &581926635
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763625351749769181}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c25183b06f702434c989f00c7de12546, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1013326008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,7 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740cc07787b2dec42b52c96dbb1ef42b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitsToDestroy: 10
+  hitsToDestroy: 1
   hitsTaken: 0
   projectileTag: Enemy
-  type: 2
+  hitSFX: 0
+  type: 0
+  animator: {fileID: 0}

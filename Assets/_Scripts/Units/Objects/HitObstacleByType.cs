@@ -1,11 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitObstacleByType : HitObstacle
+public class HitObstacleByType : HitObstacle, IHit
 {
     [SerializeField]
     private TypeUtility.Type type;
+
+    [SerializeField]
+    private Animator animator;
+
+    public event Action OnHit;
+
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        animator.SetTrigger(type.ToString());
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,8 +31,10 @@ public class HitObstacleByType : HitObstacle
                 if (this.CanBeHit(projectile.GetProjectileType()))
                 {
                     hitsTaken++;
+                    animator.SetTrigger("Hit");
+                    OnHit?.Invoke();
                     hitActionSFX?.Invoke(hitSFX);
-                    CheckNumberOfHits();
+                    //CheckNumberOfHits();
                 }
                 DisableProjectile(collision);
             }
@@ -29,7 +44,7 @@ public class HitObstacleByType : HitObstacle
 
     public bool CanBeHit(TypeUtility.Type attackerType)
     {
-        if (TypeUtility.HasAdvantage(attackerType, type))
+        if (attackerType == type)
         {
             return true;
         }

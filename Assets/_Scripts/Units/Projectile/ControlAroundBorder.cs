@@ -157,15 +157,15 @@ public class ControlAroundBorder : MonoBehaviour
         {
             if (insideObject != null)
             {
-                if (availableProjectiles[indexSelectedType].limited)
+                /*if (availableProjectiles[indexSelectedType].limited)
                 {
                     availableProjectiles[indexSelectedType].qty--;
                     AddToProjectileQty(availableProjectiles[indexSelectedType].type, availableProjectiles[indexSelectedType].qty);
-                }
+                }*/
 
                 handSprite.sprite = emptyHandSprite;
 
-                insideProjectile.SetProjectileType(availableProjectiles[indexSelectedType].type);
+                //insideProjectile.SetProjectileType(availableProjectiles[indexSelectedType].type);
                 insideProjectile.SetProjectileCurrentSpeed(projectileNewSpeed);
                 insideProjectile.ChangeState();
 
@@ -210,7 +210,7 @@ public class ControlAroundBorder : MonoBehaviour
     {
         foreach(Projectile proj in availableProjectiles)
         {
-            if (proj.type == newType && proj.qty > 0 && proj.available)
+            if (proj.type == newType) // && proj.qty > 0 && proj.available
             {
                 indexSelectedType = ((int)newType);
                 SelectedTypeAction?.Invoke(indexSelectedType);

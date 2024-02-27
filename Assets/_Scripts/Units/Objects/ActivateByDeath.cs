@@ -12,18 +12,19 @@ public class ActivateByDeath : MonoBehaviour
     {
         foreach (GameObject obj in objectsToDisable)
         {
-            CallWhenDead deadScript = obj.GetComponent<CallWhenDead>();
-            if (deadScript != null)
+            IHit deathHandler = obj.GetComponent<IHit>();
+            if (deathHandler != null)
             {
-                deadScript.OnDead += ObjectDeadHandler;
+                deathHandler.OnHit += ObjectDeadHandler;
             }
             else
             {
-                Debug.LogWarning("The objects in the list do not contain the needed script!");
+                Debug.LogWarning("The objects in the list do not contain the needed interface!");
             }
+
         }
 
-        
+
     }
 
     void ObjectDeadHandler()
@@ -34,14 +35,14 @@ public class ActivateByDeath : MonoBehaviour
         {
             if (targetObject != null)
             {
-                targetObject.SetActive(true);
+                targetObject.SetActive(false);
             }
         }
     }
 
     private void OnEnable()
     {
-        targetObject.SetActive(false);
+        //targetObject.SetActive(false);
         disabledObjectsCount = 0;
     }
 }

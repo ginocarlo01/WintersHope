@@ -16,9 +16,9 @@ public class ProjectileController : MonoBehaviour, IPooledObject
     public IProjectileState currentState;
 
     [Header("Speed values")]
-    [HideInInspector]
+    
     public float baseSpeed;
-    [HideInInspector]
+    
     public float currentSpeed;
     public float upSpeedPerSecond = 1f;
     [HideInInspector]
@@ -47,11 +47,19 @@ public class ProjectileController : MonoBehaviour, IPooledObject
     string enemyTag;
     private Animator anim;
     public SpriteRenderer spriteRenderer;
+    [SerializeField]
+    bool startAlone = false;
+
+    private void Start()
+    {
+        if(startAlone) { OnObjectSpawn(); SetProjectileType(currentProjectileType); }
+    }
+
 
     public void OnObjectSpawn()
     {
         InitMaterial();
-        Invoke("TurnOff", timeToDestroy);
+        //Invoke("TurnOff", timeToDestroy);
         currentState = attackState;
         currentState.OnBeginState();
     }
