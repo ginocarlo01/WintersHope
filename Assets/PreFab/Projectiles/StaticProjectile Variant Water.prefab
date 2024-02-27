@@ -9,19 +9,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2146185766980680036, guid: 46345c3f9a51cab4ab10afe1caa3b80f, type: 3}
       propertyPath: m_Name
-      value: StaticProjectile Variant
+      value: StaticProjectile Variant Water
       objectReference: {fileID: 0}
     - target: {fileID: 2146185766980680039, guid: 46345c3f9a51cab4ab10afe1caa3b80f, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2146185766980680039, guid: 46345c3f9a51cab4ab10afe1caa3b80f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146185766980680039, guid: 46345c3f9a51cab4ab10afe1caa3b80f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146185766980680039, guid: 46345c3f9a51cab4ab10afe1caa3b80f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146185766980680039, guid: 46345c3f9a51cab4ab10afe1caa3b80f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.719
+      value: 12.926437
       objectReference: {fileID: 0}
     - target: {fileID: 2146185766980680039, guid: 46345c3f9a51cab4ab10afe1caa3b80f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.8088036
+      value: 5.181078
       objectReference: {fileID: 0}
     - target: {fileID: 2146185766980680039, guid: 46345c3f9a51cab4ab10afe1caa3b80f, type: 3}
       propertyPath: m_LocalPosition.z
