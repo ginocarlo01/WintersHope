@@ -121,6 +121,10 @@ public class ProjectileController : MonoBehaviour, IPooledObject
         return baseAttack;
     }
 
+    public void SetProjectileCurrentSpeed(float newSpeed)
+    {
+        currentSpeed = newSpeed;
+    }
     
 
     public void OnObjectDisabled()
@@ -155,7 +159,6 @@ public class ProjectileController : MonoBehaviour, IPooledObject
             #endregion
         }
         
-
 
     }
 }

@@ -39,10 +39,21 @@ public class EnemyLife : MonoBehaviour
     public static Action<SFX> deathActionSFX;
     [SerializeField] protected SFX deathSFX;
 
+    [SerializeField]
+    private float timeToShowDamaged = .7f;
+
+    [SerializeField]
+    private SpriteRenderer[] lifeSprites;
+
+    [Range(0, 1)]
+    [SerializeField]
+    private float transparecencyValue = .0f;
+    [SerializeField]
+    private float transparecencyFadeTime = .4f;
 
     private void Start()
     {
-        
+        DisableLifeSprites();
         //load arc
         spriteRendererLifeArc.material = Instantiate<Material>(spriteRendererLifeArc.material);
         materialLifeArc = spriteRendererLifeArc.material;
@@ -51,10 +62,14 @@ public class EnemyLife : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentLife -= damage;
-        //animator.SetTrigger("damaged");
-        if(currentLife > 0) { damageActionSFX?.Invoke(damageSFX); }
+        if(!CheckDeath()) 
+        { 
+            damageActionSFX?.Invoke(damageSFX); 
+            EnableLifeSprites();
+            StartCoroutine(WaitToShowDamage());
+        }
         ChangeHealthArc((1 - currentLife / baseLife) * 360);
-        CheckDeath();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -108,11 +123,17 @@ public class EnemyLife : MonoBehaviour
         materialLifeArc.SetFloat("_Arc1", angle);
     }
 
-    public void CheckDeath()
+    public bool CheckDeath()
     {
         if(currentLife <= 0)
         {
+            
             Die();
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
@@ -132,5 +153,41 @@ public class EnemyLife : MonoBehaviour
     {
         currentLife = baseLife;
         ChangeHealthArc((1 - currentLife / baseLife) * 360);
+    }
+
+    private IEnumerator WaitToShowDamage()
+    {
+        yield return new WaitForSeconds(timeToShowDamaged);
+        DisableLifeSprites();
+    }
+
+    private void EnableLifeSprites()
+    {
+        foreach(SpriteRenderer sprite in lifeSprites)
+        {
+            // s.enabled = true;
+            StartCoroutine(FadeObj(sprite, transparecencyFadeTime, sprite.color.a, 1));
+        }
+    }
+    private void DisableLifeSprites()
+    {
+        foreach (SpriteRenderer sprite in lifeSprites)
+        {
+            //s.enabled = false;
+            StartCoroutine(FadeObj(sprite, transparecencyFadeTime, sprite.color.a, transparecencyValue));
+        }
+    }
+
+    private IEnumerator FadeObj(SpriteRenderer _spriteTrans, float fadeTime, float startValue, float targetValue)
+    {
+        float timeElapsed = 0;
+
+        while (timeElapsed < fadeTime)
+        {
+            timeElapsed += Time.deltaTime;
+            float _newAlpha = Mathf.Lerp(startValue, targetValue, timeElapsed / fadeTime);
+            _spriteTrans.color = new Color(_spriteTrans.color.r, _spriteTrans.color.g, _spriteTrans.color.b, _newAlpha);
+        }
+        yield return null;
     }
 }

@@ -23,6 +23,8 @@ public class ControlAroundBorder : MonoBehaviour
     ProjectileController insideProjectile;
     [SerializeField]
     Transform spawnPoint;
+    [SerializeField]
+    float projectileNewSpeed = 5f;
     [HideInInspector]
     public bool isFather;
     bool pressedState;
@@ -68,10 +70,11 @@ public class ControlAroundBorder : MonoBehaviour
             pressedState = false;
         }
 
-        if (Input.GetMouseButtonDown(1))
+        /*if (Input.GetMouseButtonDown(1))
         {
             ChangeProjectileType(true);
         }
+        */
         #endregion
 
         #region PastCode
@@ -163,6 +166,7 @@ public class ControlAroundBorder : MonoBehaviour
                 handSprite.sprite = emptyHandSprite;
 
                 insideProjectile.SetProjectileType(availableProjectiles[indexSelectedType].type);
+                insideProjectile.SetProjectileCurrentSpeed(projectileNewSpeed);
                 insideProjectile.ChangeState();
 
                 if (insideObject != null)

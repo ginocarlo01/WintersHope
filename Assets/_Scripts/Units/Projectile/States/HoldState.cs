@@ -21,8 +21,8 @@ public class HoldState : IProjectileState
 
     public IProjectileState ChangeState()
     {
-        UpdateCurrentSpeed();
-        FullManaBar();
+        //UpdateCurrentSpeed();
+        //FullManaBar();
         controller.spriteRenderer.enabled = true;
         
         return controller.releaseState;
@@ -30,15 +30,15 @@ public class HoldState : IProjectileState
 
     public void OnBeginState()
     {
-        timer = controller.holdProjectileTime;
-        newSpeed = controller.baseSpeed;
+        //timer = controller.holdProjectileTime;
+        //newSpeed = controller.baseSpeed;
         controller.spriteRenderer.enabled = false;
         controller.gameObject.layer = ((int)MyLayers.HoldProjectile);
     }
 
     public void OnUpdate()
     {
-        timer -= Time.deltaTime;
+       /* timer -= Time.deltaTime;
         speedTimer += Time.deltaTime;
 
         if (speedTimer >= intervalToUpSpeed)
@@ -53,6 +53,7 @@ public class HoldState : IProjectileState
         }
 
         UpdateManaBar(timer / controller.holdProjectileTime * 360);
+       */
     }
 
     public void UpdateCurrentSpeed()
