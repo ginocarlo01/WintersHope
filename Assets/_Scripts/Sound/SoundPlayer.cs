@@ -63,6 +63,7 @@ public class SoundPlayer : MonoBehaviour
         EnemyLife.damageActionSFX += PlaySound;
         EnemyLife.deathActionSFX += PlaySound;
         HitObstacle.hitActionSFX += PlaySound;
+        LifeBorder.deathActionSFX += PlaySound;
     }
 
     private void OnDisable()
@@ -73,6 +74,7 @@ public class SoundPlayer : MonoBehaviour
         EnemyLife.damageActionSFX -= PlaySound;
         EnemyLife.deathActionSFX -= PlaySound;
         HitObstacle.hitActionSFX -= PlaySound;
+        LifeBorder.deathActionSFX -= PlaySound;
     }
     #endregion
 

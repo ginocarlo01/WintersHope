@@ -1,6 +1,8 @@
+using EasyTransition;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum PlayerState
 {
@@ -18,11 +20,18 @@ public class BallMovement : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 1f;
 
+    [SerializeField]
     private Animator anim;
 
     private bool pause;
 
     PlayerState currentState;
+
+    [Header("Death Settings")]
+    [SerializeField]
+    private TransitionSettings transition;
+    [SerializeField]
+    private float startDelay;
 
     private void Start()
     {
@@ -93,8 +102,8 @@ public class BallMovement : MonoBehaviour
     public void EnableInteraction()
     {
         currentState = PlayerState.interact;
-        anim.SetBool("moving", false);
-        Time.timeScale = 0f;
+        //anim.SetBool("moving", false);
+        //Time.timeScale = 0f;
     }
 
     public void DisableInteraction()
@@ -103,18 +112,33 @@ public class BallMovement : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void Death()
+    {
+        anim.SetTrigger("Death");
+
+    }
+
+    public void ReloadScene()
+    {
+        TransitionManager.Instance().Transition(SceneManager.GetActiveScene().name, transition, startDelay);
+    }
+
     #region SubjectSubscription
     private void OnEnable()
     {
         SignInteraction.playerInteractAction += EnableInteraction;
         AddToProjectileArsenal.playerInteractAction += EnableInteraction;
         DialogueManager.endPlayerInteractAction += DisableInteraction;
+        LifeBorder.deathAction += EnableInteraction;
+        LifeBorder.deathAction += Death;
     }
     private void OnDisable()
     {
         SignInteraction.playerInteractAction -= EnableInteraction;
         AddToProjectileArsenal.playerInteractAction -= EnableInteraction;
         DialogueManager.endPlayerInteractAction -= DisableInteraction;
+        LifeBorder.deathAction += EnableInteraction;
+        LifeBorder.deathAction -= Death;
     }
 
     #endregion

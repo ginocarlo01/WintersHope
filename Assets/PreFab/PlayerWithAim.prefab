@@ -232,11 +232,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTag: Enemy
-  baseLife: 10
+  baseLife: 2
   currentLife: 0
   healthObj: {fileID: 5740597906383645714}
   lifeSFX: 0
   damageSFX: 1
+  deathSFX: 1
 --- !u!95 &4593502957039305163
 Animator:
   serializedVersion: 4
@@ -410,7 +411,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1501043876}
-  moveSpeed: 5.5
+  moveSpeed: 6.5
+  anim: {fileID: 289222949}
+  transition: {fileID: 11400000, guid: d641980330b54c243a644222c797e582, type: 2}
+  startDelay: 0
 --- !u!212 &289222944
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -727,6 +731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   insideObject: {fileID: 0}
   spawnPoint: {fileID: 1552695536}
+  projectileNewSpeed: 5
   isFather: 0
   playerTag: Player
   enemyTag: Enemy

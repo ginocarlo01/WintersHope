@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 173471291260695402}
   - component: {fileID: 4029997488027494990}
   - component: {fileID: 298440144}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,6 +130,7 @@ MonoBehaviour:
   hitsTaken: 0
   projectileTag: Enemy
   hitSFX: 4
+  animator: {fileID: 0}
 --- !u!61 &4029997488027494990
 BoxCollider2D:
   m_ObjectHideFlags: 0

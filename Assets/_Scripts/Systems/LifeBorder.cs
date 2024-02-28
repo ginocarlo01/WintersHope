@@ -18,13 +18,17 @@ public class LifeBorder : MonoBehaviour
 
     private Material healthMat;
 
-    Animator animator;
+    //Animator animator;
 
     public static Action<SFX> lifeActionSFX;
     [SerializeField] protected SFX lifeSFX;
 
     public static Action<SFX> damageActionSFX;
     [SerializeField] protected SFX damageSFX;
+
+    public static Action deathAction;
+    public static Action<SFX> deathActionSFX;
+    [SerializeField] protected SFX deathSFX;
 
     private void Start()
     {
@@ -33,11 +37,18 @@ public class LifeBorder : MonoBehaviour
 
         currentLife = baseLife;
 
-        animator = GetComponent<Animator>();    
+        //animator = GetComponent<Animator>();    
     }
     public void AlterLife(int damage)
     {
         currentLife -= damage;
+
+        if(currentLife <= 0)
+        {
+            deathAction?.Invoke();
+            deathActionSFX?.Invoke(deathSFX);
+        }
+
         if(currentLife > baseLife)
         {
             currentLife = baseLife;
@@ -79,12 +90,12 @@ public class LifeBorder : MonoBehaviour
             ChangeHealthArc((1 - currentLife / baseLife) * 360);
             if (damaged)
             {
-                animator.SetTrigger("damaged");
+                //animator.SetTrigger("damaged");
                 damageActionSFX?.Invoke(damageSFX);
             }
             else
             {
-                animator.SetTrigger("gain");
+                //animator.SetTrigger("gain");
                 lifeActionSFX?.Invoke(lifeSFX);
             }
         }
