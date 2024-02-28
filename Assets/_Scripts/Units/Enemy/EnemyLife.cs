@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.UIElements;
 
-public class EnemyLife : MonoBehaviour
+public class EnemyLife : MonoBehaviour, IHit
 {
     [SerializeField]
     public string enemyTag = "Enemy";
@@ -50,6 +50,8 @@ public class EnemyLife : MonoBehaviour
     private float transparecencyValue = .0f;
     [SerializeField]
     private float transparecencyFadeTime = .4f;
+
+    public event Action OnHit;
 
     private void Start()
     {
@@ -149,6 +151,7 @@ public class EnemyLife : MonoBehaviour
             SpawnLootAction?.Invoke(loot[i].ToString(), this.transform.position, Quaternion.identity);
 
         }
+        OnHit?.Invoke();
         deathActionSFX?.Invoke(deathSFX);
         parent.SetActive(false);
         

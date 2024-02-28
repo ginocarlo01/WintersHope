@@ -8,6 +8,9 @@ public class ActivateByDeath : MonoBehaviour
 
     private int disabledObjectsCount = 0;
 
+    [SerializeField]
+    bool disableTargetOnAwake = false;
+
     private void Start()
     {
         foreach (GameObject obj in objectsToDisable)
@@ -23,8 +26,9 @@ public class ActivateByDeath : MonoBehaviour
             }
 
         }
-
-
+        Debug.Log(targetObject.gameObject.name + " is now: " + !disableTargetOnAwake);
+        targetObject.SetActive(!disableTargetOnAwake);
+        disabledObjectsCount = 0;
     }
 
     void ObjectDeadHandler()
@@ -35,14 +39,15 @@ public class ActivateByDeath : MonoBehaviour
         {
             if (targetObject != null)
             {
-                targetObject.SetActive(false);
+                targetObject.SetActive(disableTargetOnAwake);
+                Debug.Log(targetObject.gameObject.name + " is now: " + disableTargetOnAwake);
             }
         }
     }
 
     private void OnEnable()
     {
-        targetObject.SetActive(true);
-        disabledObjectsCount = 0;
+        //targetObject.SetActive(!disableTargetOnAwake);
+        //disabledObjectsCount = 0;
     }
 }

@@ -12,6 +12,8 @@ public class HitObstacleByType : HitObstacle, IHit
 
     public event Action OnHit;
 
+    
+
 
     private void Start()
     {

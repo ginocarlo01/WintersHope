@@ -102,8 +102,13 @@ public class BallMovement : MonoBehaviour
     public void EnableInteraction()
     {
         currentState = PlayerState.interact;
-        //anim.SetBool("moving", false);
-        //Time.timeScale = 0f;
+        anim.SetBool("moving", false);
+        Time.timeScale = 0f;
+    }
+
+    public void EnableDeath()
+    {
+        currentState = PlayerState.interact;
     }
 
     public void DisableInteraction()
@@ -127,17 +132,19 @@ public class BallMovement : MonoBehaviour
     private void OnEnable()
     {
         SignInteraction.playerInteractAction += EnableInteraction;
+        CollectableInteraction.playerInteractAction += EnableInteraction;
         AddToProjectileArsenal.playerInteractAction += EnableInteraction;
         DialogueManager.endPlayerInteractAction += DisableInteraction;
-        LifeBorder.deathAction += EnableInteraction;
+        LifeBorder.deathAction += EnableDeath;
         LifeBorder.deathAction += Death;
     }
     private void OnDisable()
     {
         SignInteraction.playerInteractAction -= EnableInteraction;
+        CollectableInteraction.playerInteractAction -= EnableInteraction;
         AddToProjectileArsenal.playerInteractAction -= EnableInteraction;
         DialogueManager.endPlayerInteractAction -= DisableInteraction;
-        LifeBorder.deathAction += EnableInteraction;
+        LifeBorder.deathAction += EnableDeath;
         LifeBorder.deathAction -= Death;
     }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,12 @@ public class Room : MonoBehaviour
     bool startInactive = false;
 
     public GameObject virtualCamera;
+
+    public Transform SpawnPoint;
+
+    public bool active = false;
+
+    public static Action<Vector3> SavePlayerPosAction;
 
     private void Start()
     {
@@ -40,7 +47,9 @@ public class Room : MonoBehaviour
             //foreach (ActivateByDeath activateByDeath in activateByDeaths)
             //    ChangeActivation(activateByDeath, true);
 
+            SavePlayerPosAction?.Invoke(SpawnPoint.position);
             virtualCamera.SetActive(true);
+            active = true;
         }
     }
 
@@ -55,6 +64,7 @@ public class Room : MonoBehaviour
             //    ChangeActivation(activateByDeath, false);
 
             virtualCamera.SetActive(false);
+            active = false;
         }
     }
 

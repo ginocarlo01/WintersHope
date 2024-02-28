@@ -20,6 +20,8 @@ public class LifeBorder : MonoBehaviour
 
     //Animator animator;
 
+    bool dead;
+
     public static Action<SFX> lifeActionSFX;
     [SerializeField] protected SFX lifeSFX;
 
@@ -43,8 +45,9 @@ public class LifeBorder : MonoBehaviour
     {
         currentLife -= damage;
 
-        if(currentLife <= 0)
+        if(currentLife <= 0 && !dead)
         {
+            dead = true;
             deathAction?.Invoke();
             deathActionSFX?.Invoke(deathSFX);
         }

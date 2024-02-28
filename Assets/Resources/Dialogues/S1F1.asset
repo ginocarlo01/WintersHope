@@ -20,8 +20,7 @@ MonoBehaviour:
   data:
   - id: 0
     characterName: Shogun
-    text: "Para derrotar os inimigos, segure os seus tiros e ataque de volta! \r\nA
-      vida dos inimigos pode variar.\r"
+    text: Congratulations! You've found one of the collectibles in this level!
     hasChoice: 0
     goodChoice: 
     badChoice: 
