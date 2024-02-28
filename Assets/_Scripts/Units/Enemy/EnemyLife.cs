@@ -59,6 +59,11 @@ public class EnemyLife : MonoBehaviour
         materialLifeArc = spriteRendererLifeArc.material;
         currentLife = baseLife;
     }
+
+    public void SetBaseLife(int life)
+    {
+        baseLife = life;
+    }
     public void TakeDamage(float damage)
     {
         currentLife -= damage;

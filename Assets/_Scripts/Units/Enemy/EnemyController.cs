@@ -14,6 +14,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     //is an indepdent value from enemylife
     private TypeUtility.Type type;
+    [SerializeField]
+    private bool hasRange = false;
 
     [Header("Load state attributes")]
     [SerializeField]
@@ -25,9 +27,11 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     public float attackSpeedRandomness = .3f;
     [SerializeField]
-    public Transform centerPositionProjectile;
+    public Transform[] centerPositionProjectile;
     [SerializeField]
-    public Transform spawnPositionProjectile;
+    public Transform[] spawnPositionProjectile;
+    [SerializeField]
+    private bool canSpawnProjectile = true;
 
     [Header("Disappear state attributes")]
     [SerializeField]
@@ -51,12 +55,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     bool controlAnimation = true;
 
+    [Header("Object Pool")]
     //object pool
     ObjectPooler objectPooler;
-    [SerializeField]
     public ObjectFromPoolTag objectPoolTag;
 
-    //enemy life
+    [Header("Enemy Life")]
+    [SerializeField]
+    int baseLife = 2;
     [SerializeField]
     EnemyLife enemyLife;
 
@@ -71,6 +77,8 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        enemyLife.SetBaseLife(baseLife);
+
         //load arc
         spriteRendererLoadArc.material = Instantiate<Material>(spriteRendererLoadArc.material);
         materialLoadArc = spriteRendererLoadArc.material;
@@ -97,6 +105,12 @@ public class EnemyController : MonoBehaviour
             enemyLife.RestartLife();
         }
         anim.SetTrigger(type.ToString());
+
+        if(hasRange)
+        {
+            canSpawnProjectile = false;
+        }
+
         SpawnProjectile();
     }
 
@@ -119,13 +133,19 @@ public class EnemyController : MonoBehaviour
 
     public void SpawnProjectile()
     {
-        GameObject newProjectile = objectPooler.SpawnFromPool(objectPoolTag.ToString(), spawnPositionProjectile.position, centerPositionProjectile.rotation);
-        ProjectileController pc_ = newProjectile.GetComponent<ProjectileController>();
-        pc_.baseSpeed = attackSpeed;
-        pc_.SetProjectileType(TypeUtility.Type.Neutral);
+        if (!canSpawnProjectile) { return; }
 
-        if(controlAnimation) { UpdateAnimation(); }
-        
+       for (int i = 0; i < spawnPositionProjectile.Length; i++)
+        {
+            GameObject newProjectile = objectPooler.SpawnFromPool(objectPoolTag.ToString(), spawnPositionProjectile[i].position, centerPositionProjectile[i].rotation);
+            ProjectileController pc_ = newProjectile.GetComponent<ProjectileController>();
+            pc_.baseSpeed = attackSpeed;
+            pc_.SetProjectileType(this.type);
+
+            
+        }
+        if (controlAnimation) { UpdateAnimation(); }
+
     }
 
     public void ChangePosition()
@@ -142,7 +162,7 @@ public class EnemyController : MonoBehaviour
 
     void UpdateAnimation()
     {
-        Vector2 direction = (spawnPositionProjectile.position - centerPositionProjectile.position).normalized;
+        Vector2 direction = (spawnPositionProjectile[0].position - centerPositionProjectile[0].position).normalized;
 
         anim.SetFloat("moveX", direction.x);
         anim.SetFloat("moveY", direction.y);
@@ -151,5 +171,13 @@ public class EnemyController : MonoBehaviour
     private void OnDisable()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            canSpawnProjectile = true;
+        }
     }
 }

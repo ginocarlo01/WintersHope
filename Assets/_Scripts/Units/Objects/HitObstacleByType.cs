@@ -8,7 +8,7 @@ public class HitObstacleByType : HitObstacle, IHit
     [SerializeField]
     private TypeUtility.Type type;
 
-    
+    private bool alreadyHit;
 
     public event Action OnHit;
 
@@ -27,9 +27,10 @@ public class HitObstacleByType : HitObstacle, IHit
 
             if (projectile != null)
             {
-                if (this.CanBeHit(projectile.GetProjectileType()))
+                if (this.CanBeHit(projectile.GetProjectileType()) && !alreadyHit)
                 {
                     hitsTaken++;
+                    alreadyHit = true;
                     animator.SetTrigger("Hit");
                     OnHit?.Invoke();
                     hitActionSFX?.Invoke(hitSFX);

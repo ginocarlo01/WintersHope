@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CallWhenDead : MonoBehaviour
+public class CallWhenDead : MonoBehaviour, IHit
 {
-    public event Action OnDead;
+    public event Action OnHit;
 
     private void OnDisable()
     {
-        OnDead?.Invoke();
+        OnHit?.Invoke();
     }
 }

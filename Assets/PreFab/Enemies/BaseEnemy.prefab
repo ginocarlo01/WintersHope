@@ -362,8 +362,10 @@ MonoBehaviour:
   loadTimeRandomness: 0
   attackSpeed: 2
   attackSpeedRandomness: 0.8
-  centerPositionProjectile: {fileID: 468046106382105378}
-  spawnPositionProjectile: {fileID: 3872168686716474956}
+  centerPositionProjectile:
+  - {fileID: 468046106382105378}
+  spawnPositionProjectile:
+  - {fileID: 3872168686716474956}
   disappearTime: 3
   disappearTimeRandomness: 0.3
   spriteRendererLoadArc: {fileID: 3203142110111834539}
@@ -746,7 +748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTag: Enemy
-  baseLife: 4
+  baseLife: 2
   currentLife: 0
   spriteRendererLifeArc: {fileID: 8108421552768556613}
   materialLifeArc: {fileID: 2100000, guid: 53d15bab64b318e429a3094ca82e7221, type: 2}
