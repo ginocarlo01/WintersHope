@@ -15,6 +15,7 @@ public class CutsceneController : MonoBehaviour
 
     private int currentIndex = 0;
     private bool isTransitioning = false;
+    private Coroutine textCoroutine;
 
     [SerializeField]
     private string[] sceneTexts = {
@@ -34,6 +35,13 @@ public class CutsceneController : MonoBehaviour
         {
             if (currentIndex < images.Length - 1)
             {
+                if (textCoroutine != null)
+                {
+                    // If the text coroutine is running, complete it immediately
+                    StopCoroutine(textCoroutine);
+                    dialogueText.text = sceneTexts[currentIndex];
+                }
+
                 // Transition to the next scene
                 currentIndex++;
                 InitializeScene(); // Initialize the next scene
@@ -65,7 +73,7 @@ public class CutsceneController : MonoBehaviour
         images[currentIndex].color = imageColor;
 
         // Show corresponding text immediately
-        StartCoroutine(TransitionImageAndText(sceneTexts[currentIndex]));
+        textCoroutine = StartCoroutine(TransitionImageAndText(sceneTexts[currentIndex]));
     }
 
     IEnumerator TransitionImageAndText(string text)
@@ -80,11 +88,6 @@ public class CutsceneController : MonoBehaviour
         }
 
         // Show corresponding text
-        StartCoroutine(AppendText(text));
-    }
-
-    IEnumerator AppendText(string text)
-    {
         dialogueText.text = "";
 
         for (int i = 0; i < text.Length; i++)
@@ -92,6 +95,9 @@ public class CutsceneController : MonoBehaviour
             dialogueText.text += text[i];
             yield return new WaitForSeconds(textSpeed);
         }
+
+        // Set transitioning to false after the text is fully displayed
+        isTransitioning = false;
     }
 
     void RestartCutscene()
