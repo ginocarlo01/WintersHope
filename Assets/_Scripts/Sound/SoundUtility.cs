@@ -4,5 +4,6 @@ public enum SFX
     PlayerDamage,
     EnemyDeath,
     EnemyHit,
-    ObstacleHit
+    ObstacleHit,
+    LoopMusic
 }

@@ -49,6 +49,15 @@ public class SoundPlayer : MonoBehaviour
         }
     }
 
+    public void ChangeBgMusic(SFX sfx)
+    {
+        if (audioClips.ContainsKey(sfx))
+        {
+            _musicSource.clip = audioClips[sfx];
+            _musicSource.Play();
+        }
+    }
+
     public void ChangeMasterVolume(float value)
     {
         AudioListener.volume = value;
@@ -64,6 +73,7 @@ public class SoundPlayer : MonoBehaviour
         EnemyLife.deathActionSFX += PlaySound;
         HitObstacle.hitActionSFX += PlaySound;
         LifeBorder.deathActionSFX += PlaySound;
+        ChangeMusicBg.newMusicActionSFX += ChangeBgMusic;
     }
 
     private void OnDisable()
@@ -75,6 +85,7 @@ public class SoundPlayer : MonoBehaviour
         EnemyLife.deathActionSFX -= PlaySound;
         HitObstacle.hitActionSFX -= PlaySound;
         LifeBorder.deathActionSFX -= PlaySound;
+        ChangeMusicBg.newMusicActionSFX -= ChangeBgMusic;
     }
     #endregion
 
