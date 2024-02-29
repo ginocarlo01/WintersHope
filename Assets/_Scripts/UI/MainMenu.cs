@@ -31,6 +31,7 @@ public class MainMenu : MonoBehaviour
     public void HandleStartButtonOnClickEvent()
     {
         //SceneManager.LoadScene(_scene);
+        PlayerPrefs.DeleteAll();
         TransitionManager.Instance().Transition(nextScene, transition, startDelay);
     }
 
