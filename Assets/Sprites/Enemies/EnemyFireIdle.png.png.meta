@@ -140,8 +140,8 @@ TextureImporter:
       name: EnemyFireIdle.png_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
+        x: 0
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -161,8 +161,8 @@ TextureImporter:
       name: EnemyFireIdle.png_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
+        x: 0
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -182,8 +182,8 @@ TextureImporter:
       name: EnemyFireIdle.png_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
+        x: 0
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -199,258 +199,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: EnemyFireIdle.png_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09375e8298b2c084ba545e51d8bd33c1
-      internalID: 1229600987
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyFireIdle.png_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e75dcad81af0d95488c3836748847d41
-      internalID: 1830635763
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyFireIdle.png_6
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eff470e81df1ad34284522bdc28a4916
-      internalID: 605308825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyFireIdle.png_7
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 272236a91f03c9d408398c349dd147ef
-      internalID: 432008362
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyFireIdle.png_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe05b5c2a40dae949b957e28c729aa75
-      internalID: -925549184
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyFireIdle.png_9
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ee9f1d3984c3a0418a94f196353e920
-      internalID: -269333053
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyFireIdle.png_10
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9636ac8cbb9ed8e40b7d21deafaaf252
-      internalID: 1113192724
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyFireIdle.png_11
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 50e1058ea060de446b6ec72e9507b799
-      internalID: -841224452
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyFireIdle.png_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6c99d925a9877144a53a6122d60b16e
-      internalID: 1801533436
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyFireIdle.png_13
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67bfb844013ffaa419c05f22ea90319e
-      internalID: -1276026379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyFireIdle.png_14
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 154f119f4a83ca745a046cd08c10a9a8
-      internalID: 1546887944
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyFireIdle.png_15
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf68ce466e898e349b4a59b2fcf1ebe4
-      internalID: -2038478192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -462,21 +210,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      EnemyFireIdle.png_15: -2038478192
-      EnemyFireIdle.png_7: 432008362
-      EnemyFireIdle.png_11: -841224452
-      EnemyFireIdle.png_8: -925549184
-      EnemyFireIdle.png_12: 1801533436
       EnemyFireIdle.png_1: 323875857
-      EnemyFireIdle.png_6: 605308825
-      EnemyFireIdle.png_9: -269333053
-      EnemyFireIdle.png_14: 1546887944
       EnemyFireIdle.png_0: 1365621194
-      EnemyFireIdle.png_5: 1830635763
-      EnemyFireIdle.png_13: -1276026379
-      EnemyFireIdle.png_10: 1113192724
       EnemyFireIdle.png_3: 988580851
-      EnemyFireIdle.png_4: 1229600987
       EnemyFireIdle.png_2: -971525497
   spritePackingTag: 
   pSDRemoveMatte: 0

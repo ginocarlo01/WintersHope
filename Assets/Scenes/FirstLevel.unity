@@ -349,11 +349,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
       propertyPath: loadTimeRandomness
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
       propertyPath: attackSpeedRandomness
-      value: 0.3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
@@ -629,6 +629,10 @@ PrefabInstance:
       propertyPath: type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7851955982955671645, guid: 893f76fe58b6d4547833f5fffc4a1736, type: 3}
+      propertyPath: attackSpeedRandomness
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 893f76fe58b6d4547833f5fffc4a1736, type: 3}
 --- !u!4 &33371915 stripped
@@ -765,6 +769,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203142110769990253, guid: 7223dac6698b094499c6c698dd0b9517, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3203142110769990259, guid: 7223dac6698b094499c6c698dd0b9517, type: 3}
+      propertyPath: attackSpeedRandomness
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2802,6 +2810,10 @@ PrefabInstance:
       propertyPath: attackSpeed
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3829412707507509736, guid: db566ac274f3afa4ca34f4ba7b73c38a, type: 3}
+      propertyPath: attackSpeedRandomness
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6371511536426110512, guid: db566ac274f3afa4ca34f4ba7b73c38a, type: 3}
       propertyPath: m_Name
       value: FollowPointEnemy (4)
@@ -2974,7 +2986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
       propertyPath: attackSpeedRandomness
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
@@ -3178,6 +3190,10 @@ PrefabInstance:
     - target: {fileID: 3829412707507509736, guid: db566ac274f3afa4ca34f4ba7b73c38a, type: 3}
       propertyPath: attackSpeed
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829412707507509736, guid: db566ac274f3afa4ca34f4ba7b73c38a, type: 3}
+      propertyPath: attackSpeedRandomness
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6371511536426110512, guid: db566ac274f3afa4ca34f4ba7b73c38a, type: 3}
       propertyPath: m_Name
@@ -4007,6 +4023,10 @@ PrefabInstance:
     - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
       propertyPath: attackSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
+      propertyPath: attackSpeedRandomness
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
@@ -5633,6 +5653,10 @@ PrefabInstance:
       propertyPath: attackSpeed
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3829412707507509736, guid: db566ac274f3afa4ca34f4ba7b73c38a, type: 3}
+      propertyPath: attackSpeedRandomness
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6371511536426110512, guid: db566ac274f3afa4ca34f4ba7b73c38a, type: 3}
       propertyPath: m_Name
       value: FollowPointEnemy (2)
@@ -6423,7 +6447,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4763808521384212103, guid: 90ec3628d1cd870439036105ead8f8bf, type: 3}
       propertyPath: loadTimeRandomness
-      value: 0.3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763808521384212103, guid: 90ec3628d1cd870439036105ead8f8bf, type: 3}
+      propertyPath: attackSpeedRandomness
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4763808521384212120, guid: 90ec3628d1cd870439036105ead8f8bf, type: 3}
       propertyPath: m_Name
@@ -7546,7 +7574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
       propertyPath: attackSpeedRandomness
-      value: 0.3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
@@ -7901,6 +7929,10 @@ PrefabInstance:
     - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
       propertyPath: attackSpeed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
+      propertyPath: attackSpeedRandomness
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
@@ -8317,6 +8349,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1397230054}
     m_Modifications:
+    - target: {fileID: 1605495681745556452, guid: 7223dac6698b094499c6c698dd0b9517, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605495681745556452, guid: 7223dac6698b094499c6c698dd0b9517, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605495681745556452, guid: 7223dac6698b094499c6c698dd0b9517, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 3203142110769990252, guid: 7223dac6698b094499c6c698dd0b9517, type: 3}
       propertyPath: m_Name
       value: BaseEnemy (1)
@@ -8367,6 +8411,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203142110769990259, guid: 7223dac6698b094499c6c698dd0b9517, type: 3}
       propertyPath: type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3203142110769990259, guid: 7223dac6698b094499c6c698dd0b9517, type: 3}
+      propertyPath: attackSpeedRandomness
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3203142110769990259, guid: 7223dac6698b094499c6c698dd0b9517, type: 3}
@@ -10186,6 +10234,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LookAtPlayerEnemyWithRange Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4765465662548093882, guid: e2f1dc938a50ac1479ff50f7951e4564, type: 3}
+      propertyPath: loadTimeRandomness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765465662548093882, guid: e2f1dc938a50ac1479ff50f7951e4564, type: 3}
+      propertyPath: attackSpeedRandomness
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f1dc938a50ac1479ff50f7951e4564, type: 3}
 --- !u!4 &1255270926 stripped
@@ -11313,7 +11369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
       propertyPath: loadTimeRandomness
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
       propertyPath: attackSpeedRandomness
@@ -12036,7 +12092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
       propertyPath: loadTimeRandomness
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
       propertyPath: attackSpeedRandomness
@@ -13227,7 +13283,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4763808521384212103, guid: 90ec3628d1cd870439036105ead8f8bf, type: 3}
       propertyPath: loadTimeRandomness
-      value: 0.3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763808521384212103, guid: 90ec3628d1cd870439036105ead8f8bf, type: 3}
+      propertyPath: attackSpeedRandomness
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4763808521384212120, guid: 90ec3628d1cd870439036105ead8f8bf, type: 3}
       propertyPath: m_Name
@@ -13547,7 +13607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
       propertyPath: loadTimeRandomness
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
       propertyPath: attackSpeedRandomness
@@ -13915,6 +13975,10 @@ PrefabInstance:
     - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
       propertyPath: attackSpeed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874800606751450937, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
+      propertyPath: attackSpeedRandomness
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 430df2c40afea4841b552d103548ce0a, type: 3}
@@ -15062,6 +15126,10 @@ PrefabInstance:
     - target: {fileID: 3829412707507509736, guid: db566ac274f3afa4ca34f4ba7b73c38a, type: 3}
       propertyPath: attackSpeed
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829412707507509736, guid: db566ac274f3afa4ca34f4ba7b73c38a, type: 3}
+      propertyPath: attackSpeedRandomness
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6371511536426110512, guid: db566ac274f3afa4ca34f4ba7b73c38a, type: 3}
       propertyPath: m_Name
@@ -17895,6 +17963,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7851955982955671645, guid: 893f76fe58b6d4547833f5fffc4a1736, type: 3}
+      propertyPath: attackSpeedRandomness
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 893f76fe58b6d4547833f5fffc4a1736, type: 3}
 --- !u!1001 &5711079279505982303
@@ -17976,6 +18048,10 @@ PrefabInstance:
     - target: {fileID: 3829412707507509736, guid: db566ac274f3afa4ca34f4ba7b73c38a, type: 3}
       propertyPath: attackSpeed
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829412707507509736, guid: db566ac274f3afa4ca34f4ba7b73c38a, type: 3}
+      propertyPath: attackSpeedRandomness
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6371511536426110512, guid: db566ac274f3afa4ca34f4ba7b73c38a, type: 3}
       propertyPath: m_Name
