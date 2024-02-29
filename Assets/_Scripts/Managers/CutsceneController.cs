@@ -1,3 +1,4 @@
+using EasyTransition;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -24,6 +25,16 @@ public class CutsceneController : MonoBehaviour
         // Add more texts for additional scenes
     };
 
+    [Header("Transition Settings")]
+    [SerializeField]
+    private string newLevelName;
+    [SerializeField]
+    private TransitionSettings transition;
+    [SerializeField]
+    private float startDelay;
+    [SerializeField]
+    string nextScene;
+
     void Start()
     {
         InitializeScene();
@@ -49,6 +60,7 @@ public class CutsceneController : MonoBehaviour
             else
             {
                 // End of cutscene, you can handle it here.
+                SkipCutscene();
                 Debug.Log("End of cutscene");
             }
         }
@@ -60,8 +72,7 @@ public class CutsceneController : MonoBehaviour
 
         if (Input.GetKeyDown(skipKey))
         {
-            // Skip the entire cutscene, you can handle it here.
-            Debug.Log("Cutscene skipped");
+            SkipCutscene();
         }
     }
 
@@ -102,7 +113,12 @@ public class CutsceneController : MonoBehaviour
 
     void RestartCutscene()
     {
-        // Reset variables or perform any necessary setup to restart the cutscene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
+        TransitionManager.Instance().Transition(SceneManager.GetActiveScene().name, transition, startDelay);
+    }
+
+    void SkipCutscene()
+    {
+        TransitionManager.Instance().Transition(nextScene, transition, startDelay);
     }
 }

@@ -2,6 +2,7 @@
  * Written by: ginocarlo01
  */
 
+using EasyTransition;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,14 +13,25 @@ public class MainMenu : MonoBehaviour
     private GameObject optionsUIAnim;
     private bool optionsWasPressed = false;
 
+    [Header("Transition Settings")]
+    [SerializeField]
+    private string newLevelName;
+    [SerializeField]
+    private TransitionSettings transition;
+    [SerializeField]
+    private float startDelay;
+    [SerializeField]
+    string nextScene;
+
     private void Start()
     {
         InitUI();
     }
 
-    public void HandleStartButtonOnClickEvent(string _scene)
+    public void HandleStartButtonOnClickEvent()
     {
-        SceneManager.LoadScene(_scene);
+        //SceneManager.LoadScene(_scene);
+        TransitionManager.Instance().Transition(nextScene, transition, startDelay);
     }
 
     public void HandleOptionsButtonOnClickEvent()
