@@ -26,7 +26,7 @@ public class ActivateByDeath : MonoBehaviour
             }
 
         }
-        Debug.Log(targetObject.gameObject.name + " is now: " + !disableTargetOnAwake);
+        //Debug.Log(targetObject.gameObject.name + " is now: " + !disableTargetOnAwake);
         targetObject.SetActive(!disableTargetOnAwake);
         disabledObjectsCount = 0;
     }
@@ -40,7 +40,7 @@ public class ActivateByDeath : MonoBehaviour
             if (targetObject != null)
             {
                 targetObject.SetActive(disableTargetOnAwake);
-                Debug.Log(targetObject.gameObject.name + " is now: " + disableTargetOnAwake);
+                //Debug.Log(targetObject.gameObject.name + " is now: " + disableTargetOnAwake);
             }
         }
     }

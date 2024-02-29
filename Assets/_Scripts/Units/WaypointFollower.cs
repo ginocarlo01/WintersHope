@@ -35,6 +35,8 @@ public class WaypointFollower : MonoBehaviour
         {
             enemyController.DisableControlAnimation();
         }
+
+        
     }
 
     void FixedUpdate()
@@ -75,6 +77,12 @@ public class WaypointFollower : MonoBehaviour
 
         animator.SetFloat("moveX", direction.x);
         animator.SetFloat("moveY", direction.y);
+    }
+
+    private void OnEnable()
+    {
+        animator.SetBool("moving", true);
+        UpdateAnimation();
     }
 
 }
