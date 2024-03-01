@@ -17,8 +17,15 @@ public class PauseWindowGame : MonoBehaviour
     [SerializeField]
     private Signal pauseSignal;
 
-    public TransitionSettings transition;
-    public float startTransitionDelay;
+
+    [Header("Transition Settings")]
+    [SerializeField]
+    private string newLevelName;
+    [SerializeField]
+    private TransitionSettings transition;
+    [SerializeField]
+    private float startDelay;
+
 
     private void Start() {
         optionsUI.SetActive(optionsWasPressed);
@@ -47,7 +54,8 @@ public class PauseWindowGame : MonoBehaviour
     public void HandleQuitButtonOnClickEvent(string _scene)
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(_scene);
+        //SceneManager.LoadScene(_scene);
+        TransitionManager.Instance().Transition(newLevelName, transition, startDelay);
     }
 
     
