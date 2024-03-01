@@ -30,10 +30,16 @@ public class Room : MonoBehaviour
         if (startInactive)
         {
             foreach (EnemyController enemy in enemies)
-                ChangeActivation(enemy, false);
+                    enemy.DisableEnemy();
+                    //ChangeActivation(enemy, false);
 
             //foreach (ActivateByDeath activateByDeath in activateByDeaths)
             //    ChangeActivation(activateByDeath, false);
+        }
+        else
+        {
+            foreach (EnemyController enemy in enemies)
+                enemy.EnableEnemy();
         }
     }
 
@@ -42,7 +48,8 @@ public class Room : MonoBehaviour
         if (other.CompareTag("Player") && !other.isTrigger)
         {
             foreach (EnemyController enemy in enemies)
-                ChangeActivation(enemy, true);
+                enemy.EnableEnemy();
+                //    ChangeActivation(enemy, true);
 
             //foreach (ActivateByDeath activateByDeath in activateByDeaths)
             //    ChangeActivation(activateByDeath, true);
@@ -57,10 +64,12 @@ public class Room : MonoBehaviour
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
+            
             foreach (EnemyController enemy in enemies)
-                ChangeActivation(enemy, false);
+                enemy.DisableEnemy();
+            //    ChangeActivation(enemy, false);
 
-           // foreach (ActivateByDeath activateByDeath in activateByDeaths)
+            // foreach (ActivateByDeath activateByDeath in activateByDeaths)
             //    ChangeActivation(activateByDeath, false);
 
             virtualCamera.SetActive(false);

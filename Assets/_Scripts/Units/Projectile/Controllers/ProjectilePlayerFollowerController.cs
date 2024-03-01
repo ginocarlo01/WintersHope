@@ -9,7 +9,7 @@ public class ProjectilePlayerFollowerController : ProjectileController, IPooledO
     {
         InitMaterial();
         
-        Invoke("TurnOff", timeToDestroy);
+        //Invoke("TurnOff", timeToDestroy);
         currentState = followAttackState;
         currentState.OnBeginState();
     }

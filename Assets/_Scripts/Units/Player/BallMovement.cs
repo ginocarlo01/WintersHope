@@ -32,10 +32,16 @@ public class BallMovement : MonoBehaviour
     private TransitionSettings transition;
     [SerializeField]
     private float startDelay;
+    private CheckPointManager checkPointManager;
+    private LifeBorder lifeBorder;
+    [SerializeField]
+    private float delayDeath = .2f;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        checkPointManager = GetComponent<CheckPointManager>();
+        lifeBorder = GetComponentInChildren<LifeBorder>();
 
         currentState = PlayerState.walk;
     }
@@ -125,7 +131,10 @@ public class BallMovement : MonoBehaviour
 
     public void ReloadScene()
     {
-        TransitionManager.Instance().Transition(SceneManager.GetActiveScene().name, transition, startDelay);
+        //TransitionManager.Instance().Transition(SceneManager.GetActiveScene().name, transition, startDelay);
+        
+        TransitionManager.Instance().Transition(transition, startDelay);
+        StartCoroutine(IAfterDeath());
     }
 
     #region SubjectSubscription
@@ -150,4 +159,13 @@ public class BallMovement : MonoBehaviour
 
     #endregion
 
+    IEnumerator IAfterDeath()
+    {
+        yield return new WaitForSeconds(delayDeath);
+        transform.position = checkPointManager.GetLastPosition();
+        lifeBorder.RestartLife();
+        DisableInteraction();
+        anim.SetTrigger("Restart");
+        lifeBorder.dead = false;
+    }
 }

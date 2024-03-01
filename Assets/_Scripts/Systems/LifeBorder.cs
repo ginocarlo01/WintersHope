@@ -20,7 +20,7 @@ public class LifeBorder : MonoBehaviour
 
     //Animator animator;
 
-    bool dead;
+    public bool dead;
 
     public static Action<SFX> lifeActionSFX;
     [SerializeField] protected SFX lifeSFX;
@@ -108,4 +108,12 @@ public class LifeBorder : MonoBehaviour
     {
         healthMat.SetFloat("_Arc1", angle);
     }
+
+    public void RestartLife()
+    {
+        currentLife = baseLife;
+        UpdateHealthBar(false);
+    }
+
+
 }

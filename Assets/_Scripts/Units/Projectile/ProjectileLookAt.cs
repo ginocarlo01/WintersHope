@@ -35,7 +35,7 @@ public class ProjectileLookAt : MonoBehaviour
     {
         timerCountDown = maxTimer;
     
-        Destroy(this.gameObject, destroyTime);
+        //Destroy(this.gameObject, destroyTime);
 
         Vector3 lookDir = lookAtPos - transform.position;
 

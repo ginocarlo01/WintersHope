@@ -8,7 +8,7 @@ public class ProjectileCursorFollowerController : ProjectileController, IPooledO
     {
         InitMaterial();
 
-        Invoke("TurnOff", timeToDestroy);
+        //Invoke("TurnOff", timeToDestroy);
         currentState = followCursorState;
         currentState.OnBeginState();
     }

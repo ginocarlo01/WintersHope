@@ -73,7 +73,7 @@ public class EnemyLife : MonoBehaviour, IHit
         { 
             damageActionSFX?.Invoke(damageSFX); 
             EnableLifeSprites();
-            StartCoroutine(WaitToShowDamage());
+            //StartCoroutine(WaitToShowDamage());
         }
         ChangeHealthArc((1 - currentLife / baseLife) * 360);
         

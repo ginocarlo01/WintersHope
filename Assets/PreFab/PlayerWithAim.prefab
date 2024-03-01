@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTag: Enemy
-  baseLife: 2
+  baseLife: 10
   currentLife: 0
   healthObj: {fileID: 5740597906383645714}
   lifeSFX: 0
@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 289222949}
   - component: {fileID: 289222950}
   - component: {fileID: 6503925243151588453}
+  - component: {fileID: 591819723}
   m_Layer: 0
   m_Name: PlayerWithAim
   m_TagString: Player
@@ -411,7 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1501043876}
-  moveSpeed: 6.5
+  moveSpeed: 7
   anim: {fileID: 289222949}
   transition: {fileID: 11400000, guid: d641980330b54c243a644222c797e582, type: 2}
   startDelay: 0
@@ -455,7 +456,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1072301905
   m_SortingLayer: 2
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: -289571758, guid: fede5715f6cc44b4a9aa5ea5ba671d62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -531,6 +532,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &591819723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5740597907615467064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218820f063a7b1648a065b2562e01d57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rooms: []
 --- !u!1 &5740597907956477916
 GameObject:
   m_ObjectHideFlags: 0

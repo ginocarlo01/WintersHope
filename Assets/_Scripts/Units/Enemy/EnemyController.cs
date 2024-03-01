@@ -65,8 +65,9 @@ public class EnemyController : MonoBehaviour
     int baseLife = 2;
     [SerializeField]
     EnemyLife enemyLife;
+    [SerializeField]
+    private bool active = false;
 
-    
 
     private void Awake()
     {
@@ -133,6 +134,7 @@ public class EnemyController : MonoBehaviour
 
     public void SpawnProjectile()
     {
+        if (!active) { return; }
         if (!canSpawnProjectile) { return; }
 
        for (int i = 0; i < spawnPositionProjectile.Length; i++)
@@ -180,4 +182,15 @@ public class EnemyController : MonoBehaviour
             canSpawnProjectile = true;
         }
     }
+
+    public void EnableEnemy()
+    {
+        active = true;
+    }
+
+    public void DisableEnemy()
+    {
+        active = false;
+    }
+
 }
